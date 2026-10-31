@@ -1,0 +1,127 @@
+\section{Introduction}\label{sec:intro}
+
+Consider a one-frequency quasi-periodic Schr\"odinger operator on $\ell^2(\Z)$,
+\begin{equation}\label{eq:qp}
+(H_{v,\alpha,\theta}u)(n)=u(n+1)+u(n-1)+v(\theta+n\alpha)\,u(n),
+\end{equation}
+with a real-analytic sampling function $v$ on $\T=\R/\Z$, an irrational frequency $\alpha$ and a phase $\theta\in\T$. The almost Mathieu operator, $v(x)=2\lambda\cos2\pi x$, is the Aubry--Andr\'e model of physics~\cite{AubryAndre1980}. Let $p_n/q_n$ be the continued-fraction convergents of $\alpha$ and
+\begin{equation}\label{eq:beta}
+\beta(\alpha)=\limsup_{n\to\infty}\frac{\log q_{n+1}}{q_n}\in[0,\infty].
+\end{equation}
+When the Lyapunov exponent $L$ is positive on the spectrum, transport is a competition between the localization strength $L$ and the Liouville strength $\beta(\alpha)$. The companion papers~\cite{DMamo,DMuniv} determine the fastest transport exponent $\au$ at almost every phase: it equals $\max\{0,1-\ell_*/\beta(\alpha)\}$, where $\ell_*$ is the minimum of $L$ on the spectrum, for the almost Mathieu operator and for every supercritical analytic potential of type~I.
+
+This paper asks what happens at the worst phase. The question has a physical reading. Moving the launch site of a packet by $x$ sites moves the phase by $x\alpha$, so the worst phase governs transport uniformly over launch sites. Through the Jordan--Wigner transformation it bounds the uniform light cone of the quasi-periodic XY spin chain, and for the Aubry--Andr\'e chain, at almost every phase, the typical law governs the light cone seen from a fixed site. Three points summarize the answers.
+\begin{itemize}
+\item At the worst phase the localization strength is divided by at most twice the acceleration: when $\max_\Sigma\ell\le\beta(\alpha)<\infty$, transport is never faster than $1-\ell/(2\om\beta)$, maximized over the spectrum, for every analytic potential with $L>0$ on the spectrum and uniformly in the phase. The factor $2\om$ is attained.
+\item The worst value is generic in the sense of Baire: for the almost Mathieu operator, when $\beta_e(\alpha)=\beta(\alpha)\in[\log\lambda,\infty)$, the exponent is $1-\log\lambda/(2\beta)$ on a residual set of phases and $1-\log\lambda/\beta$ at almost every phase. In general the typical value is $\max\{0,1-\log\lambda/\beta\}$.
+\item In the Aubry--Andr\'e XY chain, for the observables specified below, at almost every phase the fixed-site light cone follows the typical law, and when $\beta_e=\beta$ is finite and at least $\log\lambda$ the uniform light cone follows the worst-case law; for every supercritical analytic field the uniform light cone obeys the all-phase upper law. For an explicit computable chain both exponents are different reals of Turing degree $\mathbf 0''$. The Lyapunov exponent itself is computable, so the uncomputability sits entirely in the frequency.
+\end{itemize}
+
+\subsection{Transport exponents}
+
+Let $\psi_t=e^{-itH}\delta_0$, $a(j,T)=\frac2T\int_0^\infty e^{-2t/T}|\langle\delta_j,\psi_t\rangle|^2\,dt$, $P(N,T)=\sum_{|j|>N}a(j,T)$ and $M_p(T)=\sum_j|j|^pa(j,T)$. The upper transport exponents are $\beta^+(p)=\limsup_{T\to\infty}\log M_p(T)/(p\log T)$, and $\au=\sup_{p>0}\beta^+(p)$ is the fastest one, as in~\cite{DT2007,DMamo,DMuniv}. A tail $P(T^a,T)$ decaying faster than every power forces $\au\le a$, and a tail of size $T^{-C}$ at distance $T^a$ forces $\au\ge a$. We write $\au(\theta)$ when the phase matters, and
+\[
+\aunif=\inf\Bigl\{a\ge0:\ \sup_\theta P_\theta(T^a,T)=O(T^{-m})\text{ for every }m>0\Bigr\}
+\]
+for the uniform exponent. It bounds $\sup_\theta\au(\theta)$, and it is also the exponent of all packets of one operator, uniformly in the launch site (Section~\ref{sec:prelim}). Let
+\begin{equation}\label{eq:Ga}
+\Ga=\bigl\{\theta\in\T:\ |\sin(2\pi q_n\theta)|\ge q_n^{-2}\text{ for all sufficiently large }n\bigr\},
+\end{equation}
+a set of full measure~\cite[Lemma~2.1]{DMamo}. Let $\delta_n=q_n\alpha-p_n$, $b_n=q_n^{-1}\log|\delta_n|^{-1}$, and let $\beta_e(\alpha)$ and $\beta_o(\alpha)$ be the limsups of $b_n$ along even and along odd $q_n$, with value $0$ along a finite set; then $\beta(\alpha)=\max\{\beta_e,\beta_o\}$.
+
+\subsection{The all-phase law}
+
+Write $\ell(E)$ for the Lyapunov exponent at energy $E$ and $\Sigma$ for the spectrum. The acceleration $\om(E)$, from Avila's global theory~\cite{Avila2015}, is the right derivative at $y=0$ of $L(E,y)/(2\pi)$, where $L(E,y)$ is the Lyapunov exponent with phase complexified by $iy$; it is a positive integer at every spectral energy where $\ell>0$. The operator is supercritical if $\ell>0$ on $\Sigma$, and of type~I if moreover $\om=1$ on $\Sigma$~\cite{GeJitomirskaya2024}. For $\ell>0$, $w\ge1/2$ and $b\ge0$ let
+\[
+f(b;\ell,w)=1-\frac{\ell}{2wb}\quad(b\ge\ell),\qquad f(b;\ell,w)=\frac{(2w-1)b}{(2w-1)b+\ell}\quad(b<\ell).
+\]
+
+\begin{maintheorem}[All-phase upper law]\label{thm:A}
+Let $v$ be real analytic with $L>0$ on the spectrum, and let $0<\beta(\alpha)<\infty$. Put $\FU(\beta)=\max_{E\in\Sigma}f(\beta;\ell(E),\om(E))$. For every $a>\FU(\beta)$ and every $m>0$,
+\[
+\sup_{\theta\in\T}P_\theta(T^a,T)=O(T^{-m})\qquad(T\to\infty).
+\]
+Hence, at every phase, $\au(\theta)\le\aunif\le\FU(\beta)<1$. If $\beta\ge\max_\Sigma\ell$, then
+\[
+\FU(\beta)=1-\frac1{2\beta}\min_{E\in\Sigma}\frac{\ell(E)}{\om(E)}\le1-\frac{\ell_*}{2\om^+\beta},\qquad\om^+=\max_\Sigma\om .
+\]
+\end{maintheorem}
+
+For type~I potentials the bound is $1-\ell_*/(2\beta)$ when $\beta\ge\ell_*$, and $\beta/(\beta+\ell_*)$ when $\beta<\ell_*$ (Corollary~\ref{cor:typeI}).
+
+\begin{remark}\label{rem:A}
+At $\beta(\alpha)=0$ the same argument gives $0$; this endpoint is known~\cite{DT2007},~\cite[Remark~1.12]{JitomirskayaMavi2017},~\cite[Corollary~5.10]{DMuniv}. At $\beta(\alpha)=\infty$, Jitomirskaya and Zhang proved $\au=1$ at every phase~\cite[Theorem~3(2)]{JZ2022}. With Theorem~\ref{thm:A}: $\au=1$ at some, equivalently at every, phase if and only if $\beta(\alpha)=\infty$. The lower bound $\au(\theta)\ge\max\{0,1-\ell_*/\beta\}$ holds at every phase~\cite[Theorem~4.1]{DMuniv}, so Theorem~\ref{thm:A} brackets the exponent at every phase.
+\end{remark}
+
+\subsection{Sharpness}
+
+\begin{maintheorem}[Sharpness]\label{thm:B}
+\begin{enumerate}
+\item Let $\lambda>1$ and $L=\log\lambda$. For the almost Mathieu operator, $\au(H_{\lambda,\alpha,1/4})\ge\max\{0,1-L/(2\beta_e(\alpha))\}$ for every irrational $\alpha$. If $\beta_e(\alpha)=\beta(\alpha)\in[L,\infty)$, then
+\[
+\aunif=\sup_\theta\au(\theta)=\au(1/4)=1-\frac{L}{2\beta(\alpha)} .
+\]
+If $\beta_e(\alpha)\ge L$, then $\au(1/4)=\max\{0,1-L/\beta_o(\alpha),1-L/(2\beta_e(\alpha))\}$.
+\item For $v(x)=2\lambda\cos2\pi sx$ with $\lambda>1$ and an integer $s\ge2$, the acceleration is $s$ on $\Sigma$, and for every $\beta_*>\log\lambda$ there is an $\alpha$ with $\beta(\alpha)=\beta_*$ and $\aunif=\sup_\theta\au(\theta)=1-\ell_*/(2\om^+\beta(\alpha))$. So the factor $2\om^+$ in Theorem~\ref{thm:A} cannot be improved in the class of analytic potentials.
+\item Let $v$ be real analytic with $L>0$ on $\Sigma$ and $v(x+1/2)=-v(x)$. Then $0\in\Sigma$, every even-denominator periodic approximant has a closed gap at $E=0$ at some phase, and $\aunif\ge\max\{0,1-\ell(0)/(2\beta_e(\alpha))\}$.
+\end{enumerate}
+\end{maintheorem}
+
+\begin{remark}\label{rem:B}
+At almost every phase the exponent of the almost Mathieu operator is $\max\{0,1-L/\beta\}$~\cite[Theorem~A]{DMamo}. So when $\beta_e=\beta\in[L,\infty)$ the worst phase sees exactly half the typical localization strength, and when $\beta_e=\beta\in(L/2,\infty)$ the phase $1/4$ is strictly faster than almost every phase, including in the window $e^{\beta}<\lambda<e^{2\beta}$ where Avila, You and Zhou proved Anderson localization at almost every phase~\cite{AYZ2017}. For the almost Mathieu operator the closed central gap of even-denominator approximants is classical~\cite{BellissardSimon1982}, and the value of the Chambers polynomial at $0$ that expresses it is due to Lamoureux and Mingo~\cite{LamoureuxMingo2007}.
+\end{remark}
+
+For odd-harmonic type~I potentials, Theorem~\ref{thm:B}(3) and Theorem~\ref{thm:A} give $1-\ell(0)/(2\beta)\le\aunif\le1-\ell_*/(2\beta)$ when $\beta_e=\beta$ is finite and at least $\ell_*$. When moreover $\beta\ge\ell(0)$, the uniform exponent of packets filtered ever more narrowly near the closed gap at $E=0$ converges to $1-\ell(0)/(2\beta)$ (Corollary~\ref{cor:window}); this is a statement about the uniform exponent in the limit of narrow filters, not about each phase or each fixed filter.
+
+\subsection{Measure versus category}
+
+\begin{maintheorem}[Category]\label{thm:C}
+Let $\lambda>1$ and $\beta_e(\alpha)=\beta(\alpha)\in[\log\lambda,\infty)$. Then $\au(H_{\lambda,\alpha,\theta})=1-\log\lambda/(2\beta(\alpha))$ for every $\theta$ in a dense $G_\delta$ set.
+\end{maintheorem}
+
+Since $\au=1-\log\lambda/\beta$ at almost every phase~\cite[Theorem~A]{DMamo}, the exponent takes one value on a set of full measure and a strictly larger value on a residual set. The lower bound on a residual set holds whenever $\beta_e>\log\lambda/2$, and a residual lower bound $1-\ell(0)/(2\beta_e)$ holds for every supercritical odd-harmonic analytic potential (Corollary~\ref{cor:G2}). The Baire argument behind it is standard; the content lies in lower-bound mechanisms that depend on the phase only through an open set of local phases.
+
+\subsection{Light cones}
+
+Consider the XY chain $\sum_n(X_nX_{n+1}+Y_nY_{n+1})+\sum_nh_nZ_n$ with $h_n=v(\theta+n\alpha)$. For an even observable $A$ near a site $x$ and receivers $B$ beyond distance $T^a$ from $x$, either even observables on the two sides, such as parity strings, or arbitrary observables on a half-line, let $\Gamma_x(\theta)$ be the least $a$ for which $\|[\tau_t(A),B]\|$ decays faster than every power of $T$ uniformly for $|t|\le T$, and $\Gamma_{\mathrm{unif}}(\theta)$ the same uniformly over $x$ (Definition~\ref{def:LR}).
+
+\begin{maintheorem}[Light cones]\label{thm:D}
+\begin{enumerate}
+\item For the Aubry--Andr\'e chain, $h_n=2\lambda\cos2\pi(\theta+n\alpha)$ with $\lambda>1$, and for almost every $\theta$, the light-cone exponent at every site is $\Gamma_x(\theta)=\max\{0,1-\log\lambda/\beta(\alpha)\}$.
+\item For every real-analytic $v$ with $L>0$ on $\Sigma$ and $\beta(\alpha)<\infty$, $\Gamma_{\mathrm{unif}}(\theta)\le\FU(\beta(\alpha))$ at every phase. For the Aubry--Andr\'e chain with $\beta_e(\alpha)=\beta(\alpha)\in[\log\lambda,\infty)$, $\Gamma_{\mathrm{unif}}(\theta)=1-\log\lambda/(2\beta(\alpha))$ at every phase.
+\item There are a computable $\alpha$ and a computable phase $\theta_*$ such that the chain with $h_n=4\cos2\pi(\theta_*+n\alpha)$ has $\Gamma_{\mathrm{unif}}=1-1/(2s_*)$ and $\Gamma_x=1-1/s_*$ at every site, where $s_*\in[23/12,2]$ has Turing degree $\mathbf 0''$; both exponents have degree $\mathbf 0''$. In the same chain at the phase $1/4$, every site has exponent $1-1/(2s_*)$.
+\end{enumerate}
+\end{maintheorem}
+
+For the pair $Z_0$, $P_R$, an order-one commutator is equivalent to a one-body mass in $R$ bounded away from both $0$ and $1$: $\|[\tau_t(Z_0),P_R]\|=4\sqrt{p(1-p)}$, where $p$ is the one-body mass in $R$ at time $2t$ (Proposition~\ref{prop:comm}). The bounds concern even sources and the stated receivers; they are not conventional exponential Lieb--Robinson bounds for arbitrary observables.
+
+\begin{remark}\label{rem:D}
+Reductions of XY dynamics to one-body dynamics go back to Lieb, Schultz and Mattis~\cite{LSM1961}, and were used by Hamza, Sims and Stolz for disordered chains~\cite{HSS2012}. Damanik, Lemm, Lukic and Yessen identified anomalous Lieb--Robinson exponents of the Fibonacci XY chain with upper transport exponents~\cite{DLLY2016}. The infinite-temperature OTOC for one receiver site is contained in the formula of Riddell and S{\o}rensen~\cite{RiddellSorensen2020}.
+\end{remark}
+
+\subsection{Computability}
+
+\begin{maintheorem}[Computability]\label{thm:E}
+\begin{enumerate}
+\item For every computable real-analytic $v$, the Lyapunov exponent is a computable function of the frequency and the energy on $(\R\setminus\Q)\times\R$. At every computable irrational frequency, $\ell$, $\ell_*$, the density of states and the spectrum are computable, with no hypothesis of supercriticality.
+\item Let $\alpha_*$ be the explicit computable frequency of~\cite[Theorem~D(3)]{DMamo}. For every even analytic $v$ with computable coefficients and $\sup_{|\operatorname{Im}z|\le1/4}|v(z)-4\cos2\pi z|<1/4$, the exponent $\au(H_{v,\alpha_*,1/4})$ and every moment exponent equal $1-\ell_*(v)/\beta(\alpha_*)\in[0.3199,0.6924]$, which has Turing degree exactly $\mathbf 0''$; the value depends continuously on $v$.
+\end{enumerate}
+\end{maintheorem}
+
+Part~1 is an algorithmic consequence of Avila's global theory; we make no priority claim for it, and computing spectra is not new (Remark~\ref{rem:compprior}). Paper A gave an exponent of degree $\mathbf 0''$ that is robust along a coupling interval~\cite[Theorem~D]{DMamo}; part~2 extends this to the computable members of an explicit neighbourhood of $4\cos2\pi x$ in the even analytic potentials, open relative to that class. Computable coefficients are needed: a noncomputable coupling in the same set gives the computable value $49/100$ (Remark~\ref{rem:noncomp}). Section~\ref{sec:computability} also shows that, for these transport laws at the prescribed good phases, the frequency is the only fragile datum, and that in the supercritical analytic class uncomputability is carried by $\limsup$-type quantities.
+
+\subsection{Relation to earlier work}
+
+For phases outside the full-measure sets of the companion papers, little was known at positive finite $\beta(\alpha)$. Damanik and Tcheremchantsev proved vanishing upper exponents at every phase when $\beta(\alpha)=0$, for trigonometric polynomial potentials~\cite[Theorems~4--5]{DT2007}, with methods that also control individual times~\cite{DT2008}. Jitomirskaya and Mavi proved arithmetic upper bounds that reach $\beta=0$ for analytic potentials~\cite[Theorem~1.7 and Remark~1.12]{JitomirskayaMavi2017}. Han and Jitomirskaya proved upper bounds under a strongly bounded discrepancy condition~\cite{HanJitomirskaya2019}, and Bradshaw, de Jong, Liu, Wang, Wang and Yang proved phase-uniform subpower bounds for weakly Liouville frequencies, which have $\beta=0$~\cite{BdJLWWY2025}. Jitomirskaya, Liu and Tcheremchantsev bounded fractal dimensions of spectral measures near the transition for $\alpha$-Diophantine phases~\cite{JLT2025}. Jitomirskaya and Zhang settled $\beta=\infty$~\cite{JZ2022}. In the literature we checked we did not find an all-phase upper law at positive finite $\beta$; this is a statement about our search, not a priority claim. The structural input is Avila's global theory~\cite{Avila2015}. The connection between the acceleration and zeros of finite-volume determinants is due to Han and Schlag~\cite{HanSchlag2022}, for Diophantine frequencies (phase restrictions enter only their application to localization), and the acceleration counts the vanishing dual Lyapunov exponents by Ge, Jitomirskaya, You and Zhou~\cite{GJYZ2023}; we prove the finite-scale count we need directly. The interpolation at every phase rests on the product lemma of Avila and Jitomirskaya~\cite[Lemma~9.7]{AJ2009}, used in the hierarchical analysis of Jitomirskaya and Liu~\cite{JL2018}. Reflection resonances of the phase were developed by Jitomirskaya and Liu~\cite{JLphase} and Liu~\cite{Liu2022}, and Jitomirskaya, Liu and Mi gave a sharp criterion for semi-uniform dynamical localization, with almost Mathieu examples that are dynamically localized but not semi-uniformly~\cite{JLM2024}. The distinction between sitewise and uniform behaviour is therefore not new; the exact power laws are.
+
+\subsection{How the proofs work}
+
+\emph{The upper bound} (Sections~\ref{sec:zeros}--\ref{sec:upperlaw}) combines two single-scale estimates through the covering argument of~\cite{DMamo,DMuniv}. At a resonant scale $q=q_n$, the rational discriminant $t_q(x,E)$ is, as a function of the local phase $x$, close to a trigonometric polynomial of bounded degree. A Jensen identity bounds the number of its zeros in a strip of width proportional to $q$ by about $2\om(E)$ (Lemma~\ref{lem:zerocount}). So the set where the discriminant is below an order-one threshold is covered by at most $2\om$ arcs, each of length about $e^{-\ell q/(2\om)}$ (Lemma~\ref{lem:sublevel}); the $q$-step resolvent identity of~\cite{DMuniv} then confines the packet within about $e^{(b-\min\{\ell,b\}/(2\om))q}$ sites at every phase (Proposition~\ref{prop:Comega}). For the speed, determinants of intervals of length $k$ are, up to an exponentially smaller error, trigonometric polynomials of degree about $\om k$ in the starting phase (Lemma~\ref{lem:RN}), and $q$ consecutive orbit points interpolate polynomials of degree $q/2$ at every phase (Lemma~\ref{lem:TI}). So every window of $2q$ sites contains a regular interval of length about $q/(2\om)$, and a flux argument bounds the speed by $e^{-\ell q/(2\om)}$ (Theorem~\ref{thm:V}). Optimizing the two radii over the time gives $f$.
+
+\emph{Sharpness} (Section~\ref{sec:sharp}). A half-period sign flip closes the central gap of every even-denominator approximant of an odd-harmonic potential (Proposition~\ref{prop:G}). Next to a closed gap the band is wide, its discriminant has derivative about $e^{\ell q/2}$, and an elliptic run of the Weyl solution from~\cite{DMamo} carries a polynomial tail to distance $e^{(b-\ell/2)q}$.
+
+\emph{Computability} (Section~\ref{sec:computability}). Where the Lyapunov exponent is positive, quantization makes the complexified cocycle uniformly hyperbolic at small positive heights. There a finite certificate bounds the Lyapunov exponent from below, and convexity carries the bound to height zero exactly. Where it is zero, nonnegativity and finite-scale upper bounds suffice.
+
+\subsection{Organization}
+
+Section~\ref{sec:prelim} fixes notation and lists the imported results. Sections~\ref{sec:zeros}--\ref{sec:upperlaw} prove Theorem~\ref{thm:A}. Section~\ref{sec:amoproof} gives a second proof for the almost Mathieu operator. Section~\ref{sec:sharp} proves Theorem~\ref{thm:B}, Section~\ref{sec:category} Theorem~\ref{thm:C}, Section~\ref{sec:xy} Theorem~\ref{thm:D}, and Section~\ref{sec:computability} Theorem~\ref{thm:E}. Section~\ref{sec:discussion} discusses open problems.

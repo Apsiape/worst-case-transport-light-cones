@@ -1,0 +1,237 @@
+\section{Computability}\label{sec:computability}
+
+The companion paper A showed that the transport exponent of one explicit computable almost Mathieu operator has Turing degree $\mathbf 0''$, and that this survives changes of the coupling in an interval~\cite[Theorem~D]{DMamo}. Here we show that, at the frequency $\alpha_*$ and the phase $1/4$, the degree survives every computable even change of the potential in an explicit strip ball (Theorem~\ref{thm:robust}), and we locate the source of the uncomputability: for a computable analytic potential the Lyapunov exponent is computable at every computable irrational frequency, so in the transport laws identified here the uncomputability sits in the arithmetic of the frequency.
+
+\subsection{Conventions}
+
+A real number is \emph{computable from an oracle} if the oracle computes rationals $r_k$ with $|r_k-x|\le2^{-k}$. A name of a real $x$ is any such sequence. A function on $\R$, or on $(\R\setminus\Q)\times\R$, is \emph{computable} if an algorithm turns every name of the argument into a name of the value; equivalently, if the sets $\{f>r\}$ and $\{f<r\}$, for rational $r$, are enumerated uniformly by rational boxes, that is, if $f$ is both lower and upper semicomputable. A real-analytic $v$ is \emph{computable} if its Fourier coefficients $\hat v(k)$, with $\hat v(-k)=\overline{\hat v(k)}$, form a computable sequence and there are computable rationals $C_v,\delta'_v>0$ with $|\hat v(k)|\le C_ve^{-2\pi\delta'_v|k|}$. Then $v$ is uniformly computable on every closed strip $|\operatorname{Im}z|\le y<\delta'_v$. Trigonometric polynomials with computable coefficients are the main examples. Two reals have the same Turing degree if each is computable from the other.
+
+We write $A_{E,y}(x)=T(E,x+iy)$ for the complexified cocycle and $L_n(E,y)=\frac1n\int_\T\log\|A_n(E,x+iy)\|\,dx$, so that $L(E,y)=\inf_nL_n(E,y)$ by subadditivity. We use the following facts from Avila's global theory~\cite{Avila2015}, with the numbering of the published version: convexity of $y\mapsto L(E,y)$ (Section~2.1); quantization (Theorem~5); regularity, which for real cocycles holds if and only if the acceleration is zero (Definition~3 and Remark~4); regular with positive Lyapunov exponent if and only if uniformly hyperbolic (Theorem~6); and Corollary~7: for every analytic $SL(2,\C)$ cocycle at an irrational frequency there is $\eps_0>0$ such that either $L(A_\eps)=0$ for all $0<\eps<\eps_0$, or $A_\eps$ is uniformly hyperbolic for all $0<\eps<\eps_0$, and in the latter case $\eps\mapsto L(A_\eps)$ is affine on $(0,\eps_0)$. Uniformly hyperbolic cocycles form an open set, have continuous invariant line fields, and their Lyapunov exponent is continuous~\cite[Section~2.1]{Avila2015}.
+
+\subsection{The Lyapunov exponent is computable}
+
+\begin{lemma}[Chord bound]\label{lem:chord}
+For real $E$ and $0<y<y'<\delta_v$,
+\[
+\ell(E)\ge\frac{y'L(E,y)-yL(E,y')}{y'-y},
+\]
+with equality if and only if $L(E,\cdot)$ is affine on $[0,y']$.
+\end{lemma}
+
+\begin{proof}
+Write $y=(1-\sigma)\cdot0+\sigma y'$ with $\sigma=y/y'$. Convexity gives $L(E,y)\le(1-\sigma)\ell(E)+\sigma L(E,y')$, which rearranges to the claim; equality at an interior point of a chord forces affineness on the whole chord.
+\end{proof}
+
+\begin{lemma}[The minimum lies on the spectrum]\label{lem:minonsigma}
+For every irrational $\alpha$ and real-analytic $v$, $\inf_{E\in\R}\ell(E)=\min_\Sigma\ell$. In particular $\ell_*=\min_{|E|\le K}\ell(E)$ for any $K\ge\|v\|_\infty+2$.
+\end{lemma}
+
+\begin{proof}
+$\ell$ is continuous~\cite{BourgainJitomirskaya2002}. On a bounded gap $(a,b)$ of $\Sigma$, the Thouless formula $\ell(E)=\int\log|E-E'|\,dk(E')$~\cite{CraigSimon1983} can be differentiated twice, since $\supp dk=\Sigma$ is at positive distance from compact subintervals of the gap, and $\ell''(E)=-\int(E-E')^{-2}\,dk(E')<0$. So $\ell$ is concave on the gap, and its minimum over $[a,b]$ is attained at an endpoint. Outside the convex hull of $\Sigma$, $\ell'(E)=\int(E-E')^{-1}\,dk(E')$ is negative for $E<\min\Sigma$ and positive for $E>\max\Sigma$, so $\ell$ increases away from $\Sigma$.
+\end{proof}
+
+\begin{lemma}[Certificates]\label{lem:cert}
+Let $B:\T\to SL(2,\C)$ be continuous and $\alpha$ irrational. A \emph{certificate} is a pair $(m,Q)$ with $m\ge1$ and $Q$ a trigonometric-polynomial matrix with Gaussian-rational coefficients such that
+\begin{itemize}
+\item[(V1)] $\det Q(x)\ne0$ for all $x\in\T$;
+\item[(V2)] the entries of $\mathcal C(x)=Q(x+m\alpha)^{-1}B^{(m)}(x)Q(x)$ satisfy $|c_{11}|-|c_{12}|>|c_{21}|+|c_{22}|$ for all $x\in\T$,
+\end{itemize}
+where $B^{(m)}(x)=B(x+(m-1)\alpha)\cdots B(x)$. Its value is $\mathrm{val}(m,Q)=\frac1m\int_\T\log(|c_{11}|-|c_{12}|)\,dx$.
+\begin{enumerate}
+\item (Soundness) $L(\alpha,B)\ge\mathrm{val}(m,Q)$.
+\item (Effectiveness) From names of $B$ and $\alpha$, the strict conditions (V1)--(V2) are semi-decidable and $\mathrm{val}(m,Q)$ is computable. A certificate verified for $(B,\alpha)$ remains one, with value changed by less than any prescribed $\eta>0$, for all $(B',\alpha')$ in a neighbourhood.
+\item (Completeness) If $(\alpha,B)$ is uniformly hyperbolic, then for every $\eta>0$ there is a certificate with $\mathrm{val}>L(\alpha,B)-\eta$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+1. Let $\phi=|c_{11}|-|c_{12}|>0$. By (V2) the cone $\{(u,w)\in\C^2:|w|\le|u|\}$ is mapped into itself by $\mathcal C(x)$, and the first coordinate grows at least by the factor $\phi(x)$. Iterating along $x,x+m\alpha,\dots$ gives $\|\mathcal C^{(k)}(x)\|\ge\prod_{j<k}\phi(x+jm\alpha)$, so $\log\|B^{(km)}(x)\|\ge\sum_{j<k}\log\phi(x+jm\alpha)-\log(\|Q\|_\infty\|Q^{-1}\|_\infty)$. Integrate over $\T$, divide by $km$ and let $k\to\infty$.
+
+2. All quantities are continuous functions of $x$ on the compact circle, computable from the names, and a strict inequality between such functions is certified by finitely many evaluations with error bounds. Once (V1) and (V2) are certified, $\phi$ is effectively bounded away from zero, so its logarithm and its integral are computable. The strict margins persist under small perturbations.
+
+3. A uniformly hyperbolic cocycle has continuous invariant line fields $u(x)$, $s(x)$, transverse to each other. Every complex line bundle over the circle is trivial, so they are spanned by continuous nonvanishing periodic vector fields, and conjugation by $P=[u,s]$ makes the cocycle diagonal, $\operatorname{diag}(\lambda_u,\lambda_s)$, with $\int\log|\lambda_u|=L(\alpha,B)$ and $\int\log|\lambda_s|=-L(\alpha,B)$. By unique ergodicity, $\frac1m\log|\Lambda_m|\to L$ and $\frac1m\log|\Sigma_m|\to-L$ uniformly, where $\Lambda_m,\Sigma_m$ are the $m$-step products of $\lambda_u,\lambda_s$. Approximate $P$ by a trigonometric polynomial matrix $Q$ with rational coefficients within $\eps'$ (Fej\'er). Then $\mathcal C=(I+Y)\operatorname{diag}(\Lambda_m,\Sigma'_m)(I+X)$ with $\|X\|,\|Y\|\le C\eps'$ and $|\Sigma'_m|\le C|\Sigma_m|$, and for $C\eps'<1/8$ and large $m$ the conditions (V1)--(V2) hold with $\phi\ge|\Lambda_m|(1-C\eps')$. So $\mathrm{val}\ge L+\frac1m\log(1-C\eps')$.
+\end{proof}
+
+Adding the condition $\min_\T\phi>\mu$ for a rational $\mu>1$ gives a certificate of uniform hyperbolicity: then $\|B^{(km)}(x)\|\ge c\mu^k$ uniformly. Completeness holds for these certificates as well, since $|\Lambda_m|\to\infty$ uniformly.
+
+\begin{theorem}[The Lyapunov exponent is computable]\label{thm:LEcomp}
+Let $v$ be a computable real-analytic function. The map $(\alpha,E)\mapsto\ell(E)$, the Lyapunov exponent of $H_{v,\alpha}$ at $E$, is computable on $(\R\setminus\Q)\times\R$, uniformly in a name of $v$. Consequently, for every computable irrational $\alpha$, $E\mapsto\ell(E)$ is a computable function, $\ell(E)$ is a computable real at every computable $E$, and $\ell_*$ is a computable real, uniformly in $v$ and $\alpha$. No hypothesis of supercriticality or type is needed.
+\end{theorem}
+
+\begin{proof}
+\emph{Upper semicomputability.} $\ell(E)<r$ if and only if there are $n$ and a rational interval $I\ni E$ with $\max_{E'\in\bar I}L_n(E',0)<r$, because $\ell=\inf_nL_n$ and each $L_n$ is continuous in $E$ and in $\alpha$. The maxima are computable.
+
+\emph{Lower semicomputability.} Let $W$ be the computably enumerable set of pairs $(I,r)$, with $I$ a rational interval and $r$ rational, such that either $r<0$, or there are rationals $0<y<y'<\delta'_v$, a certificate $(m,Q)$ for the cocycles $A_{E,y}$ valid uniformly for $E\in\bar I$, with $c_{\mathrm{low}}=\min_{E\in\bar I}\mathrm{val}_E(m,Q)$, and an $n$ with $c_{\mathrm{up}}=\max_{E\in\bar I}L_n(E,y')+2^{-n}$, such that $(y'c_{\mathrm{low}}-yc_{\mathrm{up}})/(y'-y)>r$.
+
+\emph{Soundness}: if $(I,r)\in W$ and $E\in I$, then $\ell(E)>r$, by Lemma~\ref{lem:chord} with $L(E,y)\ge c_{\mathrm{low}}$ (Lemma~\ref{lem:cert}(1)) and $L(E,y')\le L_n(E,y')<c_{\mathrm{up}}$.
+
+\emph{Completeness}: let $r<\ell(E_0)$ with $r\ge0$. Then $\ell(E_0)>0$, so $L(E_0,y)\ge\ell(E_0)>0$ for all $y$, by convexity and evenness. Corollary~7 of~\cite{Avila2015} gives $\eps_0>0$ such that $A_{E_0,y}$ is uniformly hyperbolic and $y\mapsto L(E_0,y)$ is affine for $0<y<\eps_0$; by continuity of the convex function at $0$, it is affine on $[0,\eps_0)$. Take rationals $y<y'=2y<\min\{\eps_0,\delta'_v\}$. Then Lemma~\ref{lem:chord} holds with equality at $E_0$: $2L(E_0,y)-L(E_0,2y)=\ell(E_0)$. Given $\eta>0$, Lemma~\ref{lem:cert}(3) and~(2) give a certificate at $(E_0,y)$ with value above $L(E_0,y)-2\eta$ on a neighbourhood of $E_0$. Choose $n$ with $L_n(E_0,2y)+2^{-n}<L(E_0,2y)+\eta$ and shrink the neighbourhood so that $L_n(\cdot,2y)+2^{-n}<L(E_0,2y)+2\eta$ on it. On a rational interval $I\ni E_0$ in that neighbourhood, $2c_{\mathrm{low}}-c_{\mathrm{up}}\ge\ell(E_0)-6\eta>r$ for small $\eta$. So $(I,r)\in W$.
+
+Hence $\ell(E)>r$ if and only if some $(I,r)\in W$ has $E\in I$, which is semi-decidable from names of $E$ and $\alpha$; all verifications are continuous in $\alpha$, with margins. Irrationality of $\alpha$ is used only for completeness. The two halves give a computable function. Finally $\ell_*=\min_{|E|\le K}\ell(E)$ by Lemma~\ref{lem:minonsigma}, with a computable integer $K$ larger than a computable bound for $\|v\|_\infty+2$, and the minimum of a computable function over a computable compact interval is computable.
+\end{proof}
+
+The algorithm is: where the Lyapunov exponent is positive, quantization makes the cocycle regular, hence uniformly hyperbolic, at small positive heights; there a certificate gives a lower bound; convexity carries it to height zero exactly. Where it is zero, nonnegativity and finite-scale upper bounds suffice. No modulus of continuity and no large-deviation estimate is used, so Liouville frequencies are allowed. The proof gives no bound on the running time, since the height at which the Lyapunov exponent becomes affine is found by search.
+
+\begin{corollary}[Density of states and spectrum]\label{cor:IDScomp}
+For computable $v$ and computable irrational $\alpha$: the integrated density of states $k$ is a computable function; $\Sigma$ is a computable compact set; $\max_\Sigma\ell$ and $\min\Sigma$ are computable reals, and $\min\Sigma$ is a computable point of $\Sigma$.
+\end{corollary}
+
+\begin{proof}
+Let $c_N(\theta,E)$ count the eigenvalues at most $E$ of $H_\theta$ restricted to $\{0,\dots,N-1\}$. Decoupling two adjacent sites is a rank-two perturbation with one positive and one negative eigenvalue, so $|c_{N+M}(\theta)-c_N(\theta)-c_M(\theta+N\alpha)|\le1$. With $a_N(E)=\int_\T c_N(\theta,E)\,d\theta$, this gives $|a_{N+M}-a_N-a_M|\le1$ and hence $|k(E)-a_N(E)/N|\le1/N$. The function $a_N$ is upper semicomputable, as a sum of measures of effectively closed sets cut out by computable eigenvalue functions, and the analogous count with strict inequalities is lower semicomputable. The density of states has no atoms: an atom at $E$ would make $\ell(E)=\int\log|E-E'|\,dk(E')=-\infty$. So both bounds converge to $k(E)$, and $k$ is computable. The complement of $\Sigma$ is enumerated by the certificates of uniform hyperbolicity, uniformly on rational intervals; and an open interval $(a,b)$ meets $\Sigma$ if and only if $k(b)>k(a)$, which is semi-decidable. Together with a bounding interval this makes $\Sigma$ a computable compact set, and the extrema follow.
+\end{proof}
+
+\begin{remark}[Related work]\label{rem:compprior}
+Computing the spectrum is not new: the rational approximation of~\cite[Lemma~2.7]{DMuniv}, with finite Floquet matrices, already gives an effective route, and spectral computations for broad operator classes are studied through the solvability complexity index~\cite{BACHNS2015,ColbrookHansen2019}; Colbrook, Embree and Fillman study the computation of spectral size, including for the almost Mathieu operator~\cite{CEF2026}. Theorem~\ref{thm:LEcomp} is an algorithmic consequence of Avila's global theory. We did not find this formulation, uniform over all irrational frequencies, in the literature we checked, but we make no priority claim for it.
+\end{remark}
+
+\subsection{An explicit type I neighbourhood}
+
+Let $v_0(x)=4\cos2\pi x$, the almost Mathieu potential with $\lambda=2$, and $S_Y=\{z:|\operatorname{Im}z|\le Y\}$.
+
+\begin{theorem}[An explicit neighbourhood]\label{thm:nbhd}
+Let $Y,\eps>0$, $t=e^{-2\pi Y}$ and $E_{\max}=6+\eps$, and suppose
+\[
+M:=\frac2t-2t-E_{\max}-\eps>2,\qquad p_0:=\frac{E_{\max}t+2t^2}2<1,\qquad\kappa:=\frac{t(\eps+\rho)}{2(1-p_0)}<\frac12,
+\]
+where $\rho=(M-\sqrt{M^2-4})/2$. Let $v$ be real analytic with $w=v-v_0$ holomorphic on a neighbourhood of $S_Y$ and $\sup_{S_Y}|w|\le\eps$. Then for every irrational $\alpha$:
+\begin{enumerate}
+\item $\ell(E)\ge\log2+\log(1-\kappa)>0$ for every real $E$ with $|E|\le E_{\max}$;
+\item $H_{v,\alpha}$ is supercritical and type~I, with $L(E,y)=\ell(E)+2\pi|y|$ for $E\in\Sigma$ and $|y|\le Y$;
+\item $\log2+\log(1-\kappa)\le\ell(E)\le\log2+\log(1+\kappa)$ for $E\in\Sigma$.
+\end{enumerate}
+For $Y=\eps=1/4$ one has $M>2.7051$, $\rho<0.4419$, $p_0<0.6929$ and $0.2341<\kappa<0.23411$, so $\ell\in[0.4264,0.9035]$ on $\Sigma$.
+\end{theorem}
+
+\begin{proof}
+Fix a real $E$ with $|E|\le E_{\max}$. The three strict inequalities persist, with constants $M(y),\rho(y),p_0(y),\kappa(y)$ depending continuously on the height, for $y$ in an interval $[Y-\tau,Y]$. Write $z=x+iy$ and $\mathsf q=e^{2\pi iz}$, so $|\mathsf q|=e^{-2\pi y}$. Then $a(z):=E-v(z)=-2\mathsf q^{-1}+E-2\mathsf q-w(z)$ and $|a(z)|\ge M(y)>2$ on the line $\operatorname{Im}z=y$.
+
+\emph{An invariant section.} The maps $\sigma\mapsto1/(a(\zeta)-\sigma)$ send the disk $|\sigma|\le\rho(y)$ into itself, since $|a-\sigma|\ge M(y)-\rho(y)=1/\rho(y)$, and contract it. Choosing one common disk on a slightly smaller substrip, using its lower endpoint, the limit $r(z)=\lim_n f_{z-\alpha}\circ\dots\circ f_{z-n\alpha}(0)$ exists uniformly, is holomorphic in $z$, satisfies $r(z+\alpha)=1/(a(z)-r(z))$, and on each line $\operatorname{Im}z=y$ satisfies $|r|\le\rho(y)$. With $u=(1,r)^{\mathsf T}$ and $g=a-r$, $T(E,z)u(z)=g(z)u(z+\alpha)$, and conjugation by $P=[u,e_2]$, of determinant one, gives the triangular cocycle $\bigl(\begin{smallmatrix}g&-1\\0&1/g\end{smallmatrix}\bigr)$ with $|g|\ge1/\rho>1$. Its $n$-step products are comparable to their diagonal, so $L(E,y)=\int_0^1\log|g(x+iy)|\,dx$.
+
+\emph{Slope $2\pi$.} Write $g=-2\mathsf q^{-1}(1-\Phi)$ with $\Phi=\mathsf q(E-2\mathsf q-w-r)/2=\Phi_0+\Phi_1$, where $\Phi_0=\mathsf q(E-2\mathsf q)/2$ satisfies $|\Phi_0|\le p_0(y)$ on the disk $|\mathsf q|\le e^{-2\pi y}$ by the maximum principle, and $|\Phi_1|\le e^{-2\pi y}(\eps+\rho(y))/2$. So $|\Phi|<1$, the winding number of $1-\Phi$ along a horizontal line is zero, and that of $g$ is $-1$. Since $\log|g|$ is harmonic, $y\mapsto\int_0^1\log|g(x+iy)|\,dx$ is affine, with slope $-2\pi$ times the winding number, that is $2\pi$.
+
+\emph{The value at height $Y$.} The mean of $\log|1-\Phi_0|$ over the circle $|\mathsf q|=t$ is $\log|1-\Phi_0(0)|=0$, and $|\Phi_1/(1-\Phi_0)|\le\kappa$. So $L(E,Y)=\log2+2\pi Y+c$ with $\log(1-\kappa)\le c\le\log(1+\kappa)$.
+
+\emph{Conclusions.} By convexity every slope of $L(E,\cdot)$ on $[0,Y]$ is at most $2\pi$, so $\ell(E)\ge L(E,Y)-2\pi Y\ge\log2+\log(1-\kappa)>0$. The spectrum lies in $[-2-\sup_\R|v|,2+\sup_\R|v|]\subset[-E_{\max},E_{\max}]$, so $\ell>0$ on $\Sigma$. At $E\in\Sigma$ the acceleration is an integer at least one (Section~\ref{sec:prelim}) and at most one, so the slope is $2\pi$ on all of $(0,Y]$, which gives part~2 and $\ell(E)=L(E,Y)-2\pi Y$, which gives part~3. The numerical values are elementary; they were also certified independently with exact rational interval arithmetic, which gives $\kappa\in[0.2341020899,0.2341020900]$, $\log2+\log(1-\kappa)>0.42644$ and $\log2+\log(1+\kappa)<0.90350$.
+\end{proof}
+
+The estimates are pointwise in $x$, so they hold for every irrational frequency at once, for even and non-even $v$.
+
+\begin{proposition}[Openness]\label{prop:open}
+Fix an irrational $\alpha$, and let $v_0$ be any real-analytic potential with $H_{v_0,\alpha}$ supercritical and type~I, with common strip $h$~\cite[Lemma~5.2]{DMuniv}. There is $\eps_0>0$ such that every real-analytic $v$ with $\|v-v_0\|_h:=\sup_{|\operatorname{Im}z|\le h}|v-v_0|<\eps_0$ is supercritical and type~I at $\alpha$, and $\ell_*(v)\to\ell_*(v_0)$ as $\|v-v_0\|_h\to0$.
+\end{proposition}
+
+\begin{proof}
+For $E\in\Sigma_0=\Sigma(v_0)$ and $y\in[h/4,3h/4]$, $L_{v_0}(E,\cdot)$ is affine near $y$ with positive value, so the cocycle is uniformly hyperbolic. Uniform hyperbolicity is open, and $(E,y,v)\mapsto T_v(E,\cdot+iy)$ is continuous into $C^0$ for $v$ in the norm $\|\cdot\|_h$. A finite cover of the compact set $K\times[h/4,3h/4]$, with $K=\{E:\dist(E,\Sigma_0)\le e_0\}$, gives $e_0,\eps_1>0$ such that these cocycles are uniformly hyperbolic for $E\in K$, $y\in[h/4,3h/4]$ and $\|v-v_0\|_h\le\eps_1$. There $y\mapsto L_v(E,y)$ is affine on $[h/4,3h/4]$, with a slope in $2\pi\Z$ that depends continuously on $(E,v)$, hence is constant on each connected component of $K\times\{\|v-v_0\|_h\le\eps_1\}$; each component meets $\Sigma_0\times\{v_0\}$, where the slope is $2\pi$. Let $\Psi(E,v)=L_v(E,h/4)-\pi h/2$. At $v_0$ and $E\in\Sigma_0$ it equals $\ell_{v_0}(E)$; shrinking $e_0$ and $\eps_1$, $\Psi\ge\ell_*(v_0)/2$ on the region, and, by joint continuity near $K\times\{v_0\}$ and a finite cover of $K$, $\sup_{E\in K}|\Psi(E,v)-\Psi(E,v_0)|\to0$ as $v\to v_0$. For $E\in\Sigma_v$, which lies within $\|v-v_0\|_h$ of $\Sigma_0$, convexity gives $\ell_v(E)\ge\Psi(E,v)>0$, and the argument of Theorem~\ref{thm:nbhd}(2) gives $\om_v(E)=1$ and $\ell_v=\Psi(\cdot,v)$ on $\Sigma_v$. Since $\Psi(\cdot,v_0)$ is uniformly continuous on $K$ and $\Sigma_v\to\Sigma_0$ in Hausdorff distance, $\ell_*(v)=\min_{\Sigma_v}\Psi(\cdot,v)\to\min_{\Sigma_0}\Psi(\cdot,v_0)=\ell_*(v_0)$.
+\end{proof}
+
+The topology is that of a fixed strip. This is not openness in the operator norm among all bounded potentials.
+
+\subsection{A robust exponent of degree \texorpdfstring{$\mathbf 0''$}{0''}}
+
+Let
+\[
+\mathcal U=\Bigl\{v\text{ real analytic}:\ v-v_0\text{ holomorphic near }S_{1/4},\ \sup_{S_{1/4}}|v-v_0|<\frac14\Bigr\},
+\]
+an open ball in the norm of the strip $S_{1/4}$, and its even part $\mathcal U_{\mathrm{even}}=\{v\in\mathcal U:v(-x)=v(x)\}$. Let $\alpha_*$ be the explicit computable frequency of~\cite[Theorem~D(3)]{DMamo}: all its denominators are odd, $a_{n+1}\ge2^{q_n}$, and $\beta(\alpha_*)=s_*\log2$ with $s_*\in[23/12,2]$ of Turing degree $\mathbf 0''$. So $\beta(\alpha_*)\ge(23/12)\log2>1.3285$. For $v\in\mathcal U$ put
+\[
+X(v)=\au(H_{v,\alpha_*,1/4}),\qquad X_{\mathrm{typ}}(v)=1-\frac{\ell_*(v,\alpha_*)}{\beta(\alpha_*)} .
+\]
+
+\begin{theorem}[A robust uncomputable exponent]\label{thm:robust}
+\begin{enumerate}
+\item For every $v\in\mathcal U_{\mathrm{even}}$, $X(v)=X_{\mathrm{typ}}(v)\in[0.3199,0.6924]$, and this is also the value of every moment exponent $\beta^+(p)$, of the fastest exponent for the packet started at any site, and of the upper packing dimension of the spectral measure of $\delta_0$.
+\item For every $v\in\mathcal U_{\mathrm{even}}$ with computable coefficients, $X(v)$ has Turing degree exactly $\mathbf 0''$.
+\item On $\mathcal U_{\mathrm{even}}$, $v\mapsto X(v)$ is continuous in the norm of $S_{1/4}$ and not constant: along $v=2\lambda\cos2\pi x$ with $|\lambda-2|<0.0498$, $X=1-\log\lambda/\beta(\alpha_*)$. On all of $\mathcal U$, $X_{\mathrm{typ}}$ is continuous, and it is the exponent at almost every phase.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:nbhd} with $Y=\eps=1/4$, every $v\in\mathcal U$ is supercritical and type~I at every irrational frequency, with $0.4264\le\ell_*\le0.9035<1.3285\le\beta(\alpha_*)<\infty$. Every denominator of $\alpha_*$ is odd, so $|\sin(2\pi q_n/4)|=1$ and $1/4\in G_{\alpha_*}$, which is contained in $G^v_{\alpha_*}$ for even $v$~\cite[Lemma~5.22]{DMuniv}. The transport law~\cite[Theorem~A]{DMuniv} gives $X(v)=1-\ell_*/\beta$, without clipping; \cite[Theorem~B(1)]{DMuniv} gives the same value for every $\beta^+(p)$ and shows that $\ell$ attains $\ell_*$ on the support of the spectral measure, and~\cite[Theorem~B(3)]{DMuniv} then gives the packing dimension. The packet started at $\delta_j$ is a translate of the packet started at $\delta_0$ for the phase $1/4+j\alpha_*$, and $|\sin(2\pi q_n(1/4+j\alpha_*))|=|\cos(2\pi j\delta_n)|\ge1/2$ for large $n$. This proves part~1.
+
+For part~2, $\ell_*$ is computable by Theorem~\ref{thm:LEcomp}, and positive. So $X=1-\ell_*/\beta$ is computable from $\beta$, and $\beta=\ell_*/(1-X)$ is computable from $X$. Hence $X$ has the degree of $\beta(\alpha_*)$, which is that of $s_*$, namely $\mathbf 0''$.
+
+Part~3 follows from Proposition~\ref{prop:open} at the fixed frequency $\alpha_*$, and from $|2\lambda\cos2\pi z-4\cos2\pi z|\le2|\lambda-2|\cosh(\pi/2)$ on $S_{1/4}$. The almost-everywhere statement is~\cite[Theorem~A]{DMuniv}.
+\end{proof}
+
+\begin{remark}[Computable coefficients are needed]\label{rem:noncomp}
+Part~2 fails without them. Let $\lambda=\exp(\frac{51}{100}\beta(\alpha_*))$, so $1.969<\lambda<2.028$, and $v=2\lambda\cos2\pi x$. Then $2|\lambda-2|\cosh(\pi/2)<1/4$, so $v\in\mathcal U_{\mathrm{even}}$, and $X(v)=1-\log\lambda/\beta(\alpha_*)=49/100$ is computable; the coupling $\lambda$ is not. The fixed phase $1/4$ is also needed in part~3: for non-even $v\in\mathcal U$ we do not identify the exponent at the phase $1/4$, and use instead the phase of Proposition~\ref{prop:goodphase}. Not every direction changes the value: adding a constant to $v$ shifts the energy and leaves $X$ unchanged.
+\end{remark}
+
+\begin{theorem}[Energy-resolved exponents]\label{thm:energyres}
+Let $v\in\mathcal U_{\mathrm{even}}$ have computable coefficients, and let $E_0\in\Sigma$ be computable; for instance $E_0=\min\Sigma$ (Corollary~\ref{cor:IDScomp}). Then $F_\beta(\ell(E_0))=1-\ell(E_0)/\beta(\alpha_*)$ has Turing degree exactly $\mathbf 0''$. If moreover $E_0$ lies in the support of the spectral measure $\mu$ of $\delta_0$ for $H_{v,\alpha_*,1/4}$, then $F_\beta(\ell(E_0))$ is the energy-resolved exponent at $E_0$: for every $\gamma\in(0,\ell_*/2)$ there are real $g_\gamma\in C_c^\infty(\R)$ supported in $\{E:|\ell(E)-\ell(E_0)|<\gamma\}$ with $g_\gamma(H)\delta_0\ne0$, and for every such family and every $p>0$, $\beta^+_{g_\gamma(H)\delta_0}(p)\to F_\beta(\ell(E_0))$ as $\gamma\to0$.
+\end{theorem}
+
+\begin{proof}
+$\ell(E_0)$ is computable (Theorem~\ref{thm:LEcomp}) and lies in $(0,\beta)$ (Theorem~\ref{thm:nbhd}), so the degree argument of Theorem~\ref{thm:robust} applies. If $E_0\in\supp\mu$, a smooth $g\ge0$ equal to $1$ near $E_0$ and supported in the open set $\{|\ell-\ell(E_0)|<\gamma\}$ has $\|g(H)\delta_0\|^2=\int g^2\,d\mu>0$. For every admissible $g_\gamma$, \cite[Theorem~B(2)]{DMuniv} gives $F_\beta(\ell(E_0)+\gamma)\le\beta^+_{g_\gamma(H)\delta_0}(p)\le F_\beta(\ell(E_0)-\gamma)$.
+\end{proof}
+
+By~\cite[Theorem~B(3)]{DMuniv}, the upper local dimension of $\mu$ equals $F_\beta(\ell(E))$ at $\mu$-almost every $E$. This is an almost-everywhere statement; it does not identify the local dimension at a prescribed computable energy.
+
+\begin{theorem}[The set of values]\label{thm:values}
+For every $v\in\mathcal U_{\mathrm{even}}$ with computable coefficients, as $\alpha$ ranges over the computable irrationals with eventually odd denominators, $\au(H_{v,\alpha,1/4})$ ranges over exactly the reals in $[0,1]$ that are right-c.e.\ relative to $\mathbf 0'$.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:nbhd}, $H_{v,\alpha}$ is supercritical and type~I for every irrational $\alpha$, and $1/4\in\Ga$ when the denominators are eventually odd, so the transport law~\cite[Theorem~A]{DMuniv} applies at the phase $1/4$, including the endpoints $\beta\in\{0,\infty\}$.
+
+\emph{Every value is right-c.e.\ relative to $\mathbf 0'$.} For computable $\alpha$, $\ell=\ell_*(v,\alpha)$ is computable and positive, and $\beta(\alpha)$ is right-c.e.\ relative to $\mathbf 0'$ or infinite~\cite[Lemma~10.1]{DMamo}. For rational $r\in(0,1)$, $F_\beta(\ell)<r$ if and only if some rational $s'$ satisfies $\beta<s'<\ell/(1-r)$, a $\mathbf 0'$-c.e.\ condition.
+
+\emph{Every such value occurs.} The values $0$ and $1$ occur for $\alpha=[0;1,2,2,\dots]$ and for $a_1=1$, $a_{n+1}=2^{q_n^2}$. Let $x\in(0,1)$ be right-c.e.\ relative to $\mathbf 0'$ and $\sigma=1/(1-x)>1$. By~\cite[Lemma~10.1]{DMamo} there are computable rationals $u_n$ with $\limsup u_n=\sigma/\log2$; clamp them to $[1,B]$ for an integer $B>\sigma/\log2$. Put $a_1=1$. Given $a_1,\dots,a_n$, let $\alpha^{(n)}=[0;a_1,\dots,a_n,2,2,\dots]$, a computable irrational, uniformly in $n$; compute a rational $c_n$ with $|c_n-\ell_*(v,\alpha^{(n)})|<2^{-n}$ (Theorem~\ref{thm:LEcomp}); and put $a_{n+1}=2^{\max\{1,\lceil u_nc_nq_n\rceil\}}$. All $a_{n+1}$ are even, so all $q_n$ are odd, and $\alpha=\lim\alpha^{(n)}$ is computable, with $|\alpha^{(n)}-\alpha|\le2/q_n^2$. By Lemma~\ref{lem:minonsigma}, $\ell_*(v,a)=\min_{|E|\le K}\ell(a,E)$ with $K$ independent of $a$, and the Lyapunov exponent is jointly continuous in $(a,E)$ at irrational $a$~\cite[Theorem~1]{BourgainJitomirskaya2002}; so $c_n\to\ell:=\ell_*(v,\alpha)>0$. Since $a_{n+1}q_n\le q_{n+1}\le2a_{n+1}q_n$, $\log q_{n+1}/q_n=(\log2)u_nc_n+O(\log q_n/q_n)$, so $\beta(\alpha)=\ell\sigma>\ell$ and $\au=1-\ell/\beta=x$.
+\end{proof}
+
+\begin{proposition}[A computable good phase]\label{prop:goodphase}
+Let $v$ be a computable real-analytic potential with $H_{v,\alpha_*}$ supercritical and type~I. There is a computable phase $\theta_v$ such that $\theta_v+j\alpha_*\in G^v_{\alpha_*}$ for every $j\in\Z$. Hence $\au(H_{v,\alpha_*,\theta_v})=F_{\beta(\alpha_*)}(\ell_*(v))$ for the packet started at any site; if $\ell_*(v)<\beta(\alpha_*)$, this number has Turing degree exactly $\mathbf 0''$.
+\end{proposition}
+
+\begin{proof}
+By~\cite[Lemma~5.20(1)]{DMuniv} there is $q_*$, depending on $v$ and $\alpha_*$, such that for convergent denominators $q\ge q_*$ each band centre has exactly one maximum and one minimum per period. Band centres are the ordered simple eigenvalues of a computable Hermitian Floquet matrix~\cite[Lemma~5.3]{DMuniv}, hence computable functions of the phase, and the unique maximizer of a computable continuous function on the circle is computable. So the set $\mathrm{Turn}_q$ of these $2q$ points is computable uniformly in $q\ge q_*$. Let $n_*$ be the first index with $q_{n_*}\ge q_*$; it is a fixed integer, which we do not compute but hard-code. Let $B_n=\{\theta:\dist(q_n\theta,\mathrm{Turn}_{q_n})<3q_n^{-3}\}$, a union of at most $2q_n^2$ arcs with computable endpoints and total measure at most $12q_n^{-2}$. Choose $N\ge n_*$ with $\sum_{n\ge N}|B_n|<1/2$, using the effective tail given by Fibonacci growth, and run the nested dyadic construction of Corollary~\ref{cor:twoexp}(4) with the sets $B_n$ in place of $E_n$. It gives a computable $\theta_v$ outside every $B_n$, $n\ge N$. For a site $j$, $q_n(\theta_v+j\alpha_*)\equiv q_n\theta_v+j\delta_n$ and $|\delta_n|\le1/q_{n+1}\le2^{-q_n}$, so $\dist(q_n(\theta_v+j\alpha_*),\mathrm{Turn}_{q_n})\ge3q_n^{-3}-|j|2^{-q_n}\ge2q_n^{-3}$ for large $n$, which is goodness in the sense of~\cite[Definition~5.21]{DMuniv}. The value follows from~\cite[Theorem~A]{DMuniv}, and the degree as in Theorem~\ref{thm:robust}.
+\end{proof}
+
+The program for $\theta_v$ exists, but we do not exhibit it, because $n_*$ is not computed. For even $v$ the phase $1/4$ is explicit.
+
+\subsection{What is fragile}
+
+\begin{theorem}[Fragility]\label{thm:fragile}
+Let $v\in\mathcal U_{\mathrm{even}}$ have computable coefficients, and write $X(v,\alpha,\theta)=\au(H_{v,\alpha,\theta})$.
+\begin{enumerate}
+\item The value $X(v,\alpha_*,\theta)=X(v)$ is the same for every $\theta$ in the full-measure set $G^v_{\alpha_*}$, which is not a neighbourhood of any phase. At every other phase, $X(v)\le X(v,\alpha_*,\theta)\le1-\ell_*(v)/(2\beta(\alpha_*))$, by~\cite[Theorem~A]{DMuniv} and Corollary~\ref{cor:typeI}; we do not know the exact value there.
+\item For every irrational $\alpha_0$ and every open interval $J\ni\alpha_0$, $J$ contains computable frequencies $\alpha$ with $X(v,\alpha,1/4)=0$, with $X(v,\alpha,1/4)=1$, and with $X(v,\alpha,1/4)=x$ for any prescribed $x\in(0,1)$ that is right-c.e.\ relative to $\mathbf 0'$. In particular $\alpha\mapsto X(v,\alpha,1/4)$ is discontinuous at every irrational. Moreover $X(v,\alpha,\theta)=0$ for almost every $\alpha$ and every $\theta$, and $X(v,\alpha,\theta)=1$ for a dense $G_\delta$ set of $\alpha$ and every $\theta$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+1. \cite[Theorem~A]{DMuniv} and Corollary~\ref{cor:typeI}, since $\ell_*\le\beta(\alpha_*)$. The good set has empty interior. For even $v$ the turning points are $0$ and $1/2$~\cite[Lemma~5.22]{DMuniv}, and the bad sets $\{\theta:\dist(q_n\theta,\{0,1/2\})<2q_n^{-3}\}$ are open and $1/q_n$-periodic. So each tail union $\bigcup_{n\ge n_0}$ of them is open and dense, their intersection over $n_0$ is residual, and it is disjoint from $G^v_{\alpha_*}$. A set disjoint from a dense $G_\delta$ set has empty interior.
+
+2. Choose a continued-fraction cylinder $[0;a_1,\dots,a_k]$ contained in $J$ and containing $\alpha_0$. Two consecutive denominators are coprime, so not both even; appending at most two partial quotients equal to $1$ makes the last two denominators odd. Now rerun the construction of Theorem~\ref{thm:values} from this prefix, using the actual denominators of the prefixed frequencies: even partial quotients keep every later denominator odd, and the continuity argument gives $\beta=\ell\sigma$ as before. A finite prefix does change the frequency, and, through it, the later denominators; this is why the construction is rerun rather than a fixed tail being appended, which would in general rescale $\beta$. The endpoints $0$ and $1$ are obtained with tails $2,2,\dots$ and $a_{n+1}=2^{q_n^2}$. Finally $\beta(\alpha)=0$ for almost every $\alpha$ and $\beta(\alpha)=\infty$ for a dense $G_\delta$ set of $\alpha$; at these frequencies the exponent is $0$, respectively $1$, at every phase~\cite[Theorem~A]{DMuniv}.
+\end{proof}
+
+So, for the transport laws identified here at the prescribed good phases, the frequency is the only fragile datum, and it is exactly the datum that carries the uncomputability; we have proved no robustness in the phase beyond those good phases: $X=1-\ell_*/\beta$ with $\ell_*$ computable and continuous in the potential, and $\beta(\alpha)$ noncomputable as a function of $\alpha$ and discontinuous everywhere.
+
+\begin{theorem}[A dichotomy]\label{thm:dichotomy}
+Let $v$ be a computable even real-analytic potential with $H_{v,\alpha_*}$ supercritical and type~I. Then either $\ell_*(v)>\beta(\alpha_*)$ and $X(v)=0$, or $\ell_*(v)<\beta(\alpha_*)$ and $X(v)$ has Turing degree exactly $\mathbf 0''$. For non-even $v$ in this class the same holds at the phase $\theta_v$ of Proposition~\ref{prop:goodphase}.
+\end{theorem}
+
+\begin{proof}
+$\ell_*(v)$ is computable and $\beta(\alpha_*)$ is not, so they differ. If $\ell_*>\beta$ the law gives $0$; if $\ell_*<\beta$ the exponent computes $\beta$, as in Theorem~\ref{thm:robust}.
+\end{proof}
+
+For instance the coupling $\lambda=8$ gives $\ell_*=\log8>2\log2\ge\beta(\alpha_*)$ and exponent $0$. The dichotomy concerns the supercritical type~I class; for critical potentials and for supercritical potentials that are not of type~I we do not know the exponent at $\alpha_*$.
+
+\begin{theorem}[Exponents that exist]\label{thm:exist}
+\begin{enumerate}
+\item The limit of a computable sequence of rationals is computable from $\mathbf 0'$. So a quantity that is the limit of finite-time, finite-volume observables computable uniformly along computable times has degree at most $\mathbf 0'$; degree $\mathbf 0''$ requires a $\limsup$, and the $\limsup$s of computable sequences of rationals are exactly the reals right-c.e.\ relative to $\mathbf 0'$~\cite[Lemma~10.1]{DMamo}.
+\item For real-analytic $v$ with $H_{v,\alpha}$ supercritical, every irrational $\alpha$, every phase and every $p>0$, the lower transport exponent $\beta^-(p)=\liminf_{T\to\infty}\log M_p(T)/(p\log T)$ is $0$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+1. This is the limit lemma.
+
+2. Hopping has range one, so $|\langle\delta_j,e^{-itH}\delta_0\rangle|\le(\|H\|t)^{|j|}/|j|!$, and the Abel average gives $\sum_{|j|>T^2}|j|^pa(j,T)\to0$. By~\cite[Theorem~5.9]{DMuniv}, with $N_0=C'q_n$, $C'\ge C_D$, $c_DC'\ge\kappa$, and $T_n=e^{\kappa q_n/(2p+4)}$, $P(N_0,T_n)\le Ce^{-c_DC'q_n}+CT_n^3e^{-\kappa q_n}$. Hence $M_p(T_n)\le N_0^p+T_n^{2p}P(N_0,T_n)+o(1)=O((\log T_n)^p)$, so the liminf is at most $0$. It is at least $0$, because the Abel return probability $a(0,T)$ tends to the sum of the squared atomic spectral weights of $\delta_0$, which is less than one since $\delta_0$ is not an eigenvector.
+\end{proof}
+
+Part~2 is known. It follows directly from Jitomirskaya and Mavi~\cite[Theorem~1.7(1)]{JitomirskayaMavi2017}, for piecewise H\"older potentials with continuous positive Lyapunov exponent, and it is in substance in the complex-energy method of Damanik and Tcheremchantsev~\cite{DT2007}; we include the short proof for completeness. Consequently, in the supercritical analytic class, a moment exponent that exists as a limit is $0$, and the other natural existing quantities, namely $\ell(E)$ at computable $E$, $\ell_*$, the density of states, the spectrum and $\max_\Sigma\ell$, are computable at computable data (Theorem~\ref{thm:LEcomp}, Corollary~\ref{cor:IDScomp}). In the examples of this section, uncomputability is carried by $\limsup$-type quantities: upper transport exponents and upper packing dimensions. We do not claim a classification of all observables.
+
+\begin{remark}[Related work on uncomputability]\label{rem:uncompprior}
+Undecidability and uncomputability of physical quantities are known in several forms: the spectral gap of Cubitt, Perez-Garcia and Wolf~\cite{CPGW2015}; phase diagrams, including continuous parameters and undecidability on sets of positive measure, by Bausch, Cubitt and Watson~\cite{BCW2021}; and a single uncomputable transition point in a continuous Hamiltonian family, by Purcell, Li and Cubitt~\cite{PLC2024}. We do not claim that robust or continuous-parameter uncomputability is new. Paper A already gave an exponent of degree $\mathbf 0''$ that is robust along a coupling interval. The new point here is that, at the frequency $\alpha_*$ and the phase $1/4$, the degree is stable for the computable members of an explicit neighbourhood in the even analytic potentials, open relative to that class, with the analogous statement for non-even computable potentials at the good phase of Proposition~\ref{prop:goodphase} (Theorem~\ref{thm:dichotomy}); and that the Lyapunov exponent of a computable analytic potential is itself computable, so that in these laws the frequency carries the uncomputability.
+\end{remark}

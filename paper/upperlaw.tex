@@ -1,0 +1,144 @@
+\section{The all-phase upper law}\label{sec:upperlaw}
+
+\subsection{The rate function}
+
+For $\ell>0$, $w\ge1/2$ and $b\ge0$ put
+\[
+\varrho(b;\ell,w)=b-\frac{\min\{\ell,b\}}{2w},\qquad\nu(\ell,w)=\frac\ell{2w},\qquad f(b;\ell,w)=\frac{\varrho(b;\ell,w)}{\varrho(b;\ell,w)+\nu(\ell,w)} .
+\]
+Here $\varrho$ is the exponent of the confinement radius of Proposition~\ref{prop:Comega} and $\nu$ the exponent of the velocity in Theorem~\ref{thm:V}, both per unit of $q$. Explicitly,
+\begin{equation}\label{eq:f}
+f(b;\ell,w)=\begin{cases}1-\dfrac{\ell}{2wb},&b\ge\ell,\\[2mm]\dfrac{(2w-1)b}{(2w-1)b+\ell},&0\le b<\ell.\end{cases}
+\end{equation}
+
+\begin{lemma}\label{lem:f}
+The function $f$ is continuous, nondecreasing in $b$ and in $w$, nonincreasing in $\ell$, and $0\le f<1$, with $f(0;\ell,w)=0$. The function $\varrho$ is nondecreasing in $w$ and nonincreasing in $\ell$. For $\varrho_0\ge0$ and $\nu_0>0$,
+\begin{equation}\label{eq:tauopt}
+\sup_{\tau>0}\frac{\min\{\varrho_0,(\tau-\nu_0)_+\}}{\tau}=\frac{\varrho_0}{\varrho_0+\nu_0},
+\end{equation}
+attained at $\tau=\varrho_0+\nu_0$.
+\end{lemma}
+
+\begin{proof}
+Since $w\ge1/2$, $\varrho\ge0$, and $\varrho+\nu=b$ when $b\ge\ell$. The formulas~\eqref{eq:f} agree at $b=\ell$, and the monotonicity is read off from them. For~\eqref{eq:tauopt}: the function vanishes for $\tau\le\nu_0$, equals $(\tau-\nu_0)/\tau$, which increases, for $\nu_0\le\tau\le\varrho_0+\nu_0$, and equals $\varrho_0/\tau$, which decreases, afterwards.
+\end{proof}
+
+\subsection{The theorem}
+
+\begin{theorem}[All-phase upper law]\label{thm:U}
+Let $v$ be real analytic, $\alpha$ irrational with $\beta=\beta(\alpha)<\infty$, and $H_{v,\alpha}$ supercritical. Put
+\[
+\FU(\beta)=\max_{E\in\Sigma}f\bigl(\beta;\ell(E),\om(E)\bigr).
+\]
+For every $s'>\FU(\beta)$ and $m>0$,
+\[
+\sup_{\theta\in\T}P_\theta(T^{s'},T)=O(T^{-m})\qquad(T\to\infty).
+\]
+Hence $\sup_\theta\au(\theta)\le\aunif\le\FU(\beta)<1$. If $\beta\ge\ell^+$, then
+\[
+\FU(\beta)=1-\frac1{2\beta}\min_{E\in\Sigma}\frac{\ell(E)}{\om(E)}\le1-\frac{\ell_*}{2\om^+\beta}.
+\]
+\end{theorem}
+
+The maximum defining $\FU$ exists because $E\mapsto f(\beta;\ell(E),\om(E))$ is upper semicontinuous on $\Sigma$ (proof of Lemma~\ref{lem:monolimit}). The last formula holds because $f(\beta;\ell(E),\om(E))=1-\ell(E)/(2\om(E)\beta)$ when $\beta\ge\ell(E)$.
+
+\begin{proof}
+It suffices to treat $s'<1$, since $P_\theta(N,T)$ is nonincreasing in $N$. Fix $s'\in(\FU(\beta),1)$, $m>0$ and $\eps'>0$ with $\FU(\beta)<s'-5\eps'$. The parameters are chosen in the following order; none depends on $\theta$.
+
+\emph{Height and energy neighbourhood.} By Lemma~\ref{lem:monolimit}, applied with $b=\beta$, there are $y_0\in(0,\delta_1/2]$ and $\rho_0>0$ with $2\ell_*/3\le\ell\le\ell^++1$ on $\Sigma_{\rho_0}$ and
+\[
+\max_{E\in\Sigma_{\rho_0}}f\bigl(\beta;\ell(E),\max\{1,\om_{y_0}(E)\}\bigr)<s'-4\eps'.
+\]
+Let $W=2\max_J\max\{1,\om_{y_0}\}+1$. We shall take $s\in[1/2,1)$ and $a,\eta\le\pi y_0/3$, so that $\omt\le W$ and $\omh\le W$ on $J$.
+
+\emph{The integer $K$ and the slack $\xi$.} Fix an integer $K\ge1$ with $K\ell_*/(4W)\ge4$, and then $\xi>0$ with
+\[
+8K\xi<\eps',\qquad\xi<\frac{s'}{10K},\qquad\xi<\frac{\min\{s'/(2K),\ell_*,1\}}{1000W}.
+\]
+
+\emph{Slack in the zero count.} Choose $s\in[1/2,1)$, $a\in(0,\min\{\ell_*,1,\pi y_0\}/100)$, $\eta\in(0,\pi y_0/3]$, $\zeta>0$ and $B_0>\beta$ with $2a+\eta+\zeta\le\xi$ and
+\[
+\max_{E\in\Sigma_{\rho_0}}f\bigl(B_0;\ell(E)-10a,\Omega(E)\bigr)<s'-3\eps',\qquad\Omega(E)=\max\{\omt(E),\omh(E)\}.
+\]
+This is possible: as $s\to1$ and $a,\eta\to0$, $\Omega$ converges to $\max\{1,\om_{y_0}\}$ uniformly on $J$, and $f$ is uniformly continuous on $[\beta,\beta+1]\times[\ell_*/2,\ell^++2]\times[1,W]$. With these choices $\nu(\ell(E)-10a,\Omega(E))\ge\ell_*/(4W)$ on $\Sigma_{\rho_0}$. Let $\rho\le\rho_0$ be as in Lemma~\ref{lem:RN} for $y_0$ and $a$, and fix the thresholds of Theorem~\ref{thm:V} and of Proposition~\ref{prop:Comega}, the latter with $c=s'/(2K)$, $d=1/K$ and $B=(B_0+1)/s'$.
+
+\emph{Covering.} For large $T$ let $j$ be the least index with $q_j\ge K\log T$. As $T\to\infty$, $j\to\infty$.
+
+\emph{Case A: $q_j\le T^{s'}/(\log T)^2$.} By Theorem~\ref{thm:V} at scale $j$, for $\dist(E,\Sigma)\le\rho$,
+\[
+\bar\kappa_j(E)T\le CT\exp\Bigl(-\frac{\ell_*q_j}{4W}\Bigr)\le CT^{1-K\ell_*/(4W)}\le1
+\]
+for large $T$. So, with $N=T^{s'}\ge8q_j(m\log T+2)$, which holds for large $T$,
+\[
+P_\theta(T^{s'},T)\le2\exp\Bigl(-\frac{N/(4q_j)-2}{2}\Bigr)+Ce^{-\mu N}\le2e^{-1}T^{-m}+Ce^{-\mu T^{s'}}=O(T^{-m}).
+\]
+
+\emph{Case B: $q_j>T^{s'}/(\log T)^2$.} Put $n=j-1$, $q=q_n<K\log T$ and $b=b_n$. Since $q_{n+1}<D_n=e^{bq}$, we have $bq>s'\log T-2\log\log T$. Since $b\le B_0$ for large $n$, $q\ge(s'\log T-2\log\log T)/B_0$, so $\log\log T=o(q)$, and $b>s'/(2K)=c$ for large $T$. With $\tau=\log T/q$ we get $1/K<\tau\le(B_0+o(1))/s'$, so $T\in[e^{dq},e^{Bq}]$. Split the energy axis.
+
+\emph{Far energies}, $\dist(E,\Sigma)\ge e^{-\xi q}$. The Combes--Thomas bound~\cite[Theorem~5.15(3)]{DMuniv} with $N=T^{s'}\ge e^{s'q/K}\ge e^{2\xi q}$ shows that these energies contribute at most $Ce^{-e^{\xi q}/8}$ to~\eqref{eq:parseval}, exactly as in~\cite[proof of Theorem~5.15]{DMuniv}.
+
+\emph{Near energies}, $\dist(E,\Sigma)\le e^{-\xi q}$. For such $E$ consider two radii:
+\[
+N_1(E)=8q(m\log T+2)\bigl(1+\bar\kappa_n(E)T\bigr),\qquad R(E)\text{ of Proposition~\ref{prop:Comega}}.
+\]
+Theorem~\ref{thm:V} gives the relative bound $\|\un_{\{|j|>N_1(E)\}}\psi_E\|^2\le T^{-2m}\|\psi_E\|^2$, and Proposition~\ref{prop:Comega} the absolute bound $\|\un_{\{|j|>R(E)\}}\psi_E\|^2\le4T^4e^{-6\xi qe^{\xi q}}$. Let $\mathcal E_1$ be the set of near energies with $N_1(E)\le R(E)$ and $\mathcal E_2$ the rest; both are Borel sets. We first show that $\min\{N_1(E),R(E)\}\le N$ for every near energy, where $N=T^{s'}$ is the radius used for the far energies, and then bound the whole tail at this one radius.
+
+\emph{The radius.} Fix a near energy $E$ and write $\nu=\nu(\ell(E)-10a,\Omega(E))$ and $\varrho'=\varrho(b;\ell(E),\Omega(E))$. Since $\nu\le(\ell(E)-10a)/(2\omh(E))$, Theorem~\ref{thm:V} gives $\bar\kappa_n(E)T\le Ce^{(\tau-\nu)q}$, so $\log N_1(E)\le(\tau-\nu)_+q+O(\log\log T)$. Since $\varrho$ is nondecreasing in $w$ and $\Omega\ge\omt$, $\log R(E)\le(\varrho'+7\xi)q$. Hence, by~\eqref{eq:tauopt} and $\tau>1/K$,
+\[
+\frac{\log\min\{N_1(E),R(E)\}}{\log T}\le\frac{\min\{\varrho',(\tau-\nu)_+\}+7\xi}{\tau}+o(1)\le\frac{\varrho'}{\varrho'+\nu}+7K\xi+o(1).
+\]
+Now $\varrho(b;\ell,w)\le\varrho(b;\ell-10a,w)$, so $\varrho'/(\varrho'+\nu)\le f(b;\ell(E)-10a,\Omega(E))\le f(B_0;\ell(E)-10a,\Omega(E))<s'-3\eps'$. The $o(1)$ is uniform in $E$. Therefore $\min\{N_1(E),R(E)\}\le T^{s'-3\eps'+7K\xi+o(1)}\le T^{s'}=N$ for every near energy $E$, once $T$ is large.
+
+\emph{The tail at radius $N$.} On $\mathcal E_1$ this gives $N_1(E)\le N$, and on $\mathcal E_2$ it gives $R(E)\le N$. Since the tails are nonincreasing in the radius, the relative bound holds at radius $N$ on $\mathcal E_1$ and the absolute bound holds at radius $N$ on $\mathcal E_2$; the far energies were estimated at radius $N$ above. So~\eqref{eq:parseval} gives
+\begin{align*}
+P_\theta(T^{s'},T)&\le\frac1{\pi T}\Bigl[\int_{\mathcal E_1}T^{-2m}\|\psi_E\|^2\,dE+\int_{\mathcal E_2}4T^4e^{-6\xi qe^{\xi q}}\,dE\Bigr]+Ce^{-e^{\xi q}/8}\\
+&\le T^{-2m}+CT^3e^{-6\xi qe^{\xi q}}+Ce^{-e^{\xi q}/8}.
+\end{align*}
+Since $q\ge c'\log T$ with $c'=s'/(2B_0)$, the last two terms are $O(T^{-m})$, so $P_\theta(T^{s'},T)=O(T^{-m})$.
+
+All constants and thresholds are independent of $\theta$. This proves the tail bound. The bound $\aunif\le\FU(\beta)$ follows from Definition~\ref{def:unif}, and $\sup_\theta\au\le\aunif$ is~\eqref{eq:unifsup}. Finally $\FU(\beta)<1$ because $f<1$ and the maximum is attained.
+\end{proof}
+
+\subsection{Consequences}
+
+\begin{corollary}[Finite Liouville strength caps the speed]\label{cor:U1}
+Let $v$ be real analytic with $H_{v,\alpha}$ supercritical. If $\beta(\alpha)<\infty$, then $\sup_\theta\au(H_{v,\alpha,\theta})\le\FU(\beta(\alpha))<1$.
+\end{corollary}
+
+\begin{remark}[The endpoint]\label{rem:endpoint}
+The converse is due to Jitomirskaya and Zhang. If $\beta(\alpha)=\infty$, the Lyapunov exponent has no zeros, since it is positive on $\Sigma$ and, by (A3), off $\Sigma$, and their theorem gives quasiballistic transport, $\beta^+(p)=1$ for every $p>0$, at every phase~\cite[Theorem~3(2)]{JZ2022}; the numbering is the same in the published version and in arXiv:1510.07086v2. Together with Corollary~\ref{cor:U1}: for supercritical analytic potentials, at every phase, $\au=1$ if and only if $\beta(\alpha)=\infty$.
+\end{remark}
+
+\begin{remark}[An all-phase bracket]\label{rem:bracket}
+For $0<\beta(\alpha)<\infty$ the lower bound $\au(\theta)\ge F_\beta(\ell_*)$ holds at every phase~\cite[Theorem~4.1]{DMuniv}; it needs only a Lipschitz potential whose Lyapunov exponent is continuous near a spectral minimizer, which holds for analytic $v$~\cite{BourgainJitomirskaya2002}. So at every phase
+\[
+F_\beta(\ell_*)\le\au(\theta)\le\FU(\beta),\qquad\text{and for }\beta\ge\ell^+:\quad1-\frac{\ell_*}\beta\le\au(\theta)\le1-\frac1{2\beta}\min_\Sigma\frac\ell\om .
+\]
+\end{remark}
+
+For type~I potentials $\om=1$ on $\Sigma$, and since $f$ is nonincreasing in $\ell$, $\FU(\beta)=f(\beta;\ell_*,1)$.
+
+\begin{corollary}[Type~I]\label{cor:typeI}
+If $H_{v,\alpha}$ is supercritical and type~I and $\beta(\alpha)<\infty$, then $\aunif\le f(\beta;\ell_*,1)$. That is, $\aunif\le1-\ell_*/(2\beta)$ if $\beta\ge\ell_*$, and $\aunif\le\beta/(\beta+\ell_*)$ if $\beta<\ell_*$. In particular, for the almost Mathieu operator with $\lambda>1$ and $L=\log\lambda$,
+\[
+\aunif\le1-\frac{L}{2\beta}\quad(\beta\ge L),\qquad\aunif\le\frac{\beta}{\beta+L}\quad(0\le\beta<L).
+\]
+\end{corollary}
+
+For comparison, at almost every phase the exponent is $F_\beta(\ell_*)$~\cite[Theorem~A]{DMuniv}. So, for type~I potentials with $\ell_*\le\beta<\infty$, the worst phase costs at most a factor $2$ in the localization strength; Section~\ref{sec:sharp} shows that this factor is attained. For $\beta<\ell_*$ the typical exponent is $0$ and the worst-phase bound is $\beta/(\beta+\ell_*)$, which is not a halving of $\ell_*$.
+
+\subsection{An example with acceleration two}
+
+\begin{proposition}\label{prop:twoharm}
+Let $v(x)=2\lambda\cos2\pi x+2\mu\cos4\pi x$ with $\lambda\in\R$ and $|\mu|>1$, and $\alpha$ irrational. Then $\ell(E)\ge\log|\mu|$ for every real $E$, so $H_{v,\alpha}$ is supercritical. On $\Sigma$, $\om\in\{1,2\}$, and $\om(E)=2$ if and only if $\ell(E)=\log|\mu|$.
+\end{proposition}
+
+\begin{proof}
+Let $w=e^{2\pi ix}$ and $w_k=we^{2\pi ik\alpha}$. Then $w_k^2T(E,x+k\alpha)$ is a matrix polynomial in $w_k$ whose value at $w_k=0$ is $\operatorname{diag}(-\mu,0)$, because the coefficient of $e^{-4\pi ix}$ in $E-v$ is $-\mu$. So $w^{2n}A_n(E,x)$ is, up to a unimodular constant, a matrix polynomial $M(w)$ with $\|M(0)\|=|\mu|^n$. For $y\ge0$, $|w|=e^{-2\pi y}\le1$ on the line $\operatorname{Im}x=y$, and subharmonicity of $\log\|M\|$ gives $\int_0^1\log\|A_n(E,x+iy)\|\,dx\ge n\log|\mu|+4\pi ny$. Hence $L(E,y)\ge\log|\mu|+4\pi|y|$ for all real $E$ and $y$, using evenness, and in particular $\ell(E)\ge\log|\mu|$. On the other hand $\|T(E,x+iy)\|\le|\mu|e^{4\pi y}+O(e^{2\pi y})$, so $L(E,y)\le\log|\mu|+4\pi y+o(1)$ as $y\to\infty$; $v$ is entire. By (A1), $L(E,\cdot)$ is convex and piecewise affine with slopes in $2\pi\Z$. The two bounds force every slope on $[0,\infty)$ to be at most $4\pi$, and $L(E,y)-4\pi y\to\log|\mu|$. At $E\in\Sigma$, $\om(E)\ge1$, so $\om(E)\in\{1,2\}$. If $\om(E)=2$, the slope is $4\pi$ on all of $(0,\infty)$, so $L(E,y)=\ell(E)+4\pi y$ and the limit gives $\ell(E)=\log|\mu|$. Conversely, if $\ell(E)=\log|\mu|$, then $L(E,y)\ge\ell(E)+4\pi y$ and slopes at most $4\pi$ force equality, so $\om(E)=2$.
+\end{proof}
+
+Suppose $\om=2$ somewhere on $\Sigma$. Then $\ell_*=\log|\mu|$, and $\ell>\log|\mu|$ where $\om=1$, so $\min_\Sigma\ell/\om=\log|\mu|/2$. Theorem~\ref{thm:U} gives, for $\beta(\alpha)\ge\ell^+$,
+\[
+\sup_\theta\au(\theta)\le1-\frac{\log|\mu|}{4\beta(\alpha)}.
+\]
+If $\lambda\ne0$ the potential is primitive. Conditionally on the weak separation hypothesis WXS$(v,\alpha)$ of~\cite[Definition~7.1]{DMuniv}, the exponent at almost every phase is $1-\log|\mu|/\beta(\alpha)$~\cite[Theorem~D]{DMuniv}. Whether the worst phase reaches $1-\log|\mu|/(4\beta)$, or only $1-\log|\mu|/(2\beta)$, is open (Section~\ref{sec:discussion}).

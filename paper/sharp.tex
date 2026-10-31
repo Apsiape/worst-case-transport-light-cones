@@ -1,0 +1,274 @@
+\section{Sharpness: closed gaps and the exceptional phases}\label{sec:sharp}
+
+The factor $2\om$ in Theorem~\ref{thm:U} comes from the worst possible cluster of zeros. This section shows that it is attained. The mechanism is a gap of a periodic approximant that closes, or nearly closes, at a particular phase: next to a closed gap the band is wide, of width about $e^{-\ell q/2}$ rather than $e^{-\ell q}$, and a packet launched where the local phase sits at that phase moves with the corresponding speed.
+
+\subsection{Closed central gaps}
+
+Call $v$ \emph{odd-harmonic} if $v(x+1/2)=-v(x)$. The cosine is odd-harmonic. Write $T(y)=\bigl(\begin{smallmatrix}y&-1\\1&0\end{smallmatrix}\bigr)$ and $K_0=\operatorname{diag}(1,-1)$, so that $K_0T(y)K_0=-T(-y)$.
+
+\begin{proposition}[Closed central gaps]\label{prop:G}
+Let $v$ be continuous and odd-harmonic, let $p/q$ be in lowest terms with $q$ even, and put $s=(-1)^{q/2}$ and $v_k=v(\varphi+kp/q)$. Let $M_1(\varphi)=T(-v_{q/2-1})\cdots T(-v_0)$ be the transfer matrix at $E=0$ over half a period, and $g(\varphi)=(M_1)_{11}-(M_1)_{22}$. Then:
+\begin{enumerate}
+\item $\Delta_\varphi(0)=s\bigl(g(\varphi)^2+2\bigr)$ for every $\varphi$;
+\item $g(\varphi+p/q)=-g(\varphi)$, so $g$ has a zero $\varphi_0$, and the monodromy of the $p/q$-periodic operator at $E=0$ and phase $\varphi_0$ is $sI$: the gap at $E=0$ is closed;
+\item $\Delta_\varphi(-E)=\Delta_\varphi(E)$ for all $\varphi$ and $E$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Since $q$ is even, $p$ is odd, so $v_{k+q/2}=v(\varphi+kp/q+1/2)=-v_k$. Hence the second half period contributes $\prod_kT(v_k)=\prod_k(-K_0T(-v_k)K_0)=(-1)^{q/2}K_0M_1K_0$, and the monodromy is $M=sK_0M_1K_0M_1$. If $M_1=\bigl(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\bigr)$, then $K_0M_1K_0M_1=\bigl(\begin{smallmatrix}a^2-bc&b(a-d)\\c(d-a)&d^2-bc\end{smallmatrix}\bigr)$, whose trace is $(a-d)^2+2$ because $ad-bc=1$. This is part~1. At a zero of $g$ the matrix $K_0M_1K_0M_1$ is the identity, which gives the closed gap in part~2.
+
+Shifting $\varphi$ by $p/q$ moves the half period by one site: $M_1(\varphi+p/q)=T(-v_{q/2})M_1(\varphi)T(-v_0)^{-1}=T(y)M_1(\varphi)T(-y)^{-1}$ with $y=v_0$. A direct computation shows that the diagonal of $T(y)M_1T(-y)^{-1}$ is $(d-yb,\ a-yb)$, so its diagonal difference is $d-a=-g(\varphi)$. The intermediate value theorem gives a zero.
+
+For part~3, odd-harmonicity gives
+\[
+A^{(p/q)}_q(-E,\varphi+1/2)=\prod_kT(-(E-v_k))=(-1)^qK_0A^{(p/q)}_q(E,\varphi)K_0,
+\]
+so $\Delta_{\varphi+1/2}(-E)=\Delta_\varphi(E)$. Since $1/2=(q/2)\cdot(1/q)$ is a period of $\varphi\mapsto\Delta_\varphi$, part~3 follows.
+\end{proof}
+
+\begin{corollary}\label{cor:closedgap}
+For the almost Mathieu operator and even $q$, the Chambers polynomial satisfies $P_q(0)=s(2\lambda^q+2)$ and $P_q(-E)=P_q(E)$.
+\end{corollary}
+
+\begin{proof}
+By~\eqref{eq:chambers}, $s\Delta_\varphi(0)=sP_q(0)-2s\lambda^q\cos(2\pi q\varphi)$, whose minimum over $\varphi$ is $sP_q(0)-2\lambda^q$. By Proposition~\ref{prop:G}(1)--(2), this minimum is $2$. Evenness follows from part~3 and~\eqref{eq:chambers}.
+\end{proof}
+
+\begin{remark}[Priority]\label{rem:LM}
+The closed middle gap of even-denominator almost Mathieu approximants is classical; see Bellissard and Simon~\cite[Theorem~3]{BellissardSimon1982}. The identity of Corollary~\ref{cor:closedgap} is due to Lamoureux and Mingo~\cite[Corollary~2.6 and Theorem~2.7]{LamoureuxMingo2007}; their value $2(-1)^{q/2}(1+(\lambda'/2)^q)$ is ours with $\lambda'=2\lambda$. Proposition~\ref{prop:G} gives an elementary proof that applies to every continuous odd-harmonic potential.
+\end{remark}
+
+\subsection{A wide band at the turning phase}
+
+For even $q=q_n$ write $s=(-1)^{q/2}$ and $\Delta_t(E)=P_q(E)-2s\lambda^q$, the discriminant at the turning phases $\varphi$ with $\cos(2\pi q\varphi)=s$.
+
+\begin{proposition}\label{prop:wideband}
+Let $\lambda>1$, $h>L$ and $0<\eta\le1/4$, and let $C_h$ be the constant of~\cite[Proposition~3.3(2)]{DMamo} for $r=2$, so that $\sup_{U_h}|P_q''|\le C_hq^2e^{hq}$. For all large $n$ with $q=q_n$ even there is $E^{(1)}\ge0$ with
+\[
+|\Delta_t(E^{(1)})|=2-\eta\qquad\text{and}\qquad|P_q'(E^{(1)})|\le q\sqrt{2C_h\eta}\,e^{hq/2}.
+\]
+\end{proposition}
+
+\begin{proof}
+At a phase with $\cos(2\pi q\varphi)=0$, \eqref{eq:chambers} gives $t_q=P_q$, so every root of $P_q$ is real and simple~\cite[Lemma~5.3]{DMuniv}. Away from its roots, $(\log|P_q|)''=-\sum_j(E-r_j)^{-2}<0$, so every critical point of $P_q$ is a strict local maximum of $|P_q|$. By Corollary~\ref{cor:closedgap}, $P_q'(0)=0$ and $sP_q$ has a strict local maximum at $0$ with value $2\lambda^q+2$. Let $f(E)=s(P_q(0)-P_q(E))$ and let $E^{(1)}$ be the first $E>0$ with $|f(E)|=\eta$. On $[0,E^{(1)}]$, $sP_q>0$, and $f\ge0$: otherwise $sP_q$ would exceed its value at $0$ somewhere in $(0,E^{(1)})$, forcing a positive local minimum of $|P_q|$ in between. So $f(E^{(1)})=\eta$ and $s\Delta_t=2-f\in[2-\eta,2]$ on $[0,E^{(1)}]$. This interval therefore lies in the spectrum of a turning approximant, hence in $U_h$ for large $n$~\cite[Lemma~2.5]{DMamo}, where $|f''|\le M:=C_hq^2e^{hq}$. Since $f(0)=f'(0)=0$ and $f'(E^{(1)})\ge0$, we have $f'(E^{(1)})\le ME^{(1)}$. With $t=f'(E^{(1)})/M\in[0,E^{(1)}]$, Taylor's formula gives $0\le f(E^{(1)}-t)\le\eta-f'(E^{(1)})^2/(2M)$. Hence $|P_q'(E^{(1)})|=f'(E^{(1)})\le\sqrt{2M\eta}$.
+\end{proof}
+
+\subsection{The lower bound at the phase \texorpdfstring{$1/4$}{1/4}}
+
+\begin{theorem}\label{thm:quarter}
+Let $\lambda>1$ and $\alpha$ irrational. For every $h>L$ and $\eta\in(0,1/4]$ there are $c_\eta>0$ and $n_0$ such that for every $n\ge n_0$ with $q_n$ even and $b_n\ge h/2+(h-L)$, and every $T$ with $e^{(h/2+(h-L))q_n}\le T\le|\delta_n|^{-1}$,
+\begin{equation}\label{eq:quarter}
+P_\varphi\bigl(\lfloor c_\eta Te^{-hq_n/2}\rfloor,\,T\bigr)\ge T^{-2}e^{-2hq_n}
+\end{equation}
+holds for $\varphi=1/4$, and, with modified constants, for every phase $\varphi$ with $\|\varphi-1/4\|\le2|\delta_n|$ and for every phase $\varphi$ with $|\cos(2\pi q_n\varphi)-(-1)^{q_n/2}|\le\eta\lambda^{-q_n}/16$. Consequently
+\[
+\au(H_{\lambda,\alpha,1/4})\ge\max\Bigl\{0,\ 1-\frac{L}{2\beta_e(\alpha)}\Bigr\},
+\]
+read as $1$ if $\beta_e(\alpha)=\infty$.
+\end{theorem}
+
+\begin{proof}
+Write $q=q_n$, $p=p_n$ (odd), $\delta=\delta_n$, $s=(-1)^{q/2}$ and $\eps=1/T$, so $\eps\ge|\delta|$. We first treat $\varphi=1/4$.
+
+\emph{Step 0: the turning block.} The first $q$-block of $H_{1/4}$ to the right, sites $1,\dots,q$, has phases $x_0+k\alpha$ with $x_0=1/4+\alpha$. Compare it with the rational block $R(E)=A^{(p/q)}_q(E,x_0')$, $x_0'=1/4+p/q$. Since $\cos(2\pi qx_0')=\cos(\pi q/2)=s$, \eqref{eq:chambers} gives $\tr R(E)=\Delta_t(E)$. The phase discrepancy at site $k$ is $(k+1)\delta/q$, so the potentials differ by $|w_k|\le4\pi\lambda|\delta|$.
+
+\emph{Step 1: an energy window.} Let $E^{(1)}$ be as in Proposition~\ref{prop:wideband} and $I_*=[E^{(1)}-r,E^{(1)}+r]$ with $r=\eta e^{-hq/2}/(C_1q)$ and $C_1$ large. For $E\in I_*$, which lies in $U_h$, $|P_q'(E)|\le C_2qe^{hq/2}$ and $|\Delta_t(E)-\Delta_t(E^{(1)})|\le\eta/2$, so $|\tr R(E)|\le2-\eta/2$, $|\sin\varrho_R|\ge\sqrt\eta/2$ for the rotation angle $\varrho_R$, and by~\cite[Lemma~8.2(1)]{DMamo} the block sum satisfies $S_R=|P_q'(E)|/|\sin\varrho_R|\le C_3qe^{hq/2}$.
+
+\emph{Step 2: insertion.} Let $B_R\in SL(2,\R)$ map $i$ to the fixed point of $R(E)$. The insertion lemma~\cite[Lemma~9.2]{DMamo} with the shifts $w_k$ gives $A_k(E,x_0)B_R=A^{(p/q)}_k(E,x_0')B_R\Pi_k$ with
+\[
+\|\Pi_k-I\|\le y_0:=\exp(4\pi\lambda|\delta|S_R)-1\le C q e^{-(h-L)q},
+\]
+using $|\delta|\le e^{-(h/2+(h-L))q}$. So $|\tr A_q(E,x_0)|\le2-\eta/2+2y_0\le2-\eta/4$. By~\cite[Lemma~9.3]{DMamo} the fixed point of $B_R^{-1}A_q(E,x_0)B_R$ is within hyperbolic distance $12y_0/(\sqrt\eta/2)$ of $i$; let $N\in SL(2,\R)$ map $i$ to it, so $\|N\|^2\le2$, and put $B_A=B_RN$, which maps $i$ to the fixed point of $A_q(E,x_0)$. The block sum of $A_q(E,x_0)$ in this frame is $S_0\le2(1+y_0)^2S_R\le3C_3qe^{hq/2}$.
+
+\emph{Step 3: an elliptic run.} Apply~\cite[Lemma~9.5]{DMamo} to $g(k)=G(k;E+i\eps)=\langle\delta_k,(H_{1/4}-E-i\eps)^{-1}\delta_0\rangle$, $k\ge0$, which solves the half-line equation for $k\ge1$, with ellipticity margin $\eta'=\eta/4$, frame $B_A$, block sum $S_0$, and $\xi=(4\pi\lambda+1)\eps$. Its run length satisfies $m_*\ge c_\eta Te^{-hq/2}/q\ge8$ for large $n$, because $Te^{-hq/2}\ge e^{(h-L)q}$. With $m_0=\lceil m_*/2\rceil$ the lemma gives $\sum_{k>m_0q}|g(k)|^2\ge\eta'^{5/2}2^{-22}\|\Phi_0\|^2/\xi$ and $|g(0)|\le\|B_A\|\,\|\Phi_0\|$. By~\cite[Lemma~8.2(4)]{DMamo} and the growth bound, $\|B_A\|^2\le1+2\|A_q(E,x_0)\|/|\sin\varrho_A|\le C_\eta e^{hq}$, and $|G(0;E+i\eps)|\ge\operatorname{Im}G(0;E+i\eps)\ge\eps/D_\lambda^2$ with $D_\lambda=4(1+\lambda)+1$. Hence
+\[
+\sum_{k>m_0q}|G(k;E+i\eps)|^2\ge c'_\eta\,\eps\,e^{-hq}\qquad(E\in I_*).
+\]
+
+\emph{A common cutoff.} The run length depends on $E$, so we fix one radius before integrating: $N_*=\lfloor c_\eta Te^{-hq/2}\rfloor$, with $c_\eta$ reduced so that $N_*\le m_0(E)q$ for every $E\in I_*$. By monotonicity of tails, $\sum_{k>N_*}|G(k;E+i\eps)|^2\ge c'_\eta\eps e^{-hq}$ on $I_*$.
+
+\emph{Step 4: Parseval.} By~\eqref{eq:parseval},
+\[
+P_{1/4}(N_*,T)\ge\frac1{\pi T}\int_{I_*}\sum_{k>N_*}|G(k;E+i/T)|^2\,dE\ge\frac{2r}{\pi T}\,c'_\eta T^{-1}e^{-hq}\ge\frac{c}{q}T^{-2}e^{-3hq/2}\ge T^{-2}e^{-2hq}
+\]
+for large $n$. This is~\eqref{eq:quarter}.
+
+\emph{Nearby phases.} If $\|\varphi-1/4\|\le2|\delta|$, compare the first block of $H_\varphi$ with the same rational block $R$. The discrepancies become $(\varphi-1/4)+(k+1)\delta/q$, of size at most $3|\delta|$, so $|w_k|\le12\pi\lambda|\delta|$, and Steps~1--4 hold with modified constants. If $|\cos(2\pi q\varphi)-s|\le\eta\lambda^{-q}/16$, compare the first block, with phases $\varphi+\alpha+k\alpha$, with $A^{(p/q)}_q(E,\varphi+p/q)$; its trace $P_q(E)-2\lambda^q\cos(2\pi q\varphi)$ is within $\eta/8$ of $\Delta_t(E)$, the derivative $P_q'$ is unchanged, and the discrepancies are again $(k+1)\delta/q$. So Steps~1--4 hold with $\eta/2$ replaced by $3\eta/8$ and the same exponents.
+
+\emph{The exponent.} At $T=T_n=|\delta_n|^{-1}=e^{b_nq}$, \eqref{eq:quarter} gives a tail at least $T_n^{-2-2h/b_n}$ beyond $N_*\ge cT_n^{1-h/(2b_n)}-1$. Since $M_p(T)\ge N^pP(N,T)$, $\beta^+(p)\ge1-h/(2b_n)-(2+2h/b_n)/p$ along even $n$ with $b_n\to\beta_e$, provided $\beta_e>h/2+(h-L)$. Let $p\to\infty$ and then $h\downarrow L$. If $\beta_e\le L/2$ there is nothing to prove; if $\beta_e=\infty$ the same argument with $b_n\to\infty$ gives $1$.
+\end{proof}
+
+The theorem gives a polynomially small tail at the critical distance, not a fixed fraction of the packet.
+
+\subsection{Exact laws for the almost Mathieu operator}
+
+\begin{corollary}[Exact uniform law]\label{cor:exactunif}
+Let $\lambda>1$ and let $\alpha$ satisfy $\beta_e(\alpha)=\beta(\alpha)\in[L,\infty)$, for instance when all denominators with large $b_n$ are even. Then
+\[
+\aunif=\sup_\theta\au(H_{\lambda,\alpha,\theta})=\au(H_{\lambda,\alpha,1/4})=1-\frac{L}{2\beta(\alpha)} .
+\]
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:quarter} gives $\au(1/4)\ge1-L/(2\beta)$, Corollary~\ref{cor:typeI} gives $\aunif\le1-L/(2\beta)$, and~\eqref{eq:unifsup} closes the chain.
+\end{proof}
+
+\begin{remark}\label{rem:aevalue}
+At almost every phase the exponent is $\max\{0,1-L/\beta(\alpha)\}$~\cite[Theorem~A]{DMamo}. So under the hypothesis of Corollary~\ref{cor:exactunif}, with $\beta<\infty$, the worst phase has exactly half the typical localization strength.
+\end{remark}
+
+\begin{corollary}[The exponent at the phase $1/4$]\label{cor:quarterexact}
+Let $\lambda>1$ and $\beta_e(\alpha)\ge L$. Then
+\[
+\au(H_{\lambda,\alpha,1/4})=\max\Bigl\{0,\ 1-\frac L{\beta_o(\alpha)},\ 1-\frac L{2\beta_e(\alpha)}\Bigr\},
+\]
+read as $1$ if $\beta(\alpha)=\infty$.
+\end{corollary}
+
+\begin{proof}
+\emph{Lower bound.} The lower bound $\au\ge\max\{0,1-L/\beta\}$ holds at every phase~\cite[Theorem~A]{DMamo}, and Theorem~\ref{thm:quarter} gives $1-L/(2\beta_e)$. Since $\beta=\max\{\beta_e,\beta_o\}$, the larger of the two bounds is the displayed maximum. If $\beta=\infty$ the value is $1$, by~\cite[Theorem~A(2)]{DMamo} or Theorem~\ref{thm:quarter}.
+
+\emph{Upper bound.} Let $\beta<\infty$ and $a>\max\{0,1-L/\beta_o,1-L/(2\beta_e)\}$, and run the covering argument of Theorem~\ref{thm:U} at the phase $1/4$, with $B_0^e>\beta_e$ and $B_0^o>\beta_o$ chosen so that $f(B_0^e;L,1)<a$ and $\max\{0,1-L/B_0^o\}<a$. Case~A is unchanged. In Case~B with $q_n$ even, the per-energy argument of Theorem~\ref{thm:U}, with $\om=1$ and $\ell=L$ on $\Sigma$, gives exponent at most $f(B_0^e;L,1)+o(1)<a$; here $f(b;L,1)\le\max\{1/2,1-L/(2b)\}$ and $1/2\le1-L/(2\beta_e)$ because $\beta_e\ge L$. In Case~B with $q_n$ odd, apply~\cite[Proposition~7.1]{DMamo} at the single scale $n$. Its proof uses the phase only through the sine condition $|\sin2\pi q_n\theta|\ge q_n^{-2}$ at that scale, via~\cite[Proposition~4.4 and Theorem~5.4]{DMamo}, which are stated for every phase satisfying it, and through $b_n\le B_0$, which holds for large odd $n$ with $B_0=B_0^o$. At $\theta=1/4$ and odd $q_n$, $|\sin(\pi q_n/2)|=1$. So $P_{1/4}(T^a,T)\le CT^{-m}$ in this case too.
+\end{proof}
+
+\begin{corollary}[Exceptional phases]\label{cor:exceptional}
+If $\lambda>1$ and $\beta_e(\alpha)=\beta(\alpha)\in(L/2,\infty)$, then
+\[
+\au(H_{\lambda,\alpha,1/4})\ge1-\frac L{2\beta(\alpha)}>\max\Bigl\{0,1-\frac L{\beta(\alpha)}\Bigr\}=\au(H_{\lambda,\alpha,\theta})\quad\text{for almost every }\theta .
+\]
+In particular, if $e^{\beta(\alpha)}<\lambda<e^{2\beta(\alpha)}$, the phase $1/4$ has a positive transport exponent, while for almost every phase the operator has Anderson localization by the theorem of Avila, You and Zhou~\cite{AYZ2017}.
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:quarter} and~\cite[Theorem~A]{DMamo}.
+\end{proof}
+
+\begin{remark}[Reflection resonance and related work]\label{rem:resonance}
+For even $q_n$ and odd $p_n$,
+\[
+2\cdot\frac14+\frac{q_n}2\,\alpha=\frac12+\frac{p_n}2+\frac{\delta_n}2\equiv\frac{\delta_n}2\pmod1 .
+\] So $1/4$ is a reflection-resonant phase at every even scale, with reflection centres at distance $q_n/4$, and its phase-resonance exponent in the sense of Jitomirskaya and Liu~\cite{JLphase} is at least $2\beta_e$. The phase $1/4$ is not of the completely resonant type $2\theta\in\alpha\Z+\Z$ treated by Liu~\cite[Theorem~1.1]{Liu2022}, and that localization theorem does not apply to it. That localization is not uniform over phases or sites for the almost Mathieu operator is known in other forms: Jitomirskaya, Liu and Mi gave a sharp palindromic criterion for semi-uniform dynamical localization, with almost Mathieu examples that are dynamically localized but not semi-uniformly~\cite{JLM2024}. Corollaries~\ref{cor:exactunif}--\ref{cor:exceptional} give the corresponding exact power laws for transport.
+\end{remark}
+
+\begin{remark}[The plateau radius]\label{rem:plateau}
+At even $q_n$ with $b_n>L$ and $T=|\delta_n|^{-1}$, Theorem~\ref{thm:quarter} reaches distance $e^{(b_n-h/2)q_n}$, and Proposition~\ref{prop:Camo} confines the packet, at every phase, within $e^{(b_n-L/2+\eps)q_n}$. So the fastest-tail scale at such a scale is matched up to factors $e^{o(q_n)}$. The mass at that scale is only shown to be polynomially small; whether a fixed fraction of the packet reaches it is open.
+\end{remark}
+
+\subsection{Odd-harmonic and type I potentials}
+
+The proof of Theorem~\ref{thm:quarter} uses the almost Mathieu operator only through a wide band at one local phase. We isolate that input. For a real-analytic supercritical $v$, $\ell_0>0$, $\xi>0$, $\eta\in(0,1]$ and a set $\mathcal N'$ of indices, consider:
+
+\begin{itemize}
+\item[$(\mathrm W_v)$] for every $n\in\mathcal N'$ there are $x'\in\T$ and a real $E'$ with $\dist(E',\Sigma)\le e^{-\xi q_n}$, $\ell(E')\le\ell_0+\xi$, $|t_{q_n}(x',E')|\le2-\eta$ and $|\partial_Et_{q_n}(x',E')|\le e^{(\ell(E')/2+\xi)q_n}$.
+\end{itemize}
+
+\begin{theorem}[A lower bound from a wide band]\label{thm:Wv}
+Let $v$ be real analytic with $H_{v,\alpha}$ supercritical, and assume $(\mathrm W_v)$ along an infinite set $\mathcal N'$ with $b_n\to\beta'$ as $n\to\infty$ in $\mathcal N'$, where $\beta'>\ell_0/2$. There are constants $c,C>0$, depending only on $v$, $\alpha$, $\ell_0$ and $\eta$, such that the following holds if $\xi$ is small enough. For every phase $\theta$ and every large $n\in\mathcal N'$ there is a site $x_n$ with $|x_n|\le|\delta_n|^{-1}$ and
+\[
+P_{\theta+x_n\alpha}\bigl(cT_n^{1-(\ell_0/2+C\xi)/b_n},\,T_n\bigr)\ge T_n^{-C},\qquad T_n=|\delta_n|^{-1}.
+\]
+Hence $\aunif\ge1-\ell_0/(2\beta')-C\xi$.
+\end{theorem}
+
+\begin{proof}
+This is the proof of Theorem~\ref{thm:quarter} with the following changes. Restrict to $n\in\mathcal N'$ with $b_n>\ell_0/2+C\xi$; otherwise the claimed exponent is not positive. The rational block is the $p_n/q_n$-periodic block at the phase $x'/q_n$, with trace $t_{q_n}(x',E')$ of modulus at most $2-\eta$, and~\cite[Lemma~8.2(1)]{DMamo} gives $S_R\le Ce^{(\ell(E')/2+\xi)q_n}$. The energy window around $E'$ has width $e^{-(\ell(E')/2+C\xi)q_n}/(Cq_n^2)$; on it the bound $|\partial_E^2t_q|\le8q^2e^{q(\ell(E')+\xi)}$~\cite[Corollary~5.6]{DMuniv} keeps the trace elliptic with a fixed margin and the derivative of size $e^{(\ell(E')/2+C\xi)q}$. The local phases $q_n(\theta+j\alpha)=q_n\theta+j\delta_n$ sweep $\T$ as $j$ ranges over an interval of length $|\delta_n|^{-1}$, so there is a site $x_n$, $|x_n|\le|\delta_n|^{-1}$, at which the first block to the right has local phase within $|\delta_n|$ of $x'$. Closeness of local phases identifies the block only up to a cyclic shift of the rational potential; cyclic shifts have the same trace and the same energy derivative, and uniform growth controls their frames. The insertion error is at most $\exp(C\|v'\||\delta_n|S_R)-1\to0$, since $b_n>\ell(E')/2+2\xi$. The elliptic run lemma~\cite[Lemma~9.5]{DMamo} holds for Lipschitz potentials, $\|A_{q}\|\le Ce^{(\ell(E')+\xi)q}$ by Lemma~\ref{lem:growthy}, and the rest of the proof is unchanged. The last statement follows as in Section~\ref{sec:prelim}: if $\sup_\varphi P_\varphi(T^a,T)=O(T^{-m})$ for all $m$, then $a\ge1-(\ell_0/2+C\xi)/\beta'$.
+\end{proof}
+
+\begin{theorem}[Odd-harmonic potentials]\label{thm:oddharm}
+Let $v$ be real analytic and odd-harmonic, with $H_{v,\alpha}$ supercritical. Then $0\in\Sigma$, and
+\[
+\aunif\ge\max\Bigl\{0,\ 1-\frac{\ell(0)}{2\beta_e(\alpha)}\Bigr\},
+\]
+read as $1$ if $\beta_e(\alpha)=\infty$. More precisely, for every $\eps>0$ there is $C$ such that for every phase $\theta$ and all large even $q_n$ with $b_n\ge\ell(0)/2+\eps$ there is a site $x_n$, $|x_n|\le|\delta_n|^{-1}$, with $P_{\theta+x_n\alpha}(T_n^{1-(\ell(0)/2+\eps)/b_n},T_n)\ge T_n^{-C}$.
+\end{theorem}
+
+\begin{proof}
+\emph{$0\in\Sigma$.} Reduced fractions $p/q$ with even $q$ approach $\alpha$. By Proposition~\ref{prop:G}, $0$ lies in the spectrum of the $p/q$-periodic operator at some phase, and every point of the phase-union rational spectrum is within $C|\alpha-p/q|^{1/2}$ of $\Sigma$~\cite[Lemma~2.7(1)]{DMuniv}.
+
+\emph{$(\mathrm W_v)$ at even scales.} Let $q=q_n$ be even and $\varphi_0$ the phase of Proposition~\ref{prop:G}(2), and write $\Delta=\Delta_{\varphi_0}$ and $s=(-1)^{q/2}$. Then $\Delta(0)=2s$, $\Delta$ is even, and the bands of the periodic operator adjacent to $0$ lie on both sides of $0$, with $s\Delta\le2$ on them. Let $f=2-s\Delta\ge0$ on these bands, so $f(0)=f'(0)=0$. Let $E^{(1)}>0$ be the first point with $f(E^{(1)})=\eta$. Every band of a $q$-periodic operator with hopping one has width at most $2\pi/q$~\cite[proof of Lemma~5.4]{DMuniv}, so $E^{(1)}\to0$, $\ell(E^{(1)})\to\ell(0)$, and by~\cite[Lemma~2.7(1)]{DMuniv} the interval $[0,E^{(1)}]$ is within $C(|\delta|/q)^{1/2}\le e^{-\xi q}$ of $\Sigma$ when $b_n$ is bounded below and $\xi$ is small. On it~\cite[Corollary~5.6]{DMuniv} gives $|f''|\le M=8q^2e^{q(\ell(0)+\xi)}$ for large $q$. With $t=f'(E^{(1)})/M\le E^{(1)}$, Taylor's formula on $[E^{(1)}-t,E^{(1)}]$ gives $|\Delta'(E^{(1)})|^2\le2M\eta$. So $(\mathrm W_v)$ holds at every large even $q_n$ with $x'=q\varphi_0$, $E'=E^{(1)}$, $\ell_0=\ell(0)+o(1)$ and slack $\xi$, after relabelling $\xi$. Theorem~\ref{thm:Wv}, applied along even scales with $b_n\to\beta_e$, and $\xi\to0$, give the claim. If $\beta_e\le\ell(0)/2$ there is nothing to prove.
+\end{proof}
+
+The sites $x_n$ may depend on the scale, so Theorem~\ref{thm:oddharm} bounds the uniform exponent, not the exponent of a prescribed phase; Section~\ref{sec:category} proves the same lower bound on a residual set of phases (Corollary~\ref{cor:G2}). For supercritical odd-harmonic type~I potentials the lower and upper bounds coincide when $\ell(0)=\ell_*$ and $\beta_e=\beta$ is finite and at least $\ell_*$; then the uniform exponent and the exponent on a residual set of phases both equal $1-\ell_*/(2\beta)$ (Corollaries~\ref{cor:oddbracket} and~\ref{cor:G2}).
+
+\begin{corollary}[A bracket for odd-harmonic type I potentials]\label{cor:oddbracket}
+Let $v$ be real analytic and odd-harmonic, with $H_{v,\alpha}$ supercritical and type~I, and $\beta_e(\alpha)=\beta(\alpha)\in[\ell_*,\infty)$. Then
+\[
+\max\Bigl\{0,\ 1-\frac{\ell(0)}{2\beta}\Bigr\}\le\aunif\le1-\frac{\ell_*}{2\beta},
+\]
+and the two sides coincide when $\ell(0)=\ell_*$.
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:oddharm} and Corollary~\ref{cor:typeI}.
+\end{proof}
+
+For the almost Mathieu operator $\ell(0)=\ell_*=L$, and Corollary~\ref{cor:oddbracket} recovers the uniform half of Corollary~\ref{cor:exactunif}. The class is larger than the almost Mathieu family: for instance $4\cos2\pi x+2\mu\cos6\pi x$ is odd-harmonic, and it is supercritical and type~I at every irrational frequency when $2|\mu|\cosh(3\pi/2)\le1/4$, by Theorem~\ref{thm:nbhd}.
+
+The upper bound is local in energy for smooth filters. For a vector $\psi$ and $g\in C_c^\infty(\R)$ we use the unnormalized packet $g(H_\theta)\psi$ and the quantities~\eqref{eq:abel}.
+
+\begin{corollary}[Smooth filters]\label{cor:filter}
+Let $v$ be real analytic with $H_{v,\alpha}$ supercritical and type~I, $\beta(\alpha)<\infty$, $\ell_0>0$, and let $g\in C_c^\infty(\R)$ be real with $\ell(E)\ge\ell_0$ for every $E\in\Sigma\cap\supp g$. Then for every $s'>f(\beta;\ell_0,1)$ and $m>0$,
+\[
+\sup_\theta P_{g(H_\theta)\delta_0}(T^{s'},T)=O(T^{-m}).
+\]
+Consequently $\alpha^+_{u,g(H_\theta)\delta_0}\le f(\beta;\ell_0,1)$ for every $\theta$ with $g(H_\theta)\delta_0\ne0$.
+\end{corollary}
+
+\begin{proof}
+Fix $\eps\in(0,\ell_0/2)$ and an open neighbourhood $U$ of $\Sigma\cap\supp g$ with $\ell\ge\ell_0-\eps$ on $U$. Choose $\chi\in C_c^\infty(U)$ with $\chi=1$ near $\Sigma\cap\supp g$. Then $(1-\chi)g$ vanishes on $\Sigma=\sigma(H_\theta)$, so $g(H_\theta)=(\chi g)(H_\theta)$; we may therefore assume $\supp g\subset U$. Fix $d_0>0$ such that the $2d_0$-neighbourhood of $\supp g$ lies in $U$.
+
+Write $R_E=(H_\theta-E-i/T)^{-1}$ and $\psi=g(H_\theta)\delta_0$, so that $R_E\psi=g(H_\theta)R_E\delta_0$, and use~\eqref{eq:parseval} for $\psi$.
+
+\emph{Energies with $\dist(E,\supp g)\ge d_0$.} Here $R_E\psi=h_E(H_\theta)\delta_0$ with $h_E(x)=g(x)/(x-E-i/T)$. These functions are smooth, supported in $\supp g$, and all their derivatives are bounded uniformly in $\theta$, $T\ge1$ and such $E$, by $C/(1+|E|)$. By~\cite[Lemma~2.8]{DMuniv}, $|\langle\delta_j,h_E(H_\theta)\delta_0\rangle|\le C_r(1+|E|)^{-1}|j|^{-r}$ for every $r$, so these energies contribute $O(T^{-m})$ at radius $T^{s'}$.
+
+\emph{The remaining energies.} If $\dist(E,\supp g)<d_0$, then $E\in U$. By~\cite[Lemma~2.8]{DMuniv},
+\[
+\bigl\|\un_{\{|j|>N\}}\,g(H_\theta)\,\un_{\{|j|\le N/2\}}\bigr\|\le C_rN^{-r}
+\]
+uniformly in $\theta$, so
+\[
+\|\un_{\{|j|>N\}}R_E\psi\|^2\le2C_r^2N^{-2r}\|R_E\delta_0\|^2+2\|g\|_\infty^2\|\un_{\{|j|>N/2\}}R_E\delta_0\|^2.
+\]
+The first term integrates to at most $2C_r^2N^{-2r}$ by~\eqref{eq:parseval}. For the second, run the proof of Theorem~\ref{thm:U} at radius $N/2$ with $N=T^{s'}$, restricted to energies in $U$: far energies are handled by Combes--Thomas, and near energies by the per-energy minimum of the velocity and confinement radii. For a type~I potential, $\om_{y_0}=1$ on $\Sigma$ for small $y_0$~\cite[Lemma~5.2]{DMuniv}, so by Lemma~\ref{lem:omy}(1) the quantity $\Omega$ of that proof is close to $1$ on $\Sigma_\rho$ once $\rho$ and the slack parameters are small. The per-energy exponent is then at most $f(B_0;\ell_0-\eps-10a,\Omega)$, which is below $s'$ once $\eps$, $B_0-\beta$ and the slack parameters are small. This gives the bound, uniformly in $\theta$. The last statement follows from~\cite[Lemma~2.3]{DMuniv}, since the normalized packet has finite moments by~\cite[Lemma~2.8]{DMuniv}.
+\end{proof}
+
+For a rough filter, merely supported where $\ell\ge\ell_0$, the statement can fail: the filtered vector need not have rapidly decaying spatial tails. Smoothness is used exactly in the off-diagonal bounds above.
+
+\begin{corollary}[An exact uniform law at the closed gap]\label{cor:window}
+Let $v$ be real analytic and odd-harmonic, with $H_{v,\alpha}$ supercritical and type~I, and $\beta_e(\alpha)=\beta(\alpha)\in[\ell(0),\infty)$. For $w>0$ let $g_w\in C_c^\infty((-w,w))$ be real with $g_w=1$ near $0$, and let
+\[
+\gamma_w=\inf\Bigl\{a\ge0:\ \sup_\theta P_{g_w(H_\theta)\delta_0}(T^a,T)=O(T^{-m})\text{ for every }m>0\Bigr\}.
+\]
+Then
+\[
+1-\frac{\ell(0)}{2\beta}\le\gamma_w\le f\Bigl(\beta;\min_{\Sigma\cap[-w,w]}\ell,\,1\Bigr),\qquad\lim_{w\downarrow0}\gamma_w=1-\frac{\ell(0)}{2\beta}.
+\]
+\end{corollary}
+
+\begin{proof}
+The upper bound is Corollary~\ref{cor:filter}. As $w\downarrow0$, $\min_{\Sigma\cap[-w,w]}\ell\to\ell(0)$, since $0\in\Sigma$ and $\ell$ is continuous, and $f(\beta;\ell(0),1)=1-\ell(0)/(2\beta)$ because $\beta\ge\ell(0)$. For the lower bound, the energy windows $I_*$ in the proof of Theorem~\ref{thm:oddharm} shrink to $0$, so for large $n$ they lie in a closed interval $J_w$ with $g_w=1$ on a neighbourhood of $J_w$. For $E\in J_w$, $0<\eta\le1$, the functions $x\mapsto\chi(x)(1-g_w(x))/(x-E-i\eta)$, with $\chi$ smooth and equal to $1$ on a neighbourhood of the spectrum, have all derivatives bounded uniformly in $E$ and $\eta$, because the numerator vanishes near $J_w$. So~\cite[Lemma~2.8]{DMuniv} gives $\|\un_{\{|j|>N\}}R_E(1-g_w)(H_\theta)\delta_0\|\le C_rN^{-r}$, uniformly in $\theta$, $E\in J_w$ and $T\ge1$. Since $\|a-b\|^2\ge\frac12\|a\|^2-\|b\|^2$, integrating over $I_*$ as in Step~4 of Theorem~\ref{thm:quarter} gives $P_{g_w(H_{\theta+x_n\alpha})\delta_0}(N_n,T_n)\ge\frac12T_n^{-C}-C_rN_n^{-2r}$, where $N_n=T_n^{1-(\ell(0)/2+\eps)/b_n}\ge T_n^{1/4}$ for large $n$ and $\eps<\ell(0)/4$, since $b_n\to\beta\ge\ell(0)$. Choosing $r$ large gives $\sup_\theta P_{g_w(H_\theta)\delta_0}(N_n,T_n)\ge\frac14T_n^{-C}$, and letting $\eps\to0$ gives the lower bound.
+\end{proof}
+
+At a fixed width $w>0$ we do not claim equality. The corollary says that the uniform law is exact, energy by energy, at the energy where a gap closes at every even scale.
+
+\subsection{Non-primitive potentials attain the factor \texorpdfstring{$2\om$}{2 omega}}
+
+\begin{proposition}\label{prop:NP}
+Let $\lambda>1$, $s\ge2$ an integer and $v(x)=2\lambda\cos(2\pi sx)$. Then $\ell=\log\lambda$ and $\om=s$ on $\Sigma$. For every $\beta_*\in(\log\lambda,\infty)$ there is an irrational $\alpha$ with $\beta(\alpha)=\beta_*$ and
+\[
+\aunif=\sup_\theta\au(H_{v,\alpha,\theta})=1-\frac{\log\lambda}{2s\beta(\alpha)}=1-\frac{\ell_*}{2\om^+\beta(\alpha)} .
+\]
+\end{proposition}
+
+So the bound of Theorem~\ref{thm:U} is attained in the class of all analytic potentials: no bound of the form $1-\ell_*/(M\beta)$ with $M<2\om^+$ holds for all of them.
+
+\begin{proof}
+By~\cite[Remark~5.30]{DMuniv}, $L_v(E,y)=L_w(E,sy)$, where $w(x)=2\lambda\cos2\pi x$ is taken at frequency $s\alpha$; so $\ell=\log\lambda$ and $\om=s$ on $\Sigma$. The upper bound is Theorem~\ref{thm:U}, since $\beta_*\ge\ell^+=\log\lambda$.
+
+\emph{The frequency.} Let $m=2s$. We build $\alpha=[0;a_1,a_2,\dots]$ so that every large partial quotient follows a denominator divisible by $m$. Take $a_1=m$, so $q_1=m$. Whenever $q_n\equiv0\pmod m$, let $a_{n+1}=\lceil e^{\beta_*q_n}\rceil$; then $q_{n+1}=a_{n+1}q_n+q_{n-1}\equiv q_{n-1}\pmod m$, which is invertible modulo $m$ because $\gcd(q_{n-1},q_n)=1$. Then choose a bounded $a_{n+2}\in\{1,\dots,m\}$ with $a_{n+2}q_{n+1}+q_n\equiv0\pmod m$, which is possible because $q_{n+1}$ is invertible modulo $m$; so $q_{n+2}\equiv0\pmod m$, and repeat. The partial quotients that adjust the congruence are bounded by $m$, so $b_n\to0$ along the indices with $m\nmid q_n$, while $b_n\to\beta_*$ along those with $m\mid q_n$. Hence $\beta(\alpha)=\beta_*$.
+
+\emph{The lower bound.} By~\cite[proof of Theorem~5.29]{DMuniv}, $H_{v,\alpha,\theta}=H_{\lambda,s\alpha,s\theta}$. At each $n$ with $m\mid q_n$, $q'=q_n/s$ is a convergent denominator of $s\alpha$ with $q'(s\alpha)-p_n=\delta_n$~\cite[Proposition~5.27]{DMuniv}, so its ratio is $sb_n$, and $q'$ is even. Hence $\beta_e(s\alpha)\ge s\beta(\alpha)$; with $\beta(s\alpha)\le s\beta(\alpha)$~\cite[Lemma~5.28]{DMuniv}, $\beta_e(s\alpha)=\beta(s\alpha)=s\beta(\alpha)$. Theorem~\ref{thm:quarter} at frequency $s\alpha$ and phase $1/4$ gives $\au(H_{\lambda,s\alpha,1/4})\ge1-\log\lambda/(2s\beta(\alpha))$, and $H_{\lambda,s\alpha,1/4}=H_{v,\alpha,1/(4s)}$. The equalities follow from~\eqref{eq:unifsup}.
+\end{proof}
+
+The mechanism is a symmetry: translation of $v$ by $1/s$ forces clusters of $2s$ zeros of the discriminant, at the relevant exponential scale, at every scale whose denominator is divisible by $s$; the zeros in a cluster need not coincide.

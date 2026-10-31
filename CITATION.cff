@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "Please cite this preprint if you use its results."
+title: "Worst-case transport and light cones for quasi-periodic operators"
+authors:
+- family-names: Douglas
+  given-names: Seth
+  orcid: "https://orcid.org/0009-0007-4708-3252"
+- family-names: Mghirbi
+  given-names: Nidhal
+  orcid: "https://orcid.org/0009-0005-6534-1118"
+version: 1.0.0
+date-released: 2026-10-31
+type: generic
+license: CC-BY-4.0
+abstract: "We study the fastest transport exponent α_u^+ of quasi-periodic Schrödinger operators (Hu)(n) = u(n+1) + u(n−1) + v(θ + nα) u(n), with v real analytic and positive Lyapunov exponent on the spectrum, at the worst phase rather than a typical one. Let β(α) = limsup_n q_n^{−1} log q_{n+1}. For 0 < β < ∞ we prove, uniformly in the phase, that α_u^+ is at most the maximum over the spectrum of 1 − ℓ/(2ωβ) when β ≥ ℓ, with an explicit formula for β < ℓ, where ℓ is the Lyapunov exponent and ω the acceleration. So finite β keeps α_u^+ below 1 at every phase. The factor 2ω is attained, by 2λ cos 2πsx. For the almost Mathieu operator the phase 1/4 has exponent at least 1 − log λ/(2β_e), where β_e is the limsup along even denominators; when β_e = β is finite and at least log λ this is the exact worst exponent, and it holds on a dense G_δ set of phases, while almost every phase has 1 − log λ/β. For potentials with v(x + 1/2) = −v(x), a half-period sign flip closes the central gap of every even-denominator approximant and gives the uniform lower bound 1 − ℓ(0)/(2β_e). In the Aubry–André XY chain, for even sources and the receivers we specify, at almost every phase the light cone at a fixed site follows the typical law, and when β_e = β is finite and at least log λ the light cone uniform over sites follows the worst-case law; for every supercritical analytic field the uniform light cone obeys the all-phase upper bound; for an explicit computable chain the two exponents differ and both have Turing degree 0″. Finally, the Lyapunov exponent of a computable analytic potential is computable at every computable irrational frequency, uniformly in energy, and at one explicit computable frequency and the phase 1/4 the transport exponent has degree exactly 0″ for every computable even potential in an explicit open neighbourhood of 4 cos 2πx."
+preferred-citation:
+  type: generic
+  title: "Worst-case transport and light cones for quasi-periodic operators"
+  authors:
+  - family-names: Douglas
+    given-names: Seth
+    orcid: "https://orcid.org/0009-0007-4708-3252"
+  - family-names: Mghirbi
+    given-names: Nidhal
+    orcid: "https://orcid.org/0009-0005-6534-1118"
+  year: 2026
+  version: 1.0.0
+  notes: 'Preprint. CC BY 4.0.'

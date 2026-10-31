@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\hypersetup{pdftitle={Worst-case transport and light cones for quasi-periodic operators},pdfauthor={Seth Douglas and Nidhal Mghirbi}}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\un}{\mathbf 1}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Lip}{\operatorname{Lip}}
+\newcommand{\Ga}{G_\alpha}
+\newcommand{\au}{\alpha_u^+}
+\newcommand{\aunif}{\alpha_u^{\mathrm{unif}}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\om}{\omega}
+\newcommand{\omt}{\tilde\omega}
+\newcommand{\omh}{\hat\omega}
+\newcommand{\FU}{F_{\mathrm U}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{maintheorem}{Theorem}
+\renewcommand{\themaintheorem}{\Alph{maintheorem}}
+\newtheorem{maincorollary}[maintheorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+\title{Worst-case transport and light cones\\ for quasi-periodic operators\thanks{The authors developed this work with AI models from more than one developer and take responsibility for every claim. How the work was done is described at the end of the paper.}}
+\author{Seth Douglas \and Nidhal Mghirbi}
+\date{Version 1.0.0, October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study the fastest transport exponent $\alpha_u^+$ of quasi-periodic Schr\"odinger operators $(Hu)(n)=u(n+1)+u(n-1)+v(\theta+n\alpha)u(n)$, with $v$ real analytic and positive Lyapunov exponent on the spectrum, at the worst phase rather than a typical one. Let $\beta(\alpha)=\limsup_nq_n^{-1}\log q_{n+1}$. For $0<\beta<\infty$ we prove, uniformly in the phase, that $\alpha_u^+$ is at most the maximum over the spectrum of $1-\ell/(2\omega\beta)$ when $\beta\ge\ell$, with an explicit formula for $\beta<\ell$, where $\ell$ is the Lyapunov exponent and $\omega$ the acceleration. So finite $\beta$ keeps $\alpha_u^+$ below $1$ at every phase. The factor $2\omega$ is attained, by $2\lambda\cos2\pi sx$. For the almost Mathieu operator the phase $1/4$ has exponent at least $1-\log\lambda/(2\beta_e)$, where $\beta_e$ is the limsup along even denominators; when $\beta_e=\beta$ is finite and at least $\log\lambda$ this is the exact worst exponent, and it holds on a dense $G_\delta$ set of phases, while almost every phase has $1-\log\lambda/\beta$. For potentials with $v(x+1/2)=-v(x)$, a half-period sign flip closes the central gap of every even-denominator approximant and gives the uniform lower bound $1-\ell(0)/(2\beta_e)$. In the Aubry--Andr\'e XY chain, for even sources and the receivers we specify, at almost every phase the light cone at a fixed site follows the typical law, and when $\beta_e=\beta$ is finite and at least $\log\lambda$ the light cone uniform over sites follows the worst-case law; for every supercritical analytic field the uniform light cone obeys the all-phase upper bound; for an explicit computable chain the two exponents differ and both have Turing degree $\mathbf 0''$. Finally, the Lyapunov exponent of a computable analytic potential is computable at every computable irrational frequency, uniformly in energy, and at one explicit computable frequency and the phase $1/4$ the transport exponent has degree exactly $\mathbf 0''$ for every computable even potential in an explicit open neighbourhood of $4\cos2\pi x$.
+\end{abstract}
+
+{\small\tableofcontents}
+
+\input{intro}
+\input{prelim}
+\input{zeros}
+\input{velocity}
+\input{upperlaw}
+\input{amoproof}
+\input{sharp}
+\input{category}
+\input{xy}
+\input{computability}
+\input{discussion}
+
+\bibliographystyle{plainurl}
+\bibliography{references}
+\end{document}

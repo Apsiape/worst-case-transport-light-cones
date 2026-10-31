@@ -1,0 +1,114 @@
+\section{A second proof for the almost Mathieu operator}\label{sec:amoproof}
+
+For the almost Mathieu operator the upper bound of Corollary~\ref{cor:typeI} has a second proof, with different ingredients for both halves. The velocity comes from reflection pairs of interpolation nodes instead of full-period interpolation, and the confinement from the conserved polynomial of~\cite{DMamo} instead of the zero count. We include it because it shows where the factor $1/2$ comes from in this model: at a turning phase every node has a mirror partner with almost the same cosine, so only about $q/2$ distinct nodes are available in a period.
+
+In this section $\lambda>1$, $L=\log\lambda$, $H=H_{\lambda,\alpha,\theta}$, and $\|x\|$ is the distance from $x$ to $\Z$.
+
+\subsection{Reflection half-sets}
+
+\begin{lemma}[Uniform nodes at every phase]\label{lem:L}
+There is an absolute constant $C_L$ such that the following holds for every irrational $\alpha$, every $n$ with $q=q_n\ge8$, every $\psi\in\R$ and every integer $m_0$. Put $\varphi_m=\psi+m\alpha$ and $M=\{m_0,\dots,m_0+q-1\}$. There is a set $\mathcal J\subset M$ of $\lfloor(q-1)/2\rfloor$ consecutive integers such that for every $j\in\mathcal J$ and every $c\in[-1,1]$,
+\[
+\prod_{i\in\mathcal J\setminus\{j\}}\frac{|c-\cos2\pi\varphi_i|}{|\cos2\pi\varphi_j-\cos2\pi\varphi_i|}\le q^{C_L}.
+\]
+The same holds, with a larger absolute constant, for every $\mathcal J'\subset\mathcal J$ with $|\mathcal J\setminus\mathcal J'|\le3$.
+\end{lemma}
+
+\begin{proof}
+Write $\mathsf s(x)=|\sin\pi x|$.
+
+\emph{Reflection centre.} Let $c_*$ minimize $\|2\psi+c\alpha\|$ over the integers $c\in R_c=[2m_0,2m_0+2q-2]$, and let $\eps_*\in(-1/2,1/2]$ represent $2\psi+c_*\alpha$ modulo one. Since $R_c$ contains $q$ consecutive integers, the three-gap facts give $|\eps_*|\le2/q$. Put $\mu=c_*/2\in[m_0,m_0+q-1]$. If $\mu\le m_0+q/2-1$, let $\mathcal J$ be the set of integers in $(\mu,\mu+q/2)$; otherwise the set of integers in $(\mu-q/2,\mu)$. In both cases $\mathcal J\subset M$ is an interval of integers, and after removing one endpoint if necessary, $|\mathcal J|=\lfloor(q-1)/2\rfloor$.
+
+\emph{The involution.} For $m\in M$ let $\iota(m)$ be the element of $M$ with $\iota(m)\equiv c_*-m\pmod q$. Both $m+\iota(m)$ and $c_*$ lie in $R_c$, so $m+\iota(m)=c_*+t_mq$ with $t_m\in\{-1,0,1\}$, and
+\begin{equation}\label{eq:pair}
+\varphi_m+\varphi_{\iota(m)}\equiv\eps_*+t_m\delta_n\pmod1,\qquad|\eps_*+t_m\delta_n|\le3/q.
+\end{equation}
+For distinct $j,m\in\mathcal J$ we have $0<|j+m-c_*|<q$, because both lie on the same side of $\mu$ at distance less than $q/2$. So $\iota(\mathcal J)\cap\mathcal J=\emptyset$. Let $E_j=M\setminus\bigl((\mathcal J\setminus\{j\})\cup(\iota(\mathcal J)\setminus\{\iota(j)\})\bigr)$; then $|E_j|\le6$.
+
+\emph{Separation.} Distinct $m,m'\in M$ have $\|\varphi_m-\varphi_{m'}\|\ge1/(2q)$. For distinct $j,m\in\mathcal J$ put $d=j+m-c_*$, so $0<|d|<q$ and $\|d\alpha\|\ge1/(2q)$. Since $j+m\in R_c$, minimality gives $\|\eps_*+d\alpha\|\ge\|\eps_*\|$. Hence
+\[
+\|\varphi_j+\varphi_m\|=\|\eps_*+d\alpha\|\ge\max\{\|\eps_*\|,\|d\alpha\|-\|\eps_*\|\}\ge\frac{\|d\alpha\|}2\ge\frac1{4q}.
+\]
+This lower bound holds even when $\eps_*=0$; it is what fails if both members of a mirror pair are kept.
+
+\emph{Splitting.} Use $|\cos2\pi a-\cos2\pi b|=2\mathsf s(a+b)\mathsf s(a-b)$. For real $a$,
+\[
+S(a):=\sum_{i\in\mathcal J\setminus\{j\}}\log|\cos2\pi a-\cos2\pi\varphi_i|=(|\mathcal J|-1)\log2+S_-(a)+S_+(a),
+\]
+with $S_-(a)=\sum_{i\in\mathcal J\setminus\{j\}}\log\mathsf s(a-\varphi_i)$ and, by~\eqref{eq:pair}, $S_+(a)=\sum_{i'\in\iota(\mathcal J)\setminus\{\iota(j)\}}\log\mathsf s(a+\eta_{i'}-\varphi_{i'})$ with $|\eta_{i'}|\le3/q$.
+
+\emph{Upper bound at every $a$.} Let $m_*$ minimize $\mathsf s(a-\varphi_m)$ over $M$. For $m\ne m_*$, $\|a-\varphi_m\|\ge1/(4q)$, so $\mathsf s(a-\varphi_m)\ge1/(2q)$, and the ordered distances give $\sum_{m\ne m_*}1/\mathsf s(a-\varphi_m)\le Cq\log q$. Drop the $m_*$-term wherever it occurs; it is at most zero. For the shifted terms with $i'\ne m_*$, $\log\mathsf s(a+\eta-\varphi_{i'})\le\log\mathsf s(a-\varphi_{i'})+\pi|\eta|/\mathsf s(a-\varphi_{i'})$, and these corrections add up to at most $C\log q$. Adding back the at most six omitted terms of $E_j$, each at least $-\log(2q)$, and using~\eqref{eq:AJ},
+\[
+S_-(a)+S_+(a)\le\sum_{m\in M,\,m\ne m_*}\log\mathsf s(a-\varphi_m)+C\log q\le-(q-1)\log2+C'\log q.
+\]
+
+\emph{Lower bound at $a=\varphi_j$.} Now $m_*=j$. The unshifted part is at least $\sum_{m\in M,\,m\ne j}\log\mathsf s(\varphi_j-\varphi_m)\ge-(q-1)\log2-C\log q$ by~\eqref{eq:AJ}, since removing terms that are at most zero only increases a sum. Each shift changes a term by $\log\mathsf s(\varphi_j+\varphi_{\iota^{-1}(i')})-\log\mathsf s(\varphi_j-\varphi_{i'})$. Both arguments have sine at least $1/(2q)$ by the separation step. For the indices with $\|\varphi_j-\varphi_{i'}\|\le12/q$, of which there are at most $49$ by the separation $1/(2q)$, the change is at least $-\log(2q)$. For the others $\mathsf s(\varphi_j-\varphi_{i'})\ge24/q$, so $\pi|\eta_{i'}|/\mathsf s(\varphi_j-\varphi_{i'})\le\pi/8<1/2$, and the change is at least $-2\pi|\eta_{i'}|/\mathsf s(\varphi_j-\varphi_{i'})$, and these add up to at least $-C\log q$. So $S_-(\varphi_j)+S_+(\varphi_j)\ge-(q-1)\log2-C''\log q$.
+
+\emph{Conclusion.} Every $c\in[-1,1]$ is $\cos2\pi a$ for a real $a$, and the logarithm of the product in the lemma is $S(a)-S(\varphi_j)\le(C'+C'')\log q$. Removing at most three further nodes changes only the number of omitted factors by a bounded amount.
+\end{proof}
+
+\subsection{Velocity \texorpdfstring{$\lambda^{-q/2}$}{lambda to the -q/2}}
+
+Fix $0<\zeta<L/8$ and $h=L+\zeta$. By Lemma~\ref{lem:growthy} at height zero and continuity of $\ell$ there are $r_0>0$, a real neighbourhood $U'_h$ of $\Sigma$ and $C_h$ such that $\|A_r(z,x)\|\le C_he^{hr}$ for all $z=E+i\eta$ with $E\in U'_h$ and $0\le\eta\le r_0$, all real $x$ and all $r\ge0$. For $q=q_n$ put $k_1=\lfloor(\lfloor(q-1)/2\rfloor-2)/2\rfloor$ and $k=2k_1+1$, so that $k+1\le\lfloor(q-1)/2\rfloor$ and $k\ge q/2-4$.
+
+\begin{lemma}[Regular intervals for the almost Mathieu operator]\label{lem:RNamo}
+For all large $n$, every phase $\theta$, every $z=E+i\eta$ with $E\in U'_h$ and $0\le\eta\le r_0$, and every set $W=[w,w+q+2k_1-1]$ of consecutive sites, there is $x\in[w+k_1,w+k_1+q-1]$ such that $I=[x-k_1,x+k_1]\subset W$ satisfies $|\det(z-H_I)|\ge e^{(L-\zeta)k}$. For every solution of $(H-z)g=0$ on $I$ and $y\in\{x,x+1\}$,
+\[
+|g(y)|^2\le2\gamma_0^2\bigl(|g(x-k_1-1)|^2+|g(x+k_1+1)|^2\bigr),\qquad\gamma_0=C_he^he^{-(L/2-2\zeta)k}.
+\]
+\end{lemma}
+
+\begin{proof}
+The determinant of $z-H$ on an interval of odd length $k$ centred at a site with phase $\varphi$ is a polynomial $Q_k(z;\cos2\pi\varphi)$ of degree at most $k$ in $\cos2\pi\varphi$: it is a trigonometric polynomial of degree $k$ in $\varphi$, and reversing the interval about its centre changes $\varphi$ into $-\varphi$ without changing the determinant. Apply Lemma~\ref{lem:L} with $\psi=\theta$ and $M=[w+k_1,w+k_1+q-1]$, so that $\varphi_m$ is the centre phase of $[m-k_1,m+k_1]\subset W$, and take $\mathcal J'\subset\mathcal J$ with $k+1$ elements. If $|Q_k(z;\cos2\pi\varphi_m)|\le e^{(L-\zeta)k}$ for all $m\in\mathcal J'$, Lagrange interpolation through these $k+1$ nodes gives $\sup_{[-1,1]}|Q_k(z;\cdot)|\le(k+1)q^{C}e^{(L-\zeta)k}$, so $\int_\T\log|\det(z-H_{[0,k-1]}(\theta'))|\,d\theta'\le(L-\zeta)k+C\log q<kL$ for large $n$. This contradicts Herman's bound $\int_\T\log|\det(z-H_{[0,k-1]}(\theta'))|\,d\theta'\ge kL$, valid for every $z\in\C$~\cite[proof of Lemma~6.2]{DMamo}: the determinant is a trigonometric polynomial in $\theta'$ whose extreme coefficient has modulus $\lambda^k$. So some $m=x\in\mathcal J'$ gives a regular interval. The node inequality follows from the Poisson formula and Cramer's rule as in Lemma~\ref{lem:node}: the numerators have length at most $k_1+1$ and are at most $C_he^{h(k_1+1)}$, and $hk_1-(L-\zeta)(2k_1+1)\le-(L/2-2\zeta)k$.
+\end{proof}
+
+\begin{theorem}[Velocity for the almost Mathieu operator]\label{thm:Vamo}
+For every $0<\zeta<L/8$ there are $n_0$, $T_0$, $C$ and $\mu>0$ such that for all $n\ge n_0$, every phase $\theta$, every $T\ge T_0$ and every $N\ge1$,
+\[
+P_\theta(N,T)\le2\exp\Bigl(-\frac{N/(4q_n)-2}{1+\kappa_nT}\Bigr)+Ce^{-\mu N},\qquad\kappa_n=4C_h^2e^{2h}e^{-(L-4\zeta)k}\le C'\lambda^{-q_n/2}e^{2\zeta q_n}.
+\]
+\end{theorem}
+
+\begin{proof}
+The proof of Theorem~\ref{thm:V}, with Lemma~\ref{lem:RNamo} in place of Lemmas~\ref{lem:RN} and~\ref{lem:node}, windows $W_i=[1+(i-1)(q+2k_1),\,i(q+2k_1)]$ of length at most $2q$, $T_0\ge1/r_0$, and the Combes--Thomas bound for energies outside $U'_h$. The left half-line is the right half-line of $H_{\lambda,\alpha,-\theta}$, since the cosine is even.
+\end{proof}
+
+\subsection{Confinement from the conserved polynomial}
+
+We use the conserved polynomial $Q=P_q(H)=V+K$ of~\cite[Proposition~3.3]{DMamo}, with $V(j)=2\lambda^q\cos(2\pi(q\theta+j\delta))$, $K$ of range $q$, and its normalization $\|K\|\le J_n$, $\sigma_n=J_n/\lambda^{q_n}$~\cite[eq.~(9)]{DMamo}.
+
+\begin{proposition}[Confinement for the almost Mathieu operator]\label{prop:Camo}
+Fix $c>0$ and $0<\eps<\min\{L,c\}/4$, and use~\cite[eq.~(9)]{DMamo} with $h=L+\eps/8$. There are an absolute constant $C_0$ and a constant $C$ such that for all large $n$ with $b_n\ge c$, every phase $\theta$ and all $T>0$,
+\[
+P_\theta(R_n,T)\le C(1+T^2)\exp\Bigl(-\frac{e^{\eps q_n/16}}{q_n}\Bigr),\qquad R_n=\bigl\lceil C_0\sigma_n^{1/2}|\delta_n|^{-1}\bigr\rceil+6G_n,\quad G_n=\lceil q_ne^{\eps q_n/2}\rceil,
+\]
+and $R_n\le e^{(b_n-\min\{L,b_n\}/2+\eps)q_n}$.
+\end{proposition}
+
+\begin{proof}
+Write $q=q_n$, $\delta=\delta_n$, $G=G_n$, $\kappa=1/\sigma_n$ and $u=q\theta$. Apply the barrier lemmas of~\cite[Section~4]{DMamo} to $Q'=Q/J_n=V'+K'$, where $\|K'\|\le1$, $K'$ has range $q$ and $V'(j)=2\kappa\cos(2\pi(u+j\delta))$, with $d_0=V'(0)$, $W=8$ and $V_0=16$. Dividing $Q$ by $J_n$ changes neither its spectral projections nor its commutation with $H$.
+
+\emph{Sublevel geometry.} With $x=2\pi(u+j\delta)$ and $x_0=2\pi u$, the set $\{j:|V'(j)-d_0|<32\}=\{j:|\cos x-\cos x_0|<16/\kappa\}$ meets one period, $|j|\le1/(2|\delta|)$, in at most two arcs, each of $x$-length at most $C\kappa^{-1/2}$, uniformly in $x_0$. On the two complementary gaps $V'-d_0$ has a fixed sign and modulus at least $32$. Let $\mathcal J_0$ be the arc containing $0$, merged with the other arc if one of the two gaps between them has fewer than $4G$ sites. Since $\kappa\ge e^{(\min\{L,c\}-\eps/4)q}$ is huge and the period has $|\delta|^{-1}$ sites, the two gaps cannot both be short, and after the merging rule each gap adjacent to $\mathcal J_0$ has at least $4G$ sites. (One of the gaps can be short near a turning value, so both gaps need not be long; this is why the merging rule is used.) Thus $\mathcal J_0$ is an integer interval containing $0$ of length at most $C_0\kappa^{-1/2}|\delta|^{-1}+4G$, contained in $[-(R_n-G),R_n-G]$ after enlarging $C_0$, and followed on each side by at least $4G$ sites on which $V'-d_0$ has a fixed sign and modulus at least $32$.
+
+\emph{Outer barrier.} Write $\mathcal J_0=[e_-,e_+]$, $N_+=e_++2G$ and $N_-=|e_-|+2G$, both at most $R_n$. The intervals $I_+=[e_++1,e_++3G]$ and $I_-=[e_--3G,e_--1]$ lie in the adjacent gaps, and the pairs $\{N_+,N_++1\}$ and $\{-N_--1,-N_-\}$ are at distance at least $G-1$ from their complements. \cite[Lemma~4.1]{DMamo}, with $J=1$, $V_0-W=8$ and $\ell=\lfloor(G-2)/q\rfloor-2$, gives $\|\un_B\Pi\|\le2\cdot8^{-(\ell+2)}\le\exp(-e^{\eps q/2}/q)$ for the set $B$ of these four sites and $\Pi=\un_{[d_0-W,d_0+W]}(Q')$.
+
+\emph{Inner core.} For $|j|\le r$, $|V'(j)-d_0|\le4\pi\kappa|j\delta|+4\pi^2\kappa j^2\delta^2\le2=W/4$ provided $r\le\min\{1/(8\pi\kappa|\delta|),(8\pi^2\kappa)^{-1/2}|\delta|^{-1}\}$. From $J_n\ge C_hq^{5/2}e^{(L+\eps/8)q}|\delta|$ we get, at every scale,
+\[
+\kappa|\delta|\le C^{-1}q^{-5/2}e^{-\eps q/8},\qquad\kappa^{-1/2}|\delta|^{-1}\ge C^{1/2}q^{5/4}e^{(b_n+\eps/8)q/2}.
+\]
+Since $b_n\ge c>4\eps$, we may take $r\ge e^{\eps q/16}$ for large $q$. \cite[Lemma~4.2]{DMamo} with $\ell_0=\lfloor r/q\rfloor-2$ gives $\|(1-\Pi)\delta_0\|\le3\cdot6^{-(\ell_0+2)}$.
+
+\emph{Cutoff.} The proof of~\cite[Lemma~4.3]{DMamo} works verbatim for the asymmetric window $\chi=\un_{[-N_-,N_+]}$, since $[H,\chi]$ still has norm one and lives on the two boundary bonds. It bounds the Abel-averaged mass outside $[-N_-,N_+]$, which dominates $P_\theta(R_n,T)$, by $8\|(1-\Pi)\delta_0\|^2+T^2\|\un_B\Pi\|^2$. This gives the bound. All constants are independent of $\theta$. Finally $\sigma_n\le e^{-(\min\{L,b_n\}-\eps/4)q}$ by~\cite[Lemma~3.4]{DMamo}, which gives the bound on $R_n$.
+\end{proof}
+
+\begin{corollary}\label{cor:amo2}
+For the almost Mathieu operator with $\beta(\alpha)<\infty$, the conclusion $\sup_\theta P_\theta(T^a,T)=O(T^{-m})$ for every $a>f(\beta;L,1)$ and $m>0$ follows from Theorem~\ref{thm:Vamo} and Proposition~\ref{prop:Camo}, without Sections~\ref{sec:zeros} and~\ref{sec:velocity}.
+\end{corollary}
+
+\begin{proof}
+Run the covering argument of Theorem~\ref{thm:U}. In Case~A use Theorem~\ref{thm:Vamo}. In Case~B both Theorem~\ref{thm:Vamo} and Proposition~\ref{prop:Camo} bound the same outside probability, uniformly in energy, so $P_\theta(\min\{N_1,R_n\},T)\le T^{-m}$ with $N_1=8q(m\log T+2)(1+C'Te^{-(L/2-2\zeta)q})$, and
+\[
+\frac{\log\min\{N_1,R_n\}}q\le\min\bigl\{\varrho(b;L,1)+\eps,\ (\tau-L/2)_++2\zeta\bigr\}+o(1).
+\]
+By~\eqref{eq:tauopt} the exponent is at most $f(b;L,1)+K(\eps+2\zeta)+o(1)$, and $\eps,\zeta$ can be taken small.
+\end{proof}

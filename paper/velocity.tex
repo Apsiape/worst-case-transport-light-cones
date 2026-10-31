@@ -1,0 +1,146 @@
+\section{Velocity and confinement at every phase}\label{sec:velocity}
+
+In this section $H_{v,\alpha}$ is supercritical. We prove two single-scale estimates that hold at every phase: a bound $e^{-\ell(E)q/(2\om(E))}$ on the speed (Theorem~\ref{thm:V}) and a bound on the distance the packet can reach before the drift stops it (Proposition~\ref{prop:Comega}). Both are stated with finite-height slack; the limiting rates are approached as the slack parameters tend to zero.
+
+\subsection{Interpolation at every phase}
+
+\begin{lemma}[Full-period interpolation]\label{lem:TI}
+There is an absolute constant $C$ such that the following holds for every irrational $\alpha$, every $n$ with $q=q_n\ge8$, every $\theta\in\R$ and every set $S$ of $2K+1$ consecutive integers with $2K+1\in\{q-1,q\}$. Let $\varphi_s=\theta+s\alpha$ and
+\[
+l_s(\varphi)=\prod_{s'\in S\setminus\{s\}}\frac{\sin\pi(\varphi-\varphi_{s'})}{\sin\pi(\varphi_s-\varphi_{s'})}\qquad(s\in S).
+\]
+Then $\sup_{\varphi\in\R}|l_s(\varphi)|\le q^C$, and every trigonometric polynomial $f$ of degree at most $K$ satisfies $f=\sum_{s\in S}f(\varphi_s)\,l_s$.
+\end{lemma}
+
+\begin{proof}
+Let $M\supset S$ be a set of $q$ consecutive integers, so $|M\setminus S|\le1$. By~\eqref{eq:AJ}, applied with $x=\theta+m_0\alpha-\varphi$ where $m_0=\min M$, the product $\prod_{m\in M,\,m\ne m_*}|\sin\pi(\varphi-\varphi_m)|$ is at most $2^{-(q-1)}q^{C}$, where $m_*$ minimizes $|\sin\pi(\varphi-\varphi_m)|$ over $M$. The numerator of $|l_s(\varphi)|$ is the full product over $M$ divided by the factors with $m$ in $E_s=(M\setminus S)\cup\{s\}$, a set of at most two indices. If $m_*\in E_s$, its factor cancels. The other factors of $E_s$ are at least $\sin(\pi/(4q))\ge1/(2q)$, since distinct nodes are at distance at least $1/(2q)$ and so at most one node is within $1/(4q)$ of $\varphi$. Hence the numerator is at most $2^{-(q-1)}q^C(2q)^2$. The denominator is at least $\prod_{m\in M\setminus\{s\}}|\sin\pi(\varphi_s-\varphi_m)|$, since the possible extra factor is at most one, and this is at least $2^{-(q-1)}q^{-C}$ by~\eqref{eq:AJ}, whose minimizing index is now $m=s$. Dividing gives the bound.
+
+A product of $2K$ factors $\sin\pi(\varphi-a_i)$ is a combination of $e^{2\pi ij\varphi}$ with $|j|\le K$, so each $l_s$ is a trigonometric polynomial of degree $K$ with $l_s(\varphi_{s'})=\delta_{ss'}$. The nodes are distinct modulo one, and a nonzero trigonometric polynomial of degree at most $K$ has at most $2K$ zeros on $\T$. This gives the interpolation formula.
+\end{proof}
+
+The lemma uses no condition on the phase, and this is the point: at every phase, $2K+1\approx q$ nodes of one orbit segment control trigonometric polynomials of degree $K\approx q/2$, with only a polynomial loss.
+
+\subsection{Regular intervals}
+
+For an interval of length $j$ whose first site has phase $\varphi$, write $F_j(z;\varphi)=\det(z-H_{[0,j-1]}(\varphi))$, the $(1,1)$ entry of $A_j(z,\varphi)$. Fix $y_0\in(0,\delta_1]$ and $a\in(0,\min\{\ell_*,1\}/100)$. For a convergent denominator $q$ put $K=\lfloor(q-1)/2\rfloor$ and, for real $E$,
+\[
+\omh(E)=\max\Bigl\{1,\ \om_{y_0}(E)+\frac{3a}{2\pi y_0}\Bigr\},\qquad k(E)=\Bigl\lfloor\frac K{\omh(E)}\Bigr\rfloor .
+\]
+
+\begin{lemma}[Regular intervals]\label{lem:RN}
+There is $\rho>0$ such that for all large $q$, every phase $\theta$, every real $E$ with $\dist(E,\Sigma)\le\rho$, every $z=E+i\eta$ with $0\le\eta\le\rho$, and every set $W$ of $2q$ consecutive sites, there are $k'\in\{k-2,k-1,k\}$, $k=k(E)$, and an interval $I\subset W$ of length $k'$ with
+\[
+|\det(z-H_I)|\ge e^{(\ell(E)-4a)k'}.
+\]
+\end{lemma}
+
+\begin{proof}
+Take $\rho$ no larger than the $\rho$ of Lemma~\ref{lem:growthy} with these $y_0,a$, and so small that $\ell_*/2\le\ell\le\ell^++1$ on $\Sigma_\rho$. By~\eqref{eq:thouless}, $\ell(z)\ge\ell(E)$. Since $\ell(z)=\inf_rr^{-1}\int_\T\log\|A_r(z,\varphi)\|\,d\varphi$, some real $\varphi_*$ has $\|A_k(z,\varphi_*)\|\ge e^{k\ell(E)}$. The entries of $A_k(z,\varphi_*)$ are, up to sign, $F_k(z;\varphi_*)$, $F_{k-1}(z;\varphi_*)$, $F_{k-1}(z;\varphi_*+\alpha)$ and $F_{k-2}(z;\varphi_*+\alpha)$. So for some $k'\in\{k,k-1,k-2\}$ and some real $\varphi'$, $|F_{k'}(z;\varphi')|\ge e^{k'\ell(E)}/2$.
+
+Fix this $k'$ and let $F=F_{k'}(z;\cdot)$, a $1$-periodic function holomorphic on $|\operatorname{Im}\varphi|<\delta_v$. By Lemma~\ref{lem:growthy}, $|F(\varphi+iy)|\le\|A_{k'}(z,\varphi+iy)\|\le Ce^{(L(E,y)+a)k'}$ for $|y|\le y_0$. Shifting the Fourier integral to $\operatorname{Im}\varphi=\mp y_0$ gives $|\hat F(m)|\le Ce^{(L(E,y_0)+a)k'-2\pi|m|y_0}$. So the truncation $F_K$ of $F$ to degree $K$ satisfies on $\R$
+\[
+|F-F_K|\le C_{y_0}e^{(L(E,y_0)+a)k'-2\pi Ky_0}=C_{y_0}e^{(\ell(E)+2\pi y_0\om_{y_0}(E)+a)k'-2\pi Ky_0}\le C_{y_0}e^{(\ell(E)-2a)k'},
+\]
+because $2\pi Ky_0\ge2\pi y_0\omh(E)k'\ge(2\pi y_0\om_{y_0}(E)+3a)k'$.
+
+Let $W=[w,w+2q-1]$ and $S=[w,w+2K]$. The intervals $[s,s+k'-1]$, $s\in S$, lie in $W$, since $2K+k'\le3K<2q$, and their first sites have the phases $\varphi_s=\theta+s\alpha$. Suppose $|F(\varphi_s)|\le e^{(\ell(E)-4a)k'}$ for every $s\in S$. Then $|F_K(\varphi_s)|\le2C_{y_0}e^{(\ell(E)-2a)k'}$, and Lemma~\ref{lem:TI} gives $\sup_\R|F_K|\le(2K+1)q^C2C_{y_0}e^{(\ell(E)-2a)k'}$. Hence $\sup_\R|F|\le q^{C+2}e^{(\ell(E)-2a)k'}<e^{k'\ell(E)}/2$ for large $q$, because $k'\ge k-2\ge q/(3\omh_{\max})-3$ with $\omh_{\max}=\max_{\Sigma_\rho}\omh<\infty$. This contradicts the choice of $\varphi'$. So some $s\in S$ has $|F(\varphi_s)|>e^{(\ell(E)-4a)k'}$, and $I=[s,s+k'-1]$ works.
+\end{proof}
+
+\begin{lemma}[Node inequality]\label{lem:node}
+Let $I=[x_1,x_2]$ be as in Lemma~\ref{lem:RN} and $x=x_1+\lfloor(k'-1)/2\rfloor$. If $(H-z)g=0$ on $I$, then for $y\in\{x,x+1\}$,
+\[
+|g(y)|^2\le2\gamma_0^2\bigl(|g(x_1-1)|^2+|g(x_2+1)|^2\bigr),\qquad\gamma_0=Ce^{2\ell^++2}e^{-(\ell(E)/2-5a)(k(E)-2)}.
+\]
+\end{lemma}
+
+\begin{proof}
+The Poisson formula gives $g(y)=-G_I(x_1,y)g(x_1-1)-G_I(y,x_2)g(x_2+1)$ with $G_I=(H_I-z)^{-1}$, and Cramer's rule gives $|G_I(y,x_2)|=|\det(z-H_{[x_1,y-1]})|/|\det(z-H_I)|$ and the mirror formula for $G_I(x_1,y)$. The numerators are determinants of length at most $k'/2+1$, bounded by $Ce^{(\ell(E)+a)(k'/2+1)}$ by Lemma~\ref{lem:growthy} at height zero. With the lower bound of Lemma~\ref{lem:RN}, both Green's function entries are at most $Ce^{-(\ell(E)/2-5a)k'+\ell(E)+a}\le\gamma_0$, using $k'\ge k-2$, $\ell(E)/2-5a>0$ and $\ell(E)\le\ell^++1$. Finally $(u+v)^2\le2u^2+2v^2$.
+\end{proof}
+
+The bound uses the common length $k(E)-2$ rather than the length $k'$ selected in each window, so that $\gamma_0$ does not depend on the window.
+
+\subsection{Velocity}
+
+\begin{theorem}[Velocity at every phase]\label{thm:V}
+Let $y_0,a$ be as above and $\rho$ as in Lemma~\ref{lem:RN}. There are $n_0$, $T_0$, $C$ and $\mu>0$ such that for all $n\ge n_0$, every phase $\theta$, every $T\ge T_0$, every real $E$ with $\dist(E,\Sigma)\le\rho$ and every $N\ge1$, the resolvent column $\psi_E(j)=\langle\delta_j,(H_\theta-E-i/T)^{-1}\delta_0\rangle$ satisfies
+\[
+W^+_E(N):=\sum_{j>N}|\psi_E(j)|^2\le\exp\Bigl(-\frac{N/(4q_n)-2}{1+\bar\kappa_n(E)T}\Bigr)W^+_E(0),
+\]
+and the mirror statement for $j<-N$, where
+\[
+\bar\kappa_n(E)=4\gamma_0^2\le C\exp\Bigl(-\frac{(\ell(E)-10a)\,q_n}{2\omh(E)}\Bigr).
+\]
+Consequently
+\[
+P_\theta(N,T)\le2\sup_{\dist(E,\Sigma)\le\rho}\exp\Bigl(-\frac{N/(4q_n)-2}{1+\bar\kappa_n(E)T}\Bigr)+Ce^{-\mu N}.
+\]
+\end{theorem}
+
+\begin{proof}
+Choose $T_0\ge1/\rho$, so that $z=E+i/T$ satisfies the hypothesis of Lemma~\ref{lem:RN}. Write $q=q_n$.
+
+\emph{Right half-line.} The vector $g(k)=\psi_E(k)$, $k\ge0$, is square summable and solves $(H-z)g=0$ at every $k\ge1$. Let $W_i=[1+2(i-1)q,\,2iq]$, $i\ge1$. Lemma~\ref{lem:RN} gives a regular interval $I_i\subset W_i$; let $x_i$ be its node, as in Lemma~\ref{lem:node}. Put $s_i=\sum_{k>x_i}|g(k)|^2$ and $M_i=s_i-s_{i+1}$. The flux identity
+\[
+\frac1T\sum_{k>m}|g(k)|^2=\operatorname{Im}\bigl(g(m)\overline{g(m+1)}\bigr)\qquad(m\ge0),
+\]
+which follows by summing the imaginary part of the recursion multiplied by $\overline{g(k)}$ over $k>m$, holds for every real potential~\cite[proof of Lemma~9.5]{DMamo}. For $i\ge2$ the two sites adjacent to $I_i$ lie in $(x_{i-1},x_i)$ and $(x_i,x_{i+1})$, so Lemma~\ref{lem:node} gives $|g(x_i)||g(x_i+1)|\le2\gamma_0^2(M_{i-1}+M_i)$, and therefore
+\[
+s_i\le T|g(x_i)||g(x_i+1)|\le\frac{\bar\kappa T}2\,(s_{i-1}-s_{i+1}),\qquad\bar\kappa=4\gamma_0^2.
+\]
+Since $s_{i+1}\le s_i$, this gives $s_{i+1}\le\frac{\bar\kappa T}{\bar\kappa T+2}s_{i-1}\le\exp\bigl(-\frac1{1+\bar\kappa T}\bigr)s_{i-1}$. Iterating from $i=2$, $s_{2l+1}\le\exp(-l/(1+\bar\kappa T))s_1\le\exp(-l/(1+\bar\kappa T))W^+_E(0)$. Since $x_{2l+1}\le2(2l+1)q$, the choice $l=\lfloor N/(4q)\rfloor-1$ gives $x_{2l+1}\le N$ and $l\ge N/(4q)-2$, which is the claim when $l\ge0$; when $l<0$ the claim is trivial.
+
+\emph{Left half-line.} The reflection $(Ru)(n)=u(-n)$ conjugates $H_{v,\alpha,\theta}$ to $H_{\tilde v,\alpha,-\theta}$ with $\tilde v(x)=v(-x)$. Reversing transfer products and using the evenness of $L(E,\cdot)$, $\tilde v$ has the same complexified Lyapunov exponent $L(E,y)$ for every $y$, hence the same $\ell$, $\om_{y_0}$ and $\omh$. Apply the right half-line argument to it.
+
+\emph{The rate.} $\bar\kappa=4\gamma_0^2\le Ce^{-(\ell(E)-10a)(k(E)-2)}$, and $k(E)-2\ge K/\omh(E)-3\ge(q-2)/(2\omh(E))-3$.
+
+\emph{The outside probability.} By~\eqref{eq:parseval},
+\[
+P_\theta(N,T)=\frac1{\pi T}\int_\R\|\un_{\{|j|>N\}}\psi_E\|^2\,dE,\qquad\frac1{\pi T}\int_\R\|\psi_E\|^2\,dE=1.
+\] For $\dist(E,\Sigma)\le\rho$ use the two half-line bounds and $W^+_E(0)+W^-_E(0)\le\|\psi_E\|^2$. For $\dist(E,\Sigma)>\rho$ the Combes--Thomas bound~\cite[Theorem~5.15(3)]{DMuniv} gives $\|\un_{\{|j|>N\}}\psi_E\|^2\le64g^{-2}g'^{-1}e^{-g'N/4}$ with $g=\dist(E,\Sigma)$ and $g'=\min\{g,1\}\ge\min\{\rho,1\}$, which integrates to at most $Ce^{-\mu N}$. All constants are independent of $\theta$.
+\end{proof}
+
+The theorem bounds Abel averages at the time scale $T$. A bound at each individual time needs a logarithmic allowance in the radius (Lemma~\ref{lem:abel} below); the exponents are not affected.
+
+\subsection{Confinement}
+
+\begin{proposition}[Confinement at every phase]\label{prop:Comega}
+Let $y_0\in(0,\delta_1/2]$, $s,a,\eta$ be as in Lemma~\ref{lem:zerocount}, and let $\omt_{\max}=\max_J\omt$. Fix $c>0$ and $0<d<B$, and let $\zeta>0$ and $\xi>0$ satisfy
+\[
+2a+\eta+\zeta\le\xi<\frac{\min\{c,\ell_*,1\}}{1000\,\omt_{\max}} .
+\]
+For all large $n$ with $b_n\ge c$, every phase $\theta$, every $T\in[e^{dq_n},e^{Bq_n}]$ and every real $E$ with $\dist(E,\Sigma)\le e^{-\xi q_n}$,
+\[
+\bigl\|\un_{\{|j|>R(E)\}}\psi_E\bigr\|\le2T^2\exp\bigl(-3\xi q_ne^{\xi q_n}\bigr),\qquad R(E)=\exp\Bigl[\Bigl(b_n-\frac{\min\{\ell(E),b_n\}}{2\omt(E)}+7\xi\Bigr)q_n\Bigr],
+\]
+where $\psi_E=(H_\theta-E-i/T)^{-1}\delta_0$.
+\end{proposition}
+
+\begin{proof}
+We follow the confinement steps of~\cite[proof of Theorem~5.15]{DMuniv}, which do not use its hypothesis~(W), and replace its sublevel geometry by Lemma~\ref{lem:sublevel}. Write $q=q_n$, $b=b_n$, $\delta=\delta_n$, $D=e^{bq}$, $x_j=q\theta+j\delta$, $z=E+i/T$ and $d_j=t_q(x_j,z)$. Let $N_\Omega=\lfloor D/16\rfloor$ and $\Omega=[-N_\Omega,N_\Omega]\cap\Z$; the map $j\mapsto x_j\bmod1$ is injective on $\Omega$, and its image lies in an arc of length at most $1/8$. Apply the $q$-step identity~\cite[Lemma~5.7]{DMuniv} with its parameter $a$ equal to $\zeta/2$; it applies because $1/T\le e^{-dq}\le1/q$. Its error coefficient satisfies $\eps_{\mathrm{res}}\le e^{(\ell(E)+\zeta-b)q}$ for large $q$~\cite[(E2) in the proof of Theorem~5.15]{DMuniv}. Put $\Lambda=e^{3\xi q}(2+2\eps_{\mathrm{res}})$, so that $\vartheta=(2+\eps_{\mathrm{res}})/(\Lambda-\eps_{\mathrm{res}})\le e^{-3\xi q}$.
+
+\emph{Comparison.} For real $x$, $t_q(x,\cdot)$ is monic with real roots $E_k$~\cite[Lemma~5.3]{DMuniv}, so $|t_q(x,E+i/T)|=\prod_k|E+i/T-E_k|\ge|t_q(x,E)|$. Hence $\mathcal A=\{j\in\Omega:|d_j|<\Lambda\}$ is contained in $\mathcal I=\{j\in\Omega:|t_q(x_j,E)|<\Lambda\}$.
+
+\emph{Sublevel geometry.} We have $\Lambda\le4e^{3\xi q}\max\{1,e^{(\ell(E)+\zeta-b)q}\}$ and $m_0(T_{q,E})\ge q(\ell(E)-\eta)$ by~\cite[Lemma~7.6]{DMuniv}, as in the proof of Lemma~\ref{lem:zerocount}. So the number $\eps_X$ of Lemma~\ref{lem:sublevel}, with $\Lambda'=\Lambda$, satisfies
+\[
+\eps_X\le C^{K_Z}e^{(3\xi+\zeta+\eta)q}e^{-\min\{\ell(E),b\}q},
+\]
+which is less than $c_0^{2K_Z}$ for large $q$, because $\ell(E)\ge2\ell_*/3$ for large $q$ and so $\min\{\ell(E),b\}\ge\min\{2\ell_*/3,c\}>4\xi\ge3\xi+\zeta+\eta$. By Lemma~\ref{lem:sublevel}, $\{x:|t_q(x,E)|<\Lambda\}$ lies in at most $2\omt(E)$ arcs of length $2r$ with
+\[
+r\le c_0^{-1}C^{K_Z}e^{(3\xi+\zeta+\eta)q}e^{-\min\{\ell(E),b\}q/(2\omt(E))};
+\]
+here we used $N(E)\le2\omt(E)$ on the factor $e^{-\min\{\ell(E),b\}q}<1$ and $N(E)\ge1$ on the remaining factor. Each such arc meets the arc $\{x_j:j\in\Omega\}$ in one arc, which pulls back to an integer interval of at most $2rD+1$ sites. So $\mathcal I\subset\mathcal I'$, a union of at most $2\omt(E)$ integer intervals with
+\[
+\#\mathcal I'\le2\omt(E)(2rD+1)\le e^{(b-\min\{\ell(E),b\}/(2\omt(E))+4\xi)q}
+\]
+for large $q$, since $3\xi+\zeta+\eta<4\xi$ and $b-\min\{\ell(E),b\}/(2\omt(E))\ge0$.
+
+\emph{Forbidden decay.} Let $q'=q+1$ and $\mathcal B=\mathcal A\cup[-q',q']\cup(\Z\setminus[-N_\Omega+q,N_\Omega-q])$. By the forbidden-decay paragraph of~\cite[proof of Theorem~5.15]{DMuniv}, which uses only the $q$-step identity and $|d_j|\ge\Lambda$ off $\mathcal A$, $|\psi_E(j)|\le\vartheta^kT$ whenever $\dist(j,\mathcal B)\ge kq$.
+
+\emph{Cutting.} The set $\mathcal J=\mathcal I'\cup[-q',q']$ has at most $2\omt(E)+1$ components and $\#\mathcal J\le\#\mathcal I'+2q'+1$. Let $M_0=q\lceil e^{\xi q}\rceil$. The $M_0$-neighbourhood of $\mathcal J$ has at most $\#\mathcal J+(2\omt(E)+1)(2M_0+1)$ sites. So the first site $c_+>q'$ at distance at least $M_0$ from $\mathcal J$ satisfies
+\[
+c_+\le q'+1+\#\mathcal J+(2\omt(E)+1)(2M_0+1)\le e^{(b-\min\{\ell(E),b\}/(2\omt(E))+6\xi)q}.
+\]
+This is far below $N_\Omega-q-M_0$, because $\min\{\ell(E),b\}/(2\omt(E))\ge\min\{\ell_*,c\}/(3\omt_{\max})>100\xi$ and $N_\Omega\ge e^{bq}/16-1$. Hence $\dist(c_+,\mathcal B)\ge M_0$ and $|\psi_E(c_+)|\le e^{-3\xi qe^{\xi q}}T$. The cutting estimate of~\cite[proof of Theorem~5.15]{DMuniv} gives $\|\un_{(c_+,\infty)}\psi_E\|\le T|\psi_E(c_+)|$. The left side is the same. Since $c_\pm\le R(E)$, the claim follows.
+\end{proof}
+
+Only the total size of the allowed set enters the position of the first cut, not the location of its components.

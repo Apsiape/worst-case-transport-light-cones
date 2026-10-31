@@ -1,0 +1,75 @@
+\section{Discussion and open problems}\label{sec:discussion}
+
+\paragraph{The picture.} At a resonant scale a packet moves with the speed allowed by the widest band near its energy and stops where the drift of the local phase stops it. For type~I potentials, at almost every phase the widest band has width about $e^{-\ell q}$; this is the heuristic behind the typical law. At the worst phase it can be as wide as $e^{-\ell q/(2\om)}$, because $2\om$ zeros of the discriminant can form an exponentially tight cluster at one local phase, and such clusters do form when the potential has a hidden period; the zeros of a cluster need not coincide. For the almost Mathieu operator the cluster sits at the closed central gap of even-denominator approximants, and it is visited by a residual set of phases; when $\beta_e=\beta$ is finite and at least $L$, this gives the residual law of Theorem~\ref{thm:C}. For the Aubry--Andr\'e XY chain and the observable classes of Definition~\ref{def:LR}, in the same regime, almost every phase has fixed-site exponent $1-L/\beta$, while the exponent uniform over sites is $1-L/(2\beta)$ at every phase; exceptional phases can have the larger exponent at every fixed site as well, as the phase $1/4$ does in Corollary~\ref{cor:twoexp}. All exponents here are infinite-time quantities of an infinite system; at finite times the dynamics is a sequence of bursts at the resonant times.
+
+\subsection{Open problems}
+
+\paragraph{1. The factor for primitive potentials.} Theorem~\ref{thm:A} charges the price of a cluster of $2\om$ zeros, and Proposition~\ref{prop:NP} shows that the price is paid when the potential has a hidden period $1/s$. Write $v(x)=w(sx)$ with $w$ primitive, as in~\cite[Theorem~5.29]{DMuniv}, so that $H_{v,\alpha,\theta}=H_{w,s\alpha,s\theta}$.
+
+\begin{conjecture}\label{conj:M2}
+Let $v=w(s\,\cdot)$ be real analytic with $L>0$ on $\Sigma$ and $w$ primitive. If $\max_\Sigma\ell\le\beta(s\alpha)<\infty$, then $\aunif=\sup_\theta\au(\theta)=1-\ell_*/(2\beta(s\alpha))$.
+\end{conjecture}
+
+For the two-harmonic family of Proposition~\ref{prop:twoharm} with $\lambda\ne0$, which is then primitive and has acceleration two exactly where $\ell=\log|\mu|$, assume that $\om=2$ somewhere on $\Sigma$, so that $\ell_*=\log|\mu|$, and that $\ell^+\le\beta<\infty$. Then Theorem~\ref{thm:A} gives the upper bound $1-\log|\mu|/(4\beta)$, while Conjecture~\ref{conj:M2} predicts $1-\log|\mu|/(2\beta)$. We do not know a mechanism that would force clusters of more than two zeros for a primitive potential, nor a proof that they cannot occur at the scales that matter.
+
+\begin{remark}[Numerical observations; not used in any proof]\label{rem:numerics}
+We computed a linearized bandwidth proxy at single rationals $p/q$ near the golden mean, $q=8,13,21,34,55$: the quantity $e_q/\ell(E_*)$, where $e_q=-q^{-1}\log\max_{x,b}4/|\partial_Et_q(x,E_b(x))|$ over phases and band centres, and $\ell(E_*)$ is a Birkhoff estimate of the Lyapunov exponent at the energy $E_*$ of the widest band. Ranges registered before the runs were $[0.40,0.60]$ for primitive potentials and for the almost Mathieu control, and $[0.18,0.32]$ for the non-primitive control $4\cos4\pi x$ at even $q$. Three primitive potentials with estimated acceleration two or three at $E_*$ gave values near $1/2$ rather than $1/(2\om)$: $\cos2\pi x+5\cos4\pi x$ gave $0.50$--$0.58$, a three-harmonic potential without symmetry gave $0.52$--$0.55$, and the odd-harmonic $\cos2\pi x+5\cos6\pi x$ gave $0.50$--$0.59$ for $q\le34$ and $0.630$ at $q=55$, a miss. There were further misses: the almost Mathieu control gave $0.629$, $0.709$, $0.659$ at $q=8,13,21$; the non-primitive control gave $0.683$ and $0.646$ at odd $q=13,21$, and $0.388$ at even $q=34$, against $0.268$ at $q=8$. The proxy is not the exact band width, the maximization over phases is a finite search, and the acceleration estimates are not certificates. These are finite-size observations, not evidence of an asymptotic law.
+\end{remark}
+
+\paragraph{2. The matching lower bound for general potentials.} Theorem~\ref{thm:Wv} reduces the lower bound $1-\ell_0/(2\beta)$ to the existence of a wide band, $(\mathrm W_v)$, near an energy with $\ell\approx\ell_0$. A sufficient condition is a small gap between band centres: if $E_b(x)$ and $E_{b+1}(x)$ are roots of $t_q(x,\cdot)$ near $E'$ with $E_{b+1}(x)-E_b(x)\le e^{-(\ell(E')/2-4\xi)q}$, then the maximum principle for $t_q(x,z)/((z-E_b)(z-E_{b+1}))$ on a disk of radius $e^{-\xi q}$, with~\cite[Corollary~5.6]{DMuniv}, bounds $|\partial_Et_q(x,E_b)|$ by $e^{(\ell(E')/2+7\xi+o(1))q}$. We do not know whether this condition is also necessary. It is proved here only at $E=0$ for even $q$ and odd-harmonic potentials, through exactly closed gaps; for general type~I potentials, and at the minimizer of $\ell$ when $\ell(0)>\ell_*$, it is open.
+
+\paragraph{3. The regime $0<\beta<\ell$.} For supercritical type~I operators and $0<\beta<\ell_*$, the exponent is $0$ at almost every phase~\cite[Theorem~A]{DMuniv}, while Corollary~\ref{cor:typeI} only gives the positive uniform bound $\beta/(\beta+\ell_*)$. For general supercritical analytic operators, Theorem~\ref{thm:A} gives the uniform bound $\max_{E\in\Sigma}f(\beta;\ell(E),\om(E))$, which involves $(2\om-1)\beta/((2\om-1)\beta+\ell)$ at energies with $\beta<\ell$; the typical value is not $0$ in general there, since a hidden period replaces $\beta(\alpha)$ by $\beta(s\alpha)$~\cite[Theorem~C]{DMuniv}, which can be larger. For the almost Mathieu operator with $L/2<\beta_e=\beta<L$ the worst exponent lies between $1-L/(2\beta)$ and $\beta/(\beta+L)$. Whether $\au=0$ at every phase for $0<\beta\le\ell_*/(2\om^+)$ is open. The obstruction is the error term $e^{(\ell-b)q}$ of the $q$-step identity, which raises the sublevel threshold in Proposition~\ref{prop:Comega} when $b<\ell$.
+
+\paragraph{4. Odd scales for the almost Mathieu operator.} Theorem~\ref{thm:quarter} uses the closed gaps at even denominators. For odd $q$ every gap of the rational approximants is open~\cite{vanMouche1989}, so no closure argument is available, and a quantitative bound on one gap is needed. Fix an odd $q\ge3$ and $p$ coprime to $q$, and write $P^\lambda$ for the Chambers polynomial of coupling $\lambda$. Its critical points $c_1<\dots<c_{q-1}$ are real and simple, and $\mathrm{crit}_k(\lambda)=|P^\lambda(c_k)|-2\lambda^q=\min_\varphi|\Delta_\varphi(c_k)|\ge2$, because every critical value of a periodic discriminant has modulus at least two. Put $\mathrm{ex}_k(\lambda)=\mathrm{crit}_k(\lambda)-2$, and let $\mathrm{ex}_{\mathrm{ext}}$ refer to the two extreme gap labels $m=\pm(q-1)/2$, where $k\equiv mp\pmod q$.
+
+\begin{lemma}[Duality of the excess]\label{lem:X}
+$\mathrm{ex}_k(1/\lambda)=\lambda^{-q}\,\mathrm{ex}_k(\lambda)$ for every $k$ and every $\lambda>0$.
+\end{lemma}
+
+\begin{proof}
+On the cyclic $q$-site space let $H_\lambda(a,b)=e^{ia}S+e^{-ia}S^*+2\lambda\operatorname{diag}\{\cos(2\pi np/q+b)\}$. The discrete Fourier transform with entries $q^{-1/2}e^{2\pi ipns/q}$ exchanges shifts and multiplications, and conjugates $H_\lambda(a,b)$ to $\lambda H_{1/\lambda}(b,a)$, up to orientation signs in $a,b$. So $\det(E-H_\lambda(a,b))=\lambda^q\det(E/\lambda-H_{1/\lambda}(b,a))$. Averaging over both phases removes the phase-dependent harmonics of Chambers' formula and gives $P^\lambda(E)=\lambda^qP^{1/\lambda}(E/\lambda)$. So the critical points scale by $\lambda$, preserving their order, and $\mathrm{crit}_k(\lambda)-2=\lambda^q(\mathrm{crit}_k(1/\lambda)-2)$.
+\end{proof}
+
+\begin{proposition}[The strong-coupling coefficient]\label{prop:X2}
+For odd $q\ge3$ and $p$ coprime to $q$,
+\[
+\lim_{\lambda\to\infty}\frac{\mathrm{ex}_{\mathrm{ext}}(\lambda)}{\lambda}=\lim_{\mu\to0}\frac{\mathrm{ex}_{\mathrm{ext}}(\mu)}{\mu^{q-1}}=C_q:=4\sin^2\Bigl(\frac{\pi mp}q\Bigr),\qquad m=\frac{q-1}2 .
+\]
+In particular $0<C_q\le4$.
+\end{proposition}
+
+\begin{proof}
+The first equality is Lemma~\ref{lem:X}. At weak coupling $\mu$, the Bloch fibre of the $q$-periodic operator in the plane-wave basis indexed by $s=0,\dots,q-1$ is a $q$-cycle with diagonal $\epsilon_s=2\cos(k+2\pi sp/q)$ and hopping of size $\mu$. The gap with label $m$ sits at the crossing $\epsilon_0=\epsilon_m$, at $k\equiv-\pi mp/q\pmod\pi$ and $E_0=2\cos k$. For fixed $p,q$ the two crossing states are isolated from the others, and a Schur complement onto them is finite-dimensional analytic perturbation theory. By reflection the two diagonal self-energies agree, and the off-diagonal coupling comes from the unique path of length $m$, the other path having length $m+1$:
+\[
+|t_{\mathrm{eff}}|=\frac{\mu^m}{\prod_{s=1}^{m-1}|E_0-\epsilon_s|}\bigl(1+O_{p,q}(\mu)\bigr).
+\]
+Using $|E_0-\epsilon_s|=4|\sin(k+\pi sp/q)\sin(\pi sp/q)|$ and the identity $\prod_{s=1}^{m}|\sin(\pi sp/q)|=\sqrt q\,2^{-m}$, which follows from $\prod_{s=1}^{q-1}|\sin(\pi sp/q)|=q2^{-(q-1)}$ and the symmetry $s\mapsto q-s$, one gets $\prod_{s=1}^{m-1}|E_0-\epsilon_s|=q/(4\sin^2(\pi mp/q))$. The half-gap is $|t_{\mathrm{eff}}|$, and the free discriminant $2T_q(E/2)$ has second derivative of modulus $q^2/(2\sin^2(\pi mp/q))$ at the corresponding critical point. A Taylor expansion gives $\mathrm{ex}_{\mathrm{ext}}(\mu)=\frac12|P''|\,|t_{\mathrm{eff}}|^2(1+O_{p,q}(\mu))=4\sin^2(\pi mp/q)\mu^{q-1}(1+O_{p,q}(\mu))$; the phase-union term $2\mu^q$ is of higher order.
+\end{proof}
+
+The remainders depend on $p$ and $q$, so Proposition~\ref{prop:X2} gives no control uniform in $q$. Sharp exponential asymptotics of spectral gaps are known for Diophantine frequencies in the subcritical regime~\cite{LYZZ2017}, and upper bounds on gaps at Liouville frequencies in a regime of weak dual coupling~\cite[Theorem~1.3]{LiuShi2019}; as stated, neither gives the bound on the extreme gaps of the rational approximants that is needed here.
+
+\begin{conjecture}[Mon]\label{conj:mon}
+For every odd $q$ and every $p$ coprime to $q$, the function $\lambda\mapsto\mathrm{ex}_{\mathrm{ext}}(\lambda)/\lambda$ is nondecreasing on $(0,\infty)$.
+\end{conjecture}
+
+\begin{proposition}[Conditional exact law]\label{prop:X4}
+If Conjecture~\ref{conj:mon} holds, then $\aunif=1-\log\lambda/(2\beta(\alpha))$ for the almost Mathieu operator with $\lambda>1$ and every irrational $\alpha$ with $\log\lambda\le\beta(\alpha)<\infty$, without any parity condition.
+\end{proposition}
+
+\begin{proof}
+Under the conjecture, Proposition~\ref{prop:X2} gives $\mathrm{ex}_{\mathrm{ext}}(\lambda)\le C_q\lambda\le4\lambda$, so the critical value $D=\mathrm{crit}_{\mathrm{ext}}(\lambda)\le4\lambda+2$ is bounded uniformly in $p,q$. Let $\varphi$ be a phase at which $|\Delta_\varphi(c)|=D$ for the extreme critical point $c$, and let $e$ be a point of an adjacent band with $|\Delta_\varphi(e)|\le1$; it lies within $e^{-\xi q}$ of $\Sigma$ when $b_n$ is bounded below. On a $1/q$-neighbourhood of $e$, \cite[Corollary~5.6]{DMuniv} gives $|\Delta_\varphi'|\le2qe^{(L+\eps)q}$ and $|\Delta_\varphi''|\le M=8q^2e^{(L+\eps)q}$. Moving from $e$ towards $c$ by $t=|\Delta_\varphi'(e)|/M\le1/(4q)$, which does not pass $c$ because $\Delta'_\varphi(c)=0$, Taylor's formula on a segment where the signed discriminant is at most $D$ gives $|\Delta_\varphi'(e)|^2\le2M(D+1)$. So $(\mathrm W_v)$ holds at every large odd scale, with $\eta=1$ and $\ell_0=L$, and Theorem~\ref{thm:Wv}, together with Theorem~\ref{thm:quarter} at even scales, gives $\aunif\ge1-L/(2\beta)$. Corollary~\ref{cor:typeI} gives the upper bound.
+\end{proof}
+
+\begin{remark}[Numerical observations; not used in any proof]\label{rem:monnum}
+For $p/q=8/13$ and $13/21$, the discrete second differences of $t\mapsto\log\mathrm{ex}_{\mathrm{ext}}(e^t)$ on a grid of step $1/4$ in $[-3,4]$ were all negative. For twelve rationals with $5\le q\le21$, the ratio $\mathrm{ex}_{\mathrm{ext}}(\lambda)/(C_q\lambda)$ was below one at $\lambda=1.2,2,4$, and $\mathrm{ex}_{\mathrm{ext}}(10^5)/10^5$ agreed with $C_q$ to about $2\cdot10^{-5}$, the difference being of the size of the next term. Global concavity of $t\mapsto\log\mathrm{ex}_{\mathrm{ext}}(e^t)$, together with Proposition~\ref{prop:X2}, would imply Conjecture~\ref{conj:mon}. A grid does not prove concavity.
+\end{remark}
+
+\paragraph{5. Weak separation.} The typical exponent beyond type~I is known only conditionally on the weak separation hypothesis WXS for primitive potentials with acceleration at least two~\cite[Definition~7.1 and Theorem~D]{DMuniv}. It remains open, and so does the typical exponent of the two-harmonic family.
+
+\paragraph{6. How much of the packet moves at the worst phase.} Theorem~\ref{thm:quarter} produces a polynomially small tail at the exceptional radius, whose exponent is $1-L/(2\beta)$ when $\beta_e=\beta$ is finite and at least $L$. For the almost Mathieu operator with $h>L$, \cite[Theorem~B]{DMamo} gives at every phase a fixed Abel-averaged fraction of the packet beyond $Te^{-hq_n}$, for $e^{hq_n}\le T\le|\delta_n|^{-1}$ on the resonant scales with $b_n\ge c>h$; at $T=|\delta_n|^{-1}$ this is the smaller, typical radius. Whether a fixed fraction reaches the larger exceptional radius of Theorem~\ref{thm:quarter}, and what the moment exponents are at the exceptional phases, is open.
+
+\subsection*{How this work was done}
+
+The authors developed the results and proofs with assistance from AI models from more than one developer. They take responsibility for every claim. The authors chose the question, directed the work and decided which lines to pursue; the models did most of the exploration, derivation and drafting.
+
+The proof was developed over several long working sessions, each building on the previous ones and recording its proofs, failed routes and self-checks. Each step was then checked by a separate session that had not seen the material, with instructions to refute it and to read the primary sources it relies on. The repairs found in these checks are incorporated here. Priority and literature searches were AI-assisted. The assembled paper was then audited as a whole by another session that had not seen it, also instructed to refute; the repairs made in answer to that audit and to each later check were checked again by a fresh session, including one session that compared every summary sentence with the result it summarizes, and the final small repair uses the wording that the last check proposed. No computation is used in any proof, except that the elementary numerical constants of Theorem~\ref{thm:nbhd} were also certified with exact rational arithmetic; the numerical remarks are not used in any proof.

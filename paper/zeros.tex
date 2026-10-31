@@ -1,0 +1,122 @@
+\section{Counting zeros near the real axis}\label{sec:zeros}
+
+In this section $H_{v,\alpha}$ is supercritical. The key fact is that, for all large convergent scales and uniformly for $E$ in a fixed energy neighbourhood $J$ of the spectrum, a truncation of the rational discriminant $t_q(\cdot,E)$ has at most $2\omt(E)$ zeros in a strip whose width is proportional to $q$ (Lemma~\ref{lem:zerocount}); at each fixed spectral energy this sharpens to $2\om(E)$, with parameters and a threshold depending on the energy (Remark~\ref{rem:twice}). We state it with finite-height quantities, which is what the dynamical argument needs.
+
+\subsection{The acceleration at a finite height}
+
+For real $E$ and $0<y<\delta_v$ put
+\[
+\om_y(E)=\frac{L(E,y)-\ell(E)}{2\pi y}.
+\]
+For $\rho>0$ write $\Sigma_\rho=\{E\in\R:\dist(E,\Sigma)\le\rho\}$.
+
+\begin{lemma}\label{lem:omy}
+\begin{enumerate}
+\item For fixed $y$, $E\mapsto\om_y(E)$ is continuous on $\R$.
+\item For fixed $E$, $y\mapsto\om_y(E)$ is nondecreasing, and $\om_y(E)\to\om(E)$ as $y\downarrow0$.
+\item On $\Sigma$, $\om$ is upper semicontinuous with values in $\{1,2,\dots\}$. In particular $\om^+=\max_\Sigma\om$ exists.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Part~1 is the continuity of $L(\cdot,y)$ and of $\ell$. Part~2: the secant slope of a convex function from $0$ is nondecreasing, and its limit is the right derivative. Part~3: $\om=\inf_{y>0}\om_y$ is an infimum of continuous functions, hence upper semicontinuous; its values on $\Sigma$ are integers by (A1) and at least $1$ by Section~\ref{sec:prelim}. An upper semicontinuous function on a compact set attains its maximum.
+\end{proof}
+
+\begin{lemma}[Uniform complexified growth]\label{lem:growthy}
+Let $0<y_0\le\delta_1$ and $a>0$. There are $\rho>0$ and $C$ such that
+\[
+\|A_r(z,x+iy)\|\le Ce^{(L(E,y)+a)r}
+\]
+for every real $E\in J$, every $z\in\C$ with $|z-E|\le\rho$, every real $x$, every $|y|\le y_0$ and every $r\ge0$. For all large $q$ the rational products $A^{(p/q)}_r(z,\varphi+iy)$, $0\le r\le q$, obey the same bound with $C$ replaced by $C'=C\exp(C\|v'\|_{y_0})$, where $\|v'\|_{y_0}=\max_{|\operatorname{Im}x|\le y_0}|v'(x)|$.
+\end{lemma}
+
+\begin{proof}
+This is the proof of~\cite[Lemma~5.5(2)]{DMuniv}, with the type~I identity for $L(E,y)$ replaced by the joint continuity of $(E,y)\mapsto L(E,y)$. Fix $(E_0,y_0')\in J\times[-y_0,y_0]$ and pick $r_0$ with $r_0^{-1}\int_\T\log\|A_{r_0}(E_0,x+iy_0')\|\,dx<L(E_0,y_0')+a/4$. The integrand is jointly continuous in $(z,y,x)$, and Birkhoff averages over the uniquely ergodic rotation by $r_0\alpha$ converge uniformly. This gives the bound $Ce^{(L(E_0,y_0')+3a/4)r}$ on a complex neighbourhood of $(E_0,y_0')$, and joint continuity of $L$ replaces $L(E_0,y_0')$ by $L(E,y)+a/4$ nearby. Compactness of $J\times[-y_0,y_0]$ gives $\rho$ and $C$. The rational products are handled as in~\cite[Lemma~5.5(3)]{DMuniv}: the potentials of the rational and irrational products differ by at most $\|v'\|_{y_0}|\delta|$ per site, and expanding the product in these errors costs the factor $\exp(C\|v'\|_{y_0}q|\delta|)\le\exp(C\|v'\|_{y_0})$.
+\end{proof}
+
+\begin{lemma}[A limit of maxima]\label{lem:monolimit}
+Let $f:[0,\infty)\times(0,\infty)\times[1/2,\infty)\to\R$ be continuous and nondecreasing in its third argument, and fix $b\ge0$. Then
+\[
+\lim_{y\downarrow0,\ \rho\downarrow0}\ \max_{E\in\Sigma_\rho}f\bigl(b,\ell(E),\max\{1,\om_y(E)\}\bigr)=\max_{E\in\Sigma}f\bigl(b,\ell(E),\om(E)\bigr),
+\]
+where $\rho$ ranges over values small enough that $\ell>0$ on $\Sigma_\rho$.
+\end{lemma}
+
+\begin{proof}
+The right side is a maximum: $E\mapsto f(b,\ell(E),\om(E))$ is upper semicontinuous on $\Sigma$, because $\om$ is integer valued and upper semicontinuous and $f$ is continuous and monotone in its last argument. Call it $F$. Since $\om_y\ge\om\ge1$ on $\Sigma$, the left side is at least $F$. Suppose it is not at most $F$ in the limit. Then there are $\eps>0$, $y_k,\rho_k\to0$ and $E_k\in\Sigma_{\rho_k}$ with $f(b,\ell(E_k),\max\{1,\om_{y_k}(E_k)\})\ge F+\eps$. Pass to a subsequence with $E_k\to E_0\in\Sigma$. For fixed $y>0$ and large $k$, $\om_{y_k}\le\om_y$ by Lemma~\ref{lem:omy}(2), so by monotonicity and continuity
+\[
+F+\eps\le\lim_kf\bigl(b,\ell(E_k),\max\{1,\om_y(E_k)\}\bigr)=f\bigl(b,\ell(E_0),\max\{1,\om_y(E_0)\}\bigr).
+\]
+Letting $y\downarrow0$ gives $F+\eps\le f(b,\ell(E_0),\om(E_0))\le F$, a contradiction.
+\end{proof}
+
+\subsection{A Jensen identity and the zero count}
+
+For a real trigonometric polynomial $\mathcal T(x)=\sum_{|k|\le K'}c_ke^{2\pi ikx}$ of exact degree $K'\ge1$, with zeros $\zeta_1,\dots,\zeta_{2K'}$ in $\C/\Z$ counted with multiplicity, and for real $y$, put $m_y(\mathcal T)=\int_0^1\log|\mathcal T(x+iy)|\,dx$.
+
+\begin{lemma}[Jensen identity]\label{lem:jensen}
+$m_y(\mathcal T)=\log|c_{K'}|+\pi\sum_k|y-\operatorname{Im}\zeta_k|$. Hence, for $Y>0$,
+\[
+m_Y(\mathcal T)+m_{-Y}(\mathcal T)-2m_0(\mathcal T)=2\pi\sum_{k:\,|\operatorname{Im}\zeta_k|<Y}\bigl(Y-|\operatorname{Im}\zeta_k|\bigr).
+\]
+\end{lemma}
+
+\begin{proof}
+By~\cite[Lemma~7.3(1)]{DMuniv}, $|\mathcal T(x)|=|c_{K'}|4^{K'}\prod_k|\sin\pi(x-\zeta_k)|$ for complex $x$, and $\int_0^1\log|\sin\pi(x+iy-\zeta)|\,dx=\pi|y-\operatorname{Im}\zeta|-\log2$~\cite[proof of Lemma~7.3(2)]{DMuniv}. Sum over $k$. For the second identity note that $|Y-b|+|Y+b|-2|b|$ equals $2(Y-|b|)$ if $|b|<Y$ and $0$ otherwise.
+\end{proof}
+
+Let $\Gamma=\max\{\log\|T(E,x)\|:E\in J,\ |\operatorname{Im}x|\le\delta_1\}$ and $K_Z=\lceil(\Gamma+2)/(\pi\delta_1)\rceil$. For $E\in J$ write $t_q(x,E)=\sum_kc_{q,k}(E)e^{2\pi ikx}$ and let
+\[
+T_{q,E}(x)=\sum_{|k|\le K_Z}c_{q,k}(E)e^{2\pi ikx}
+\]
+be its truncation. For real $E$ it is a real trigonometric polynomial.
+
+\begin{lemma}[Zero count]\label{lem:zerocount}
+Fix $y_0\in(0,\delta_1/2]$, $s\in(0,1)$, $a>0$ and $\eta>0$, and put
+\[
+\omt(E)=\max\Bigl\{1,\ \frac{\om_{y_0}(E)}{s}+\frac{2a+\eta}{2\pi sy_0}\Bigr\}.
+\]
+For all large $q$ and every $E\in J$:
+\begin{enumerate}
+\item $|t_q(x,E)-T_{q,E}(x)|\le e^{-q}$ for $|\operatorname{Im}x|\le qy_0$;
+\item the number $N(E)$ of zeros $\zeta$ of $T_{q,E}$ in $\C/\Z$, counted with multiplicity, with $|\operatorname{Im}\zeta|\le(1-s)qy_0$, satisfies $N(E)\le2\omt(E)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+1. For $|\operatorname{Im}x|\le q\delta_1$ every factor of the rational product defining $t_q(x,E)$ has a phase with imaginary part at most $\delta_1$, so $|t_q(x,E)|\le2e^{\Gamma q}$. Shifting the contour of the Fourier integral gives $|c_{q,k}(E)|\le2e^{\Gamma q-2\pi|k|q\delta_1}$~\cite[proof of Lemma~7.5]{DMuniv}. For $|\operatorname{Im}x|\le qy_0\le q\delta_1/2$,
+\[
+\sum_{|k|>K_Z}|c_{q,k}(E)|e^{2\pi|k|qy_0}\le\sum_{|k|>K_Z}2e^{\Gamma q-\pi|k|q\delta_1}\le8e^{(\Gamma-\pi(K_Z+1)\delta_1)q}\le8e^{-2q}\le e^{-q}
+\]
+for large $q$, since $\pi K_Z\delta_1\ge\Gamma+2$.
+
+2. If $T_{q,E}$ is constant there is nothing to count. Otherwise apply Lemma~\ref{lem:jensen} with $Y=qy_0$. On the line $\operatorname{Im}x=\pm Y$ we have $t_q(x,E)=\tr A^{(p/q)}_q(E,x/q)$ with $\operatorname{Im}(x/q)=\pm y_0$. So Lemma~\ref{lem:growthy}, part~1 and the evenness of $L(E,\cdot)$ give $m_{\pm Y}(T_{q,E})\le\log\bigl(2C'e^{(L(E,y_0)+a)q}+e^{-q}\bigr)\le q\bigl(L(E,y_0)+2a\bigr)$ for large $q$. The mean lower bound~\cite[Lemma~7.6]{DMuniv} gives $m_0(T_{q,E})\ge q(\ell(E)-\eta)$; its proof applies verbatim to the truncation degree $K_Z$, since the truncation error on $\R$ is at most $e^{-q}$ by part~1 and~\cite[Lemma~7.3(5)]{DMuniv} loses only $K_Z\log4$. Each zero counted in $N(E)$ contributes at least $sY$ to the sum in Lemma~\ref{lem:jensen}. Therefore
+\[
+2\pi sqy_0N(E)\le m_Y+m_{-Y}-2m_0\le2q\bigl(L(E,y_0)-\ell(E)+2a+\eta\bigr)=2q\bigl(2\pi y_0\om_{y_0}(E)+2a+\eta\bigr),
+\]
+which is $N(E)\le2\omt(E)$.
+\end{proof}
+
+All thresholds depend only on $v$, $\alpha$ and the fixed parameters, not on $E\in J$.
+
+\begin{remark}[Twice the acceleration]\label{rem:twice}
+Fix $E\in\Sigma$. Choosing $y_0,a,\eta$ small and $s$ close to $1$, depending on $E$, makes $2\omt(E)<2\om(E)+1$ by Lemma~\ref{lem:omy}(2), so $N(E)\le2\om(E)$ for all large $q$, with a threshold depending on $E$. In words: at a fixed spectral energy, in a strip of width proportional to $q$, the truncated discriminant has at most twice the acceleration many zeros. We do not claim a count that is uniform over energies with different accelerations; the arguments below keep the finite-height quantity $\omt$, which is uniform. Han and Schlag connected the acceleration with zero counts of finite-volume Dirichlet determinants~\cite[Theorem~1.2]{HanSchlag2022}, under Diophantine assumptions, and Ge, Jitomirskaya, You and Zhou identified the acceleration with the number of vanishing dual Lyapunov exponents~\cite{GJYZ2023}. Lemma~\ref{lem:zerocount} is a finite-scale statement for rational discriminants at every irrational frequency; it is proved directly from the Jensen identity and the mean lower bound.
+\end{remark}
+
+\subsection{Sublevel sets}
+
+Write $\mathsf g(u)=|\sin\pi u|e^{-\pi|\operatorname{Im}u|}$ for $u\in\C/\Z$ and $c_0=2e^{-\pi}$, as in~\cite[Section~7.2]{DMuniv}.
+
+\begin{lemma}[Sublevel sets]\label{lem:sublevel}
+In the setting of Lemma~\ref{lem:zerocount}, let $q$ be large, $E\in J$ and $\Lambda'>0$, and put
+\[
+\eps_X=4^{K_Z}(\Lambda'+e^{-q})\,e^{-m_0(T_{q,E})}\,0.49^{-2K_Z}.
+\]
+If $\eps_X<c_0^{2K_Z}$, then $X=\{x\in\T:|t_q(x,E)|<\Lambda'\}$ is empty when $N(E)=0$, and otherwise lies in the union of $N(E)$ arcs of length $2r$, centred at the real parts of the zeros counted in $N(E)$, with $r=\eps_X^{1/N(E)}/c_0$. In particular $X$ is covered by at most $2\omt(E)$ arcs of length at most $2\eps_X^{1/(2\omt(E))}/c_0$.
+\end{lemma}
+
+\begin{proof}
+Write $\mathcal T=T_{q,E}$, of exact degree $K'\le K_Z$. For real $x$, \cite[Lemma~7.3(3)]{DMuniv} holds with equality: $|\mathcal T(x)|=4^{K'}e^{m_0(\mathcal T)}\prod_k\mathsf g(x-\zeta_k)$. A zero not counted in $N(E)$ has $|\operatorname{Im}\zeta_k|>(1-s)qy_0\ge1$ for large $q$, and then $\mathsf g(x-\zeta_k)\ge0.49$~\cite[proof of Lemma~7.3(2)]{DMuniv}. If $x\in X$, then $|\mathcal T(x)|<\Lambda'+e^{-q}$ by Lemma~\ref{lem:zerocount}(1), so the product of $\mathsf g(x-\zeta_k)$ over the counted zeros is less than $\eps_X$. If $N(E)=0$ the product is $1>\eps_X$, which is impossible. Otherwise some counted zero has $\mathsf g(x-\zeta_k)<\eps_X^{1/N(E)}<c_0$. Since $\mathsf g(u)\ge c_0\min\{\dist(u,\Z),1\}$~\cite[Lemma~7.3(2)]{DMuniv}, $\dist(x-\operatorname{Re}\zeta_k,\Z)\le\dist(x-\zeta_k,\Z)<\eps_X^{1/N(E)}/c_0$. The last sentence follows from $N(E)\le2\omt(E)$ and $\eps_X<1$.
+\end{proof}
+
+At an order-one threshold, Lemma~\ref{lem:sublevel} covers the sublevel set by at most $2\omt(E)$ arcs of length at most about $(e^{-m_0(T_{q,E})})^{1/(2\omt(E))}$, where $m_0(T_{q,E})\approx q\ell(E)$; it gives upper bounds on the arcs, not their actual lengths. At a fixed spectral energy the limiting worst-cluster scale is $e^{-\ell(E)q/(2\om(E))}$. This is the price of an exponentially tight cluster of zeros, which need not coincide, and it is the source of the factor $2\om$ below.

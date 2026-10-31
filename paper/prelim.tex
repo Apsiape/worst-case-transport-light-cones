@@ -1,0 +1,95 @@
+\section{Setting and imported results}\label{sec:prelim}
+
+\subsection{Operators, Lyapunov exponents and acceleration}
+
+Throughout, $v:\T\to\R$ is real analytic. It extends holomorphically to a strip $|\operatorname{Im}x|<\delta_v$, and we fix $0<\delta_1<\delta_v$. For an irrational $\alpha$ and a phase $\theta\in\T$ we write $H_\theta=H_{v,\alpha,\theta}$ for the operator~\eqref{eq:qp}, and $H_{\lambda,\alpha,\theta}$ for the almost Mathieu operator, $v(x)=2\lambda\cos2\pi x$; for it we write $L=\log\lambda$. The spectrum $\Sigma$ of $H_\theta$ does not depend on $\theta$. We put
+\[
+J=[-\|v\|_\infty-3,\ \|v\|_\infty+3],
+\]
+an interval that contains $\Sigma$ with room to spare.
+
+For $E\in\C$ and $x\in\C$ with $|\operatorname{Im}x|<\delta_v$ let $T(E,x)=\bigl(\begin{smallmatrix}E-v(x)&-1\\1&0\end{smallmatrix}\bigr)$ and $A_r(E,x)=T(E,x+(r-1)\alpha)\cdots T(E,x)$. For a rational frequency $p/q$ we write $A^{(p/q)}_r$ for the same products with $\alpha$ replaced by $p/q$. We write $\ell(E)$ for the Lyapunov exponent at $E\in\C$, and, for real $E$ and $|y|<\delta_v$, $L(E,y)$ for the Lyapunov exponent of the cocycle $x\mapsto T(E,x+iy)$ over the rotation by $\alpha$; so $L(E,0)=\ell(E)$. The function $L(E,\cdot)$ is even and convex~\cite[Section~2.1]{Avila2015}. The \emph{acceleration} is
+\[
+\om(E)=\lim_{y\downarrow0}\frac{L(E,y)-\ell(E)}{2\pi y}.
+\]
+We use three facts from Avila's global theory~\cite{Avila2015}, in the form recorded in~\cite[Section~5.1]{DMuniv}.
+\begin{itemize}
+\item[(A1)] \emph{Quantization}~\cite[Theorem~5]{Avila2015}. The acceleration of an analytic $SL(2,\C)$ cocycle over an irrational rotation is an integer. Hence $L(E,\cdot)$ is convex and piecewise affine with slopes in $2\pi\Z$.
+\item[(A2)] \emph{Regularity}~\cite[Definition~3 and Theorem~6]{Avila2015}. A cocycle is regular if its complexified Lyapunov exponent is affine for heights near zero. If its Lyapunov exponent is positive, it is regular if and only if it is uniformly hyperbolic.
+\item[(A3)] \emph{Uniform hyperbolicity}~\cite[Section~2.1]{Avila2015}. A real energy lies outside $\Sigma$ if and only if its cocycle is uniformly hyperbolic. Uniform hyperbolicity is an open condition, and the Lyapunov exponent is continuous on the uniformly hyperbolic cocycles.
+\end{itemize}
+The operator is \emph{supercritical} if $\ell>0$ on $\Sigma$. Then $\ell_*=\min_\Sigma\ell>0$, and we put $\ell^+=\max_\Sigma\ell$. At a supercritical spectral energy the acceleration is an integer $\om(E)\ge1$: if it were $0$, evenness would make $L(E,\cdot)$ constant near $0$, the cocycle would be regular with positive Lyapunov exponent, hence uniformly hyperbolic by (A2), and $E\notin\Sigma$ by (A3)~\cite[proof of Lemma~5.2]{DMuniv}. The operator is \emph{supercritical and type~I} if moreover $\om=1$ on $\Sigma$~\cite[Definition~2.1]{GeJitomirskaya2024},~\cite[Definition~5.1]{DMuniv}. The almost Mathieu operator with $\lambda>1$ is supercritical and type~I, with $\ell=L$ and $\om=1$ on $\Sigma$~\cite[Section~5.1]{DMuniv}.
+
+We also use the continuity of $E\mapsto L(E,y)$ for each fixed $|y|<\delta_v$, which holds for analytic $SL(2,\C)$ cocycles at every irrational frequency~\cite{JKS2009,AJS2014}; for $y=0$ it is~\cite[Theorem~1]{BourgainJitomirskaya2002}. Since $L(E,\cdot)$ is convex, pointwise convergence on an open interval is locally uniform, so $(E,y)\mapsto L(E,y)$ is jointly continuous on $\R\times(-\delta_v,\delta_v)$. Finally, by the Thouless formula~\cite{CraigSimon1983},
+\begin{equation}\label{eq:thouless}
+\ell(E+i\eta)\ge\ell(E)\qquad(E\in\R,\ \eta\ge0),
+\end{equation}
+as in~\cite[proof of Lemma~5.8]{DMuniv}. We use~\eqref{eq:thouless} only at energies $E+i\eta$ with the same real part.
+
+\subsection{Continued fractions}
+
+Let $p_n/q_n$ be the convergents of $\alpha$ and put
+\[
+\delta_n=q_n\alpha-p_n,\qquad D_n=|\delta_n|^{-1},\qquad b_n=\frac{\log D_n}{q_n},\qquad \beta(\alpha)=\limsup_{n\to\infty}b_n=\limsup_{n\to\infty}\frac{\log q_{n+1}}{q_n}.
+\]
+The two limsups agree because $q_{n+1}<D_n<2q_{n+1}$~\cite[eq.~(5)]{DMuniv}. At a fixed scale we drop the index and write $q,p,\delta,D,b$. We also use the limsups along even and odd denominators,
+\[
+\beta_e(\alpha)=\limsup_{n:\,q_n\text{ even}}b_n,\qquad\beta_o(\alpha)=\limsup_{n:\,q_n\text{ odd}}b_n,
+\]
+with the convention that a limsup over a finite set is $0$. Thus $\beta=\max\{\beta_e,\beta_o\}$.
+
+\subsection{Transport exponents}
+
+For a vector $\psi\in\ell^2(\Z)$ let $\psi_t=e^{-itH}\psi$ and
+\begin{equation}\label{eq:abel}
+\begin{gathered}
+a_\psi(j,T)=\frac2T\int_0^\infty e^{-2t/T}|\langle\delta_j,\psi_t\rangle|^2\,dt,\\
+P_\psi(N,T)=\sum_{|j|>N}a_\psi(j,T),\qquad M_{p,\psi}(T)=\sum_j|j|^pa_\psi(j,T).
+\end{gathered}
+\end{equation}
+For $\psi\ne0$ the upper transport exponents are
+\begin{equation}\label{eq:exponents}
+\beta^+_\psi(p)=\limsup_{T\to\infty}\frac{\log M_{p,\psi}(T)}{p\log T},\qquad\alpha^+_{u,\psi}=\sup_{p>0}\beta^+_\psi(p).
+\end{equation}
+They do not change when $\psi$ is multiplied by a nonzero constant. When $\psi=\delta_0$ we drop the index, and we write $P_\theta(N,T)$ and $\au(\theta)=\au(H_{v,\alpha,\theta})$ when the phase matters. The fastest exponent $\au$ is that of Damanik and Tcheremchantsev~\cite{DT2007}. Always $0\le\au\le1$. We use two facts from~\cite{DMuniv}: if $0<a<1$ and $P_\psi(T^a,T)=O(T^{-m})$ for every $m$, for a unit vector $\psi$ with finite moments, then $\alpha^+_{u,\psi}\le a$~\cite[Lemma~2.3]{DMuniv}; and the Parseval formula~\cite[Lemma~2.1]{DMuniv}
+\begin{equation}\label{eq:parseval}
+P_\psi(N,T)=\frac1{\pi T}\int_\R\bigl\|\un_{\{|j|>N\}}(H-E-i/T)^{-1}\psi\bigr\|^2\,dE,\qquad\frac1{\pi T}\int_\R\bigl\|(H-E-i/T)^{-1}\psi\bigr\|^2\,dE=\|\psi\|^2.
+\end{equation}
+Conversely, $M_{p}(T)\ge N^pP(N,T)$, so a tail $P(N_j,T_j)\ge T_j^{-C}$ along $T_j\to\infty$ with $\log N_j/\log T_j\to a$ gives $\au\ge a$.
+
+\begin{definition}[Uniform exponent]\label{def:unif}
+For $v$ and $\alpha$ fixed, let
+\[
+\aunif=\inf\Bigl\{a\ge0:\ \sup_{\theta\in\T}P_\theta(T^a,T)=O(T^{-m})\text{ as }T\to\infty,\text{ for every }m>0\Bigr\}.
+\]
+\end{definition}
+
+The set in the definition contains every $a>1$, because hopping has range one, so $\aunif\le1$. If $\sup_\theta P_\theta(T^a,T)=O(T^{-m})$ for every $m$, then $\au(\theta)\le a$ for every $\theta$. Hence
+\begin{equation}\label{eq:unifsup}
+\sup_\theta\au(\theta)\le\aunif.
+\end{equation}
+Translation by $x$ sites conjugates $H_\theta$ to $H_{\theta+x\alpha}$, and for fixed $N,T$ the map $\theta\mapsto P_\theta(N,T)$ is continuous. Since the orbit $\theta+x\alpha$ is dense, $\sup_{x\in\Z}P_{\theta+x\alpha}(N,T)=\sup_\varphi P_\varphi(N,T)$ for every $\theta$. So $\aunif$ is also the exponent of the packets launched from all sites of one fixed operator $H_\theta$, uniformly in the launch site, for any $\theta$. We do not know whether equality holds in~\eqref{eq:unifsup} in general.
+
+For $0<\beta<\infty$ we write $F_\beta(\ell)=\max\{0,1-\ell/\beta\}$, with $F_0\equiv0$ and $F_\infty\equiv1$, as in~\cite{DMamo,DMuniv}.
+
+\subsection{Rational discriminants}
+
+Let $p/q$ be a convergent of $\alpha$ and $\Delta_\varphi(E)=\tr A^{(p/q)}_q(E,\varphi)$ the discriminant of the $p/q$-periodic operator at phase $\varphi$. It is invariant under $\varphi\mapsto\varphi+1/q$, so
+\[
+t_q(x,E)=\Delta_{x/q}(E)
+\]
+is well defined, $1$-periodic and analytic in $x$ on $|\operatorname{Im}x|<q\delta_v$, and a monic real polynomial of degree $q$ in $E$~\cite[Section~5.2]{DMuniv}. For real $x$ its roots are $q$ simple real numbers, the \emph{band centres}~\cite[Lemma~5.3]{DMuniv}. For $H_\theta$ the \emph{local phase} at site $j$ is $x_j=q(\theta+j\alpha)\bmod1=x_0+j\delta$. For the almost Mathieu operator, Chambers' formula~\cite[Lemma~3.1]{DMamo} gives
+\begin{equation}\label{eq:chambers}
+\Delta_\varphi(E)=P_q(E)-2\lambda^q\cos(2\pi q\varphi)
+\end{equation}
+with a real monic polynomial $P_q=P_{p/q}$ of degree $q$ that does not depend on $\varphi$.
+
+\subsection{Imported results}
+
+We use the companion papers~\cite{DMamo} (cited as A) and~\cite{DMuniv} (cited as B), version~1.0.0, with their numbering. From A: Lemma~2.1 (the set $\Ga$ of~\eqref{eq:Ga} has full measure), Lemma~2.3 (uniform growth on a neighbourhood $U_h$ of $\Sigma$), Lemma~2.5 (rational spectra), Lemma~3.1 (Chambers' formula), Proposition~3.3 and equation~(9) (the conserved polynomial and its normalization $J_n$, $\sigma_n$), Lemma~3.4, Lemmas~4.1--4.3 (barriers), Proposition~4.4, Proposition~7.1, Theorem~7.3, Lemma~8.2 (elliptic blocks), Lemmas~9.2, 9.3 and~9.5 (insertion, perturbed rotations, elliptic runs), Theorems~A, B and~D, and Lemma~10.1. From B: Lemmas~2.1, 2.3, 2.7 and~2.8, Theorem~4.1 (the lower bound), Lemmas~5.2--5.5, Corollary~5.6, Lemma~5.7 (the $q$-step identity), Theorem~5.9 (the per-denominator estimate), Corollary~5.10, the proof of Theorem~5.15 (its far-energy, forbidden-decay and cutting paragraphs, which do not use its hypothesis~(W)), Lemma~5.20, Definition~5.21, Lemma~5.22, Theorem~5.26, Proposition~5.27, Lemma~5.28, Theorem~5.29, Remark~5.30, Lemmas~7.3, 7.5 and~7.6 (factorization, truncation and the mean lower bound), and Theorems~A, B and~D. Each use is stated where it occurs.
+
+One further input is the trigonometric-polynomial product lemma of Avila and Jitomirskaya~\cite[Lemma~9.7]{AJ2009}; see also~\cite[Lemma~B.1]{JL2018}. For every irrational $\alpha$, every $x\in\R$ and every $n$, if $0\le l_0\le q_n-1$ minimizes $|\sin\pi(x+l\alpha)|$ over $0\le l\le q_n-1$, then
+\begin{equation}\label{eq:AJ}
+\Bigl|\sum_{0\le l\le q_n-1,\ l\ne l_0}\log|\sin\pi(x+l\alpha)|+(q_n-1)\log2\Bigr|\le C\log q_n
+\end{equation}
+with an absolute constant $C$. No condition on $x$ or on the arithmetic of $\alpha$ is needed. We also use the elementary three-gap facts: for $0<|d|<q_n$, $\|d\alpha\|\ge\|q_{n-1}\alpha\|\ge1/(2q_n)$, where $\|\cdot\|$ is the distance to $\Z$; so the points $\theta+s\alpha$, $s$ ranging over $q_n$ consecutive integers, are at mutual distance at least $1/(2q_n)$.

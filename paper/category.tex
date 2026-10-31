@@ -1,0 +1,49 @@
+\section{Measure versus category}\label{sec:category}
+
+The lower bounds of Section~\ref{sec:sharp} depend on the phase only through the local phase $q_n\theta\bmod1$ at the scale used, and they are stable under small changes of it. A standard Baire argument then turns them into lower bounds on a residual set of phases.
+
+\begin{theorem}[A Baire principle]\label{thm:G}
+Let $v$ be continuous and $\alpha$ irrational. Suppose there are scales $n_j\to\infty$, times $T_j\to\infty$, radii $N_j$, a constant $C>0$, a number $a_*\in[0,1]$ with $\log N_j/\log T_j\to a_*$, and nonempty open sets $U_j\subset\T$ such that
+\[
+P_\theta(N_j,T_j)\ge T_j^{-C}\qquad\text{for every }\theta\text{ with }q_{n_j}\theta\bmod1\in U_j .
+\]
+Then $\{\theta:\au(H_{v,\alpha,\theta})\ge a_*\}$ contains a dense $G_\delta$ set.
+\end{theorem}
+
+\begin{proof}
+The map $\theta\mapsto H_\theta$ is norm continuous, so for fixed $N,T$ the map $\theta\mapsto P_\theta(N,T)=1-\sum_{|j|\le N}a_\theta(j,T)$ is continuous, by dominated convergence in the Abel integral. The set $V_j=\{\theta:P_\theta(N_j,T_j)>T_j^{-C}/2\}$ is open and contains $\{\theta:q_{n_j}\theta\in U_j\}$, a nonempty open $1/q_{n_j}$-periodic set, which meets every interval of length greater than $1/q_{n_j}$. So $W_m=\bigcup_{j\ge m}V_j$ is open and dense, and $G=\bigcap_mW_m$ is a dense $G_\delta$ set. For $\theta\in G$, $\theta\in V_j$ for infinitely many $j$, and $M_p(T_j)\ge N_j^pP_\theta(N_j,T_j)\ge N_j^pT_j^{-C}/2$. Hence $\beta^+(p)\ge a_*-C/p$, and letting $p\to\infty$ gives $\au(\theta)\ge a_*$.
+\end{proof}
+
+The argument is the standard open-dense mechanism; we claim no novelty for it. Its content lies in the inputs.
+
+\begin{corollary}[The almost Mathieu operator]\label{cor:G1}
+Let $\lambda>1$ and $\alpha$ irrational with $\beta_e(\alpha)>L/2$. Then $\au(H_{\lambda,\alpha,\theta})\ge1-L/(2\beta_e(\alpha))$ for every $\theta$ in a dense $G_\delta$ set, read as $1$ if $\beta_e=\infty$. If moreover $\beta_e(\alpha)=\beta(\alpha)\in[L,\infty)$, then
+\[
+\au(H_{\lambda,\alpha,\theta})=1-\frac L{2\beta(\alpha)}\quad\text{on a dense }G_\delta\text{ set},
+\]
+which is strictly larger than the value $1-L/\beta(\alpha)$ at almost every phase.
+\end{corollary}
+
+\begin{proof}
+If $\beta_e=\infty$ the value is $1$ at every phase by Remark~\ref{rem:endpoint}. Let $L/2<\beta_e<\infty$ and fix $h>L$ with $h/2+(h-L)<\beta_e$ and $\eta=1/4$. Along even scales $n_j$ with $b_{n_j}\to\beta_e$, Theorem~\ref{thm:quarter} gives~\eqref{eq:quarter} at $T_j=|\delta_{n_j}|^{-1}$ for every $\theta$ whose local phase lies in the open nonempty set $U_j=\{x\in\T:|\cos2\pi x-(-1)^{q_{n_j}/2}|<\eta\lambda^{-q_{n_j}}/16\}$. There $T_j^{-2}e^{-2hq_{n_j}}\ge T_j^{-C}$ with $C=2+2h/(h/2+h-L)$, and $\log N_j/\log T_j\to1-h/(2\beta_e)$. Theorem~\ref{thm:G} gives a dense $G_\delta$ set on which $\au\ge1-h/(2\beta_e)$. Intersect these sets along a sequence $h\downarrow L$; a countable intersection of dense $G_\delta$ sets is a dense $G_\delta$ set. If $\beta_e=\beta\ge L$, Corollary~\ref{cor:typeI} gives $\au\le1-L/(2\beta)$ at every phase. The almost-everywhere value is~\cite[Theorem~A]{DMamo}; for finite $\beta\ge L$ the two values differ.
+\end{proof}
+
+So for these frequencies the transport exponent of the almost Mathieu operator takes one value at almost every phase and a strictly larger value at a residual set of phases. At $\beta=\infty$ both values are $1$.
+
+\begin{corollary}[Odd-harmonic potentials]\label{cor:G2}
+Let $v$ be real analytic and odd-harmonic, with $H_{v,\alpha}$ supercritical, and $\beta_e(\alpha)>\ell(0)/2$. Then $\au(H_{v,\alpha,\theta})\ge1-\ell(0)/(2\beta_e(\alpha))$ on a dense $G_\delta$ set of phases. If moreover $H_{v,\alpha}$ is type~I and $\ell_*\le\beta(\alpha)<\infty$, then $\au\le1-\ell_*/(2\beta(\alpha))$ at every phase, and $\au=\max\{0,1-\ell_*/\beta(\alpha)\}$ at almost every phase~\cite[Theorem~A]{DMuniv}.
+\end{corollary}
+
+\begin{proof}
+In the proof of Theorem~\ref{thm:oddharm}, the lower bound at scale $n$ holds for the packet launched at any site whose first block has local phase within $|\delta_n|$ of $x'_n=q_n\varphi_0$, with the same constants. Applied to the launch site $0$, it holds for every $\theta$ with $q_n\theta$ in a fixed nonempty open neighbourhood $U_n$ of $x'_n-q_n\alpha$, because the insertion error is controlled uniformly there. Theorem~\ref{thm:G} and a countable intersection give the lower bound. The upper bound is Corollary~\ref{cor:typeI}.
+\end{proof}
+
+The lower and upper bounds of Corollary~\ref{cor:G2} coincide only when $\ell(0)=\ell_*$ and $\beta_e=\beta$. We do not claim that the worst exponent is attained on a residual set for every odd-harmonic type~I potential.
+
+\begin{corollary}[Non-primitive potentials]\label{cor:G3}
+Let $v(x)=w(sx)$ with an integer $s\ge2$. If the conclusion of Corollary~\ref{cor:G1} or~\ref{cor:G2} holds for $w$ at frequency $s\alpha$, with $\beta_e(s\alpha)$ and $\beta(s\alpha)$ in place of $\beta_e(\alpha)$ and $\beta(\alpha)$, then it holds for $v$ at frequency $\alpha$ with the same numbers.
+\end{corollary}
+
+\begin{proof}
+$H_{v,\alpha,\theta}=H_{w,s\alpha,s\theta}$~\cite[Theorem~5.29]{DMuniv}, and $\theta\mapsto s\theta$ is a continuous, open surjection of $\T$, so preimages of dense $G_\delta$ sets are dense $G_\delta$ sets and preimages of null sets are null.
+\end{proof}

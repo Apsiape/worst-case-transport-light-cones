@@ -1,0 +1,285 @@
+\begin{thebibliography}{10}
+
+\bibitem{AubryAndre1980}
+Serge Aubry and Gilles Andr{\'e}.
+\newblock Analyticity breaking and {A}nderson localization in incommensurate
+  lattices.
+\newblock {\em Ann. Israel Phys. Soc.}, 3:133--164, 1980.
+
+\bibitem{Avila2015}
+Artur Avila.
+\newblock Global theory of one-frequency {S}chr{\"o}dinger operators.
+\newblock {\em Acta Math.}, 215(1):1--54, 2015.
+\newblock Statement numbers as in the published version. Theorems~5 and~6 and
+  Corollary~7 carry the same numbers in arXiv:0905.3902v1, where Definition~3
+  and Remark~4 are Definition~2 and Remark~3.
+\newblock \href {https://arxiv.org/abs/0905.3902} {\path{arXiv:0905.3902}},
+  \href {https://doi.org/10.1007/s11511-015-0128-7}
+  {\path{doi:10.1007/s11511-015-0128-7}}.
+
+\bibitem{AJ2009}
+Artur Avila and Svetlana Jitomirskaya.
+\newblock The {T}en {M}artini {P}roblem.
+\newblock {\em Ann. of Math. (2)}, 170(1):303--342, 2009.
+
+\bibitem{AJS2014}
+Artur Avila, Svetlana Jitomirskaya, and Christian Sadel.
+\newblock Complex one-frequency cocycles.
+\newblock {\em J. Eur. Math. Soc.}, 16(9):1915--1935, 2014.
+
+\bibitem{AYZ2017}
+Artur Avila, Jiangong You, and Qi~Zhou.
+\newblock Sharp phase transitions for the almost {M}athieu operator.
+\newblock {\em Duke Math. J.}, 166(14):2697--2718, 2017.
+
+\bibitem{BCW2021}
+Johannes Bausch, Toby~S. Cubitt, and James~D. Watson.
+\newblock Uncomputability of phase diagrams.
+\newblock {\em Nature Commun.}, 12:452, 2021.
+\newblock \href {https://arxiv.org/abs/1910.01631} {\path{arXiv:1910.01631}}.
+
+\bibitem{BellissardSimon1982}
+Jean Bellissard and Barry Simon.
+\newblock Cantor spectrum for the almost {M}athieu equation.
+\newblock {\em J. Funct. Anal.}, 48(3):408--419, 1982.
+
+\bibitem{BACHNS2015}
+Jonathan Ben-Artzi, Matthew~J. Colbrook, Anders~C. Hansen, Olavi Nevanlinna,
+  and Markus Seidel.
+\newblock Computing spectra -- {O}n the solvability complexity index hierarchy
+  and towers of algorithms.
+\newblock arXiv:1508.03280, 2015.
+\newblock \href {https://arxiv.org/abs/1508.03280} {\path{arXiv:1508.03280}}.
+
+\bibitem{BourgainJitomirskaya2002}
+Jean Bourgain and Svetlana Jitomirskaya.
+\newblock Continuity of the {L}yapunov exponent for quasiperiodic operators
+  with analytic potential.
+\newblock {\em J. Statist. Phys.}, 108:1203--1218, 2002.
+\newblock \href {https://arxiv.org/abs/math-ph/0110040}
+  {\path{arXiv:math-ph/0110040}}.
+
+\bibitem{BdJLWWY2025}
+Matthew Bradshaw, Titus de~Jong, Wencai Liu, Audrey Wang, Xueyin Wang, and
+  Bingheng Yang.
+\newblock Quantum dynamical bounds for quasi-periodic operators with
+  {L}iouville frequencies.
+\newblock arXiv:2510.25603, 2025.
+\newblock \href {https://arxiv.org/abs/2510.25603} {\path{arXiv:2510.25603}}.
+
+\bibitem{CEF2026}
+Matthew~J. Colbrook, Mark Embree, and Jake Fillman.
+\newblock Computing spectral size: rigorous algorithms and the limits of
+  computation.
+\newblock arXiv:2407.20353v2, 2026.
+\newblock \href {https://arxiv.org/abs/2407.20353} {\path{arXiv:2407.20353}}.
+
+\bibitem{ColbrookHansen2019}
+Matthew~J. Colbrook and Anders~C. Hansen.
+\newblock The foundations of spectral computations via the solvability
+  complexity index hierarchy.
+\newblock arXiv:1908.09592, 2019.
+\newblock \href {https://arxiv.org/abs/1908.09592} {\path{arXiv:1908.09592}}.
+
+\bibitem{CraigSimon1983}
+Walter Craig and Barry Simon.
+\newblock Subharmonicity of the {L}yaponov index.
+\newblock {\em Duke Math. J.}, 50(2):551--560, 1983.
+\newblock \href {https://doi.org/10.1215/S0012-7094-83-05025-1}
+  {\path{doi:10.1215/S0012-7094-83-05025-1}}.
+
+\bibitem{CPGW2015}
+Toby~S. Cubitt, David Perez-Garcia, and Michael~M. Wolf.
+\newblock Undecidability of the spectral gap.
+\newblock {\em Nature}, 528:207--211, 2015.
+\newblock \href {https://doi.org/10.1038/nature16059}
+  {\path{doi:10.1038/nature16059}}.
+
+\bibitem{DLLY2016}
+David Damanik, Marius Lemm, Milivoje Lukic, and William Yessen.
+\newblock On anomalous {L}ieb--{R}obinson bounds for the {F}ibonacci {XY}
+  chain.
+\newblock {\em J. Spectr. Theory}, 6(3):601--628, 2016.
+\newblock \href {https://arxiv.org/abs/1407.4924} {\path{arXiv:1407.4924}}.
+
+\bibitem{DT2007}
+David Damanik and Serguei Tcheremchantsev.
+\newblock Upper bounds in quantum dynamics.
+\newblock {\em J. Amer. Math. Soc.}, 20:799--827, 2007.
+\newblock \href {https://arxiv.org/abs/math-ph/0502044}
+  {\path{arXiv:math-ph/0502044}}.
+
+\bibitem{DT2008}
+David Damanik and Serguei Tcheremchantsev.
+\newblock Quantum dynamics via complex analysis methods: general upper bounds
+  without time-averaging and tight lower bounds for the strongly coupled
+  {F}ibonacci {H}amiltonian.
+\newblock {\em J. Funct. Anal.}, 255:2872--2887, 2008.
+\newblock \href {https://arxiv.org/abs/0801.3399} {\path{arXiv:0801.3399}}.
+
+\bibitem{DMamo}
+Seth Douglas and Nidhal Mghirbi.
+\newblock Exact transport and packing dimension for the almost {M}athieu
+  operator.
+\newblock Preprint, version 1.0.0, Zenodo, 2026.
+\newblock \href {https://doi.org/10.5281/zenodo.23830305}
+  {\path{doi:10.5281/zenodo.23830305}}.
+
+\bibitem{DMuniv}
+Seth Douglas and Nidhal Mghirbi.
+\newblock Universality of the transport law for supercritical quasi-periodic
+  operators.
+\newblock Preprint, version 1.0.0, Zenodo, 2026.
+\newblock \href {https://doi.org/10.5281/zenodo.23830333}
+  {\path{doi:10.5281/zenodo.23830333}}.
+
+\bibitem{GeJitomirskaya2024}
+Lingrui Ge and Svetlana Jitomirskaya.
+\newblock Intrinsic symplectic structure and sharp arithmetic universality.
+\newblock arXiv:2407.08866v2, 2026.
+\newblock Version~v1 (2024): \emph{Hidden subcriticality, symplectic structure,
+  and universality of sharp arithmetic spectral results for type {I}
+  operators}.
+\newblock \href {https://arxiv.org/abs/2407.08866} {\path{arXiv:2407.08866}}.
+
+\bibitem{GJYZ2023}
+Lingrui Ge, Svetlana Jitomirskaya, Jiangong You, and Qi~Zhou.
+\newblock Multiplicative {J}ensen's formula and quantitative global theory of
+  one-frequency {S}chr{\"o}dinger operators.
+\newblock arXiv:2306.16387, 2023.
+\newblock \href {https://arxiv.org/abs/2306.16387} {\path{arXiv:2306.16387}}.
+
+\bibitem{HSS2012}
+Eman Hamza, Robert Sims, and G{\"u}nter Stolz.
+\newblock Dynamical localization in disordered quantum spin systems.
+\newblock {\em Comm. Math. Phys.}, 315(1):215--239, 2012.
+\newblock \href {https://arxiv.org/abs/1108.3811} {\path{arXiv:1108.3811}}.
+
+\bibitem{HanJitomirskaya2019}
+Rui Han and Svetlana Jitomirskaya.
+\newblock Quantum dynamical bounds for ergodic potentials with underlying
+  dynamics of zero topological entropy.
+\newblock {\em Anal. PDE}, 12(4):867--902, 2019.
+\newblock \href {https://arxiv.org/abs/1607.08576} {\path{arXiv:1607.08576}}.
+
+\bibitem{HanSchlag2022}
+Rui Han and Wilhelm Schlag.
+\newblock Avila's acceleration via zeros of determinants, and applications to
+  {S}chr{\"o}dinger cocycles.
+\newblock arXiv:2212.05988, 2022.
+\newblock Published in Comm. Pure Appl. Math. 79(3) (2026), 729--761; we cite
+  the numbering of arXiv v2.
+\newblock \href {https://arxiv.org/abs/2212.05988} {\path{arXiv:2212.05988}}.
+
+\bibitem{JKS2009}
+Svetlana Jitomirskaya, D.~A. Koslover, and M.~S. Schulteis.
+\newblock Continuity of the {L}yapunov exponent for analytic quasiperiodic
+  cocycles.
+\newblock {\em Ergodic Theory Dynam. Systems}, 29(6):1881--1905, 2009.
+
+\bibitem{JL2018}
+Svetlana Jitomirskaya and Wencai Liu.
+\newblock Universal hierarchical structure of quasiperiodic eigenfunctions.
+\newblock {\em Ann. of Math. (2)}, 187(3):721--776, 2018.
+\newblock \href {https://arxiv.org/abs/1609.08664} {\path{arXiv:1609.08664}}.
+
+\bibitem{JLphase}
+Svetlana Jitomirskaya and Wencai Liu.
+\newblock Universal reflective-hierarchical structure of quasiperiodic
+  eigenfunctions and sharp spectral transition in phase.
+\newblock arXiv:1802.00781, 2018.
+\newblock \href {https://arxiv.org/abs/1802.00781} {\path{arXiv:1802.00781}}.
+
+\bibitem{JLM2024}
+Svetlana Jitomirskaya, Wencai Liu, and Lufang Mi.
+\newblock Sharp palindromic criterion for semi-uniform dynamical localization.
+\newblock arXiv:2410.21700, 2024.
+\newblock \href {https://arxiv.org/abs/2410.21700} {\path{arXiv:2410.21700}}.
+
+\bibitem{JLT2025}
+Svetlana Jitomirskaya, Wencai Liu, and Serguei Tcheremchantsev.
+\newblock Lower bounds on concentration through {B}orel transforms and
+  quantitative singularity of spectral measures near the arithmetic transition.
+\newblock arXiv:2501.12153, 2025.
+\newblock \href {https://arxiv.org/abs/2501.12153} {\path{arXiv:2501.12153}}.
+
+\bibitem{JitomirskayaMavi2017}
+Svetlana Jitomirskaya and Rajinder Mavi.
+\newblock Dynamical bounds for quasiperiodic {S}chr{\"o}dinger operators with
+  rough potentials.
+\newblock {\em Int. Math. Res. Not. IMRN}, 2017(1):96--120, 2017.
+\newblock Statement numbers as in arXiv:1412.0309v4.
+\newblock \href {https://arxiv.org/abs/1412.0309} {\path{arXiv:1412.0309}}.
+
+\bibitem{JZ2022}
+Svetlana Jitomirskaya and Shiwen Zhang.
+\newblock Quantitative continuity of singular continuous spectral measures and
+  arithmetic criteria for quasiperiodic {S}chr{\"o}dinger operators.
+\newblock {\em J. Eur. Math. Soc.}, 24:1723--1767, 2022.
+\newblock \href {https://arxiv.org/abs/1510.07086} {\path{arXiv:1510.07086}}.
+
+\bibitem{Kachkovskiy2016}
+Ilya Kachkovskiy.
+\newblock On transport properties of isotropic quasiperiodic {XY} spin chains.
+\newblock {\em Comm. Math. Phys.}, 345(2):659--673, 2016.
+\newblock \href {https://arxiv.org/abs/1505.07150} {\path{arXiv:1505.07150}}.
+
+\bibitem{LamoureuxMingo2007}
+Michael~P. Lamoureux and James~A. Mingo.
+\newblock On the characteristic polynomial of the almost {M}athieu operator.
+\newblock {\em Proc. Amer. Math. Soc.}, 135(10):3205--3215, 2007.
+\newblock \href {https://arxiv.org/abs/math/0606507}
+  {\path{arXiv:math/0606507}}, \href
+  {https://doi.org/10.1090/S0002-9939-07-08830-2}
+  {\path{doi:10.1090/S0002-9939-07-08830-2}}.
+
+\bibitem{LYZZ2017}
+Martin Leguil, Jiangong You, Zhiyan Zhao, and Qi~Zhou.
+\newblock Asymptotics of spectral gaps of quasi-periodic {S}chr{\"o}dinger
+  operators.
+\newblock arXiv:1712.04700, 2017.
+\newblock \href {https://arxiv.org/abs/1712.04700} {\path{arXiv:1712.04700}}.
+
+\bibitem{LSM1961}
+Elliott Lieb, Theodore Schultz, and Daniel Mattis.
+\newblock Two soluble models of an antiferromagnetic chain.
+\newblock {\em Ann. Physics}, 16:407--466, 1961.
+
+\bibitem{LiebRobinson1972}
+Elliott~H. Lieb and Derek~W. Robinson.
+\newblock The finite group velocity of quantum spin systems.
+\newblock {\em Comm. Math. Phys.}, 28:251--257, 1972.
+
+\bibitem{Liu2022}
+Wencai Liu.
+\newblock Small denominators and large numerators of quasiperiodic
+  {S}chr{\"o}dinger operators.
+\newblock arXiv:2205.04648, 2022.
+\newblock \href {https://arxiv.org/abs/2205.04648} {\path{arXiv:2205.04648}}.
+
+\bibitem{LiuShi2019}
+Wencai Liu and Yunfeng Shi.
+\newblock Upper bounds on the spectral gaps of quasi-periodic {S}chr{\"o}dinger
+  operators with {L}iouville frequencies.
+\newblock {\em J. Spectr. Theory}, 9(4):1223--1248, 2019.
+\newblock \href {https://arxiv.org/abs/1708.01760} {\path{arXiv:1708.01760}}.
+
+\bibitem{PLC2024}
+James Purcell, Zhi Li, and Toby~S. Cubitt.
+\newblock Chaitin phase transition.
+\newblock arXiv:2410.02600, 2024.
+\newblock \href {https://arxiv.org/abs/2410.02600} {\path{arXiv:2410.02600}}.
+
+\bibitem{RiddellSorensen2020}
+Jonathon Riddell and Erik~S. S{\o}rensen.
+\newblock Out-of-time-order correlations in the quasiperiodic
+  {A}ubry--{A}ndr{\'e} model.
+\newblock {\em Phys. Rev. B}, 101:024202, 2020.
+\newblock \href {https://arxiv.org/abs/1908.03292} {\path{arXiv:1908.03292}}.
+
+\bibitem{vanMouche1989}
+P.~van Mouche.
+\newblock The coexistence problem for the discrete {M}athieu operator.
+\newblock {\em Comm. Math. Phys.}, 122(1):23--33, 1989.
+
+\end{thebibliography}
