@@ -2,11 +2,17 @@
 
 Seth Douglas and Nidhal Mghirbi
 
-Version 2.0.0, November 2026. DOI: [10.5281/zenodo.23875774](https://doi.org/10.5281/zenodo.23875774). A preprint; it has not been peer reviewed. Version 1.0.0: [10.5281/zenodo.23845228](https://doi.org/10.5281/zenodo.23845228). Concept DOI (all versions): [10.5281/zenodo.23845227](https://doi.org/10.5281/zenodo.23845227).
+Version 2.0.1, November 2026. A preprint; it has not been peer reviewed. Version 2.0.0: [10.5281/zenodo.23875774](https://doi.org/10.5281/zenodo.23875774). Version 1.0.0: [10.5281/zenodo.23845228](https://doi.org/10.5281/zenodo.23845228). Concept DOI (all versions): [10.5281/zenodo.23845227](https://doi.org/10.5281/zenodo.23845227).
 
 ## Abstract
 
 We study the fastest transport exponent α_u^+ of supercritical analytic quasi-periodic Schrödinger operators at the worst phase. For finite Liouville exponent β, an upper law involving the Lyapunov exponent ℓ and acceleration ω keeps transport below one uniformly in phase. When β ≥ ℓ its local rate is 1 − ℓ/(2ωβ), and the factor 2ω is attained. For the almost Mathieu operator with L = log λ > 0, we prove the sharper uniform upper bound 1 − L/(2β) also on L/2 < β < L. Thus whenever the even-denominator exponent satisfies β_e = β > L/2, with β finite, the uniform exponent, the supremum over phases and the exponent at phase 1/4 all equal 1 − L/(2β). The same value holds on a dense G_δ set, while almost every phase has max{0, 1 − L/β}. The new upper proof uses translated one-band and two-band frames, an exact inverse-Morse factorization, matrix shells and one fixed energy unit through the full depth range. For odd-harmonic analytic potentials, a half-period sign flip gives a lower bound through a closed central gap. In the Aubry–André XY chain, for even sources and the specified receivers, the fixed-site light cone follows the typical law at almost every phase; the light cone uniform over sites follows the exact worst-case law when β_e = β > L/2 is finite. For an explicit computable chain these exponents differ and both have Turing degree 0″. We also prove computability of the Lyapunov exponent for computable analytic potentials and a transport exponent of degree 0″ throughout an explicit computable even-potential neighborhood. No computation enters the new upper proof.
+
+## Changes in version 2.0.1
+
+- Cites Liu and Wang (arXiv:2608.29339): for even potentials with positive Lyapunov exponent, the logarithmic growth of
+  phase-uniform moment bounds is sharp, with matching lower bounds along sequences of times at a completely resonant phase.
+  The introduction now places it beside the other work on sitewise and uniform dynamics. No result changes.
 
 ## Changes in version 2.0.0
 
