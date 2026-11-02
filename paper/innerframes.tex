@@ -1,0 +1,427 @@
+\section{Inner edges and the two-band normal form}\label{sec:innerframes}
+
+We now construct the data used in Definition~\ref{def:FPstar}.
+The imported global reduction is the translated-well reduction of
+\cite[Appendices A--D]{DMband}. We use its complex-energy transfer
+bounds, physical Green kernels, Gram orthogonalization and localized
+boundary weights. We do not import its Mathieu counting theorem as
+a transport theorem. The changes needed at inner edges are proved
+below. The lattice product estimates are recorded in
+Appendix~\ref{app:libcalculus}.
+
+\subsection{Two branches and the exact inverse Morse map}
+
+Chambers' formula, in a common periodic Bloch gauge, is
+\begin{equation}\label{eq:libchambers}
+ \det(E-B_t(k))=P(E)-2\cos k-c(t),\qquad
+ c(t)=2\Lambda\cos2\pi qt.
+\end{equation}
+This is the classical identity already used in
+Section~\ref{sec:sharp}; see \cite{Chambers1965} and
+\cite[Methods and conventions]{DMband}.
+The phase-union bands are the intervals on which $|P|\le R_*$.
+An inner gap $\gamma$, possibly closed, has edges $E_a\le E_a'$ and
+one critical point $c_\gamma$. Write
+\[
+ P(E_a)=P(E_a')=sR_*,\quad
+ P(c_\gamma)=s(R_*+\mathrm{ex}),\quad s\in\{-1,1\},\quad
+ \mathrm{ex}\ge0.
+\]
+The turning phase satisfies $c(t_a)=2s\Lambda$ and
+$\cos k_a=s$. Roots of $P+sR_*$ are counted with multiplicity.
+Their real-rootedness follows by realizing the polynomial as a
+Hermitian fibre characteristic polynomial.
+
+\begin{lemma}[Curvature and the Morse chart]\label{lem:libMorse}
+Let $d_S=4\lambda+5$ and $M_j=\sup|P^{(j)}|$ in the fixed complex
+neighborhood used for the rational derivative bounds. For large $q$,
+\begin{align}
+ |P''(c_\gamma)|&=(2R_*+\mathrm{ex})
+       \sum_{f:P(f)=-sR_*}(c_\gamma-f)^{-2}
+       \ge 2R_*q/d_S^2,\label{eq:libcurvature}\\
+ |P'(E_a)|&\le M_2|E_a-c_\gamma|,\qquad
+ \mathrm{ex}\ge |P'(E_a)|^2/(2M_2).\label{eq:libexcess}
+\end{align}
+There is $\rho_c=e^{-d_hq}/(C_0q^2)$, with $C_0$ sufficiently large,
+on a contracted disc about $c_\gamma$ on which
+\begin{equation}\label{eq:libMorse}
+ P(E)=s(R_*+\mathrm{ex})-s\zeta(E)^2,\quad
+ \zeta(c_\gamma)=0,\quad z_\gamma:=\zeta'(c_\gamma)
+      =\sqrt{|P''(c_\gamma)|/2}>0,
+\end{equation}
+whenever the two edges lie in its inner quarter.
+The map $\zeta$ is analytic and univalent there, is real on the real
+axis, and $\zeta'(E)/z_\gamma=1+O(1/q)$.
+\end{lemma}
+
+\begin{proof}
+Put $Q=P+sR_*$. On the root-free interval containing the gap,
+$(Q'/Q)'=-\sum_f(E-f)^{-2}$. At $c_\gamma$ the first logarithmic
+derivative vanishes and $Q(c_\gamma)=s(2R_*+\mathrm{ex})$.
+This proves~\eqref{eq:libcurvature}. Integrating the same identity
+also gives $|P'(E_a)|\ge2R_*q|c_\gamma-E_a|/d_S^2$.
+The mean-value theorem gives the first inequality
+in~\eqref{eq:libexcess}. Integrate
+$|P'(E)|\ge |P'(E_a)|-M_2|E-E_a|$ up to its zero, which lies before
+$c_\gamma$, to get the second.
+
+The derivative bounds below are used only in the fixed complex neighborhood of the rational phase-union bands. To justify their use at a narrow-gap center, integrate the logarithmic derivative once more:
+\[
+ \log\left(1+\frac{\mathrm{ex}}{2R_*}\right)
+ \ge\frac{q|E_a-c_\gamma|^2}{2d_S^2}.
+\]
+Thus the center of an N gap tends to its edge and belongs to that neighborhood. The triangular integral proving~\eqref{eq:libexcess} needs only an $O(1/q)$ segment at the edge. If the critical point is farther away, take the same segment and enlarge the fixed derivative constants. No growth bound at a far gap center is assumed.
+
+The rational derivative bounds are
+$M_j\le C_{j,h}q^j e^{hq}$, by
+\cite[Proposition 3.3(2)]{DMamo} and
+\cite[Appendix A, Polynomial derivatives and the top contour]{DMband}.
+Taylor-expand at $c_\gamma$ and take the analytic square root of the
+nonzero quadratic factor. Bound that factor and its derivative on
+a larger disc before contracting to $\rho_c$. Increasing $C_0$
+makes its derivative $O(1/q)$ relative to its value at the center.
+This proves univalence and all assertions about $\zeta$.
+\end{proof}
+
+On an isolated two-band chart let $h(k,t)$ be the frozen restriction
+of $B_t(k)$ to these two bands, in an orthonormal analytic frame.
+Put
+\[
+ T_s(k)=2-2s\cos k,\quad U(t)=2\Lambda-sc(t),\quad
+ x=\mathrm{ex}+T_s(k)+U(t).
+\]
+Cayley--Hamilton and~\eqref{eq:libchambers} give the exact identity
+\begin{equation}\label{eq:libDirac}
+ Z=\zeta(h),\qquad Z^2=xI_2,\qquad \tr Z=0.
+\end{equation}
+Indeed the two distinct energies in the chart have opposite
+$\zeta$-values. Continuation proves the trace identity at a touching
+point as well. For real $k,t$, $Z$ is Hermitian.
+
+Write $c=c_\gamma$ and keep the full inverse
+\[
+ \psi(w)=z_\gamma\bigl(\zeta^{-1}(w)-c\bigr),\qquad Y=\psi(Z).
+\]
+Define analytic scalar functions
+\begin{equation}\label{eq:libinverse}
+ \vartheta(x)=\frac{\psi(\sqrt x)+\psi(-\sqrt x)}2,\qquad
+ \Omega(x)=\left(\frac{\psi(\sqrt x)-\psi(-\sqrt x)}2\right)^2.
+\end{equation}
+They are analytic also at $x=0$. With
+$\widetilde Y=Y-\vartheta(x)I_2$, one has
+\begin{equation}\label{eq:libfactor}
+ \widetilde Y^2=\Omega(x)I_2,\qquad
+ (Y-Y_0)(Y+Y_0-2\vartheta(x))=\Phi(x)I_2,
+ \quad \Phi(x)=\Omega(x)-(Y_0-\vartheta(x))^2.
+\end{equation}
+For admissible $Y_0$ in the contracted chart,
+$\Phi'=1+O(1/q)>0$. The inverse estimates imply this after contracting
+the chart and choosing $\xi$ larger than its fixed losses.
+These are exact frozen identities. In general $Y\ne Z$.
+Replacing the inverse by its tangent would already introduce a
+nonzero error at $\delta=0$.
+
+\subsection{The wide and narrow classes}
+
+Use the final threshold
+\begin{equation}\label{eq:libclasses}
+ \mathrm{ex}_*=\Lambda e^{-4d_hq}/q.
+ \qquad \mathrm W:\ \mathrm{ex}>\mathrm{ex}_*,\qquad
+ \mathrm N:\ \mathrm{ex}\le\mathrm{ex}_*.
+\end{equation}
+Class W uses separate one-band frames at its two edges. Class N
+uses one frame containing both bands. Every exactly closed pair
+belongs to N. The threshold is an eventual asymptotic threshold,
+not a classification inferred from a finite numerical sample.
+
+\begin{lemma}[Isolation and localized frames]\label{lem:libframes}
+For every sufficiently small $\xi>0$, choose $d_h>0$ sufficiently
+small after all fixed derivative orders. For large $q$ the following
+hold uniformly on $|t-t_a|\le t_{\rm fr}$.
+In W each edge has a one-root contour of radius at least
+$e^{-6d_hq}/q^C$, with discriminant on its boundary at least
+$\Lambda e^{-11d_hq}/q^C$.
+In N the Morse contour contains exactly two roots, with boundary
+discriminant at least $\Lambda e^{-2d_hq}/q^C$.
+Both give Wannier frames with, for the finite derivative orders used
+here,
+\begin{equation}\label{eq:libtails}
+ |\partial_t^j w_{t,\ell}(x)|\le
+ \mathcal R_q e^{-(L-4\tau)\dist(x,\mathcal A)},
+ \qquad \#\mathcal A\le2.
+\end{equation}
+Here $\mathcal A$ is a finite set of lifted anchors in one cell.
+The translated global synthesis and its orthogonalization obey
+physical weighted row and column Schur bounds, retaining an
+interwell error at most $\mathcal R_q e^{-c/|\delta|}$.
+\end{lemma}
+
+\begin{proof}
+In W, if $c_\gamma$ is outside a fixed edge neighborhood, the logarithmic-derivative lower bound gives $|P'(E_a)|\ge c_\lambda q\Lambda$. Otherwise the segment from $E_a$ to $c_\gamma$ is inside the derivative neighborhood, and $\mathrm{ex}\le M_1|c_\gamma-E_a|$ combines with that lower bound. In either case the threshold~\eqref{eq:libclasses} gives
+$|P'(E_a)|\ge\Lambda e^{-5d_hq}/q^C$.
+Take a fixed contraction of
+$\min\{|P'(E_a)|/(2M_2),R_*/M_1\}$ as the one-root radius.
+Taylor's theorem and Rouch\'e give the stated contour estimates.
+In N,~\eqref{eq:libcurvature} and~\eqref{eq:libclasses} put both roots
+in the inner quarter of the Morse disc for large $q$.
+Rouch\'e counts exactly two roots there. The phase drift on the
+frame chart is $O(\Lambda e^{-\xi q/2})$ and is smaller than the
+boundary discriminant. Contract the complex Bloch strip accordingly.
+
+The periodic Green-function argument in
+\cite[Appendix B, Periodic Green function and Analytic fibre data]{DMband}
+uses only this large discriminant and the complex transfer bounds.
+It therefore applies on these contours. It gives cyclic Green
+kernels and analytic fibre data on a strip of width
+$(L-O(d_h)-\text{chosen loss})q$.
+Choose a nondegenerate anchor Gram matrix at the reference real
+fibre. In rank two, pivoted Cholesky gives determinant at least
+$2/q^2$; the overlap anchors in Lemma~\ref{lem:libanchors} will give
+another valid choice at an open N gap.
+For its complex continuation use the periodic trace and determinant
+of the Gram matrix. Endpoint phases cancel in principal minors.
+Their Fourier coefficients are bounded on the large strip, so their
+variation on a contracted strip is small. The identity
+\[
+ G^{1/2}=\frac{G+\sqrt{\det G}\,I_2}
+                 {\sqrt{\tr G+2\sqrt{\det G}}}
+\]
+continues the inverse square root holomorphically from the positive
+real reference matrix. This does not assert entrywise Fourier
+flatness in an incompatible gauge.
+
+Include the anchor endpoint phases before inverse Bloch transform,
+and choose a common periodic gauge for both columns. Place their
+finite lifts along the shorter arc, of length $r\le q/2$.
+Contour shifting gives~\eqref{eq:libtails}. The tail of one Wannier
+function is measured from this finite set, rather than from its
+periodic repetition. Translating each well to the reference chart
+and applying the physical Schur orthogonalization of
+\cite[Appendix C, Overlap cancellation and global orthogonalization]{DMband}
+gives the global assertions. Across wells sum over distinct physical
+centers; the number of anchors per center is bounded. This proves
+both Schur sums without summing a nonzero error once per well.
+\end{proof}
+
+The raw global construction remains valid when $b\ge2\xi$.
+Only its freezing comparison uses a lower bound on $b$.
+On patches of $\ell_c=\lceil(q|\delta|)^{-1/2}\rceil$ cells the phase
+variation is $O(\sqrt{|\delta|/q})$. It is smaller than the frame
+chart and than the complementary energy margin below.
+The estimates normalized by a level spacing need not be small on
+these scales. We keep the raw estimates and enlarge $D$ instead.
+
+\begin{proposition}[Compression and direct complement exclusion]
+\label{prop:libcompression}
+For $2\xi\le b\le L-\xi$, the global frames above have a self-adjoint
+effective operator $h_s$ and, throughout their contracted class
+windows,
+\begin{equation}\label{eq:libcompdata}
+ \|(QHQ-E)v\|\ge m\|v\|\quad(v\in Q\ell^2),\qquad
+ m\ge q^{-C}e^{-(\xi/2+Cd_h)q}.
+\end{equation}
+The bulk coupling is $c_{\rm bulk}\le|\delta|\mathcal R_q$.
+In N the safe compression error and separate end coupling are
+\begin{equation}\label{eq:libranktwoerrors}
+ \gamma_{\rm cmp}\le |\delta|\mathcal R_q
+       e^{-(L-4\tau)(q-r)}+\delta^2\mathcal R_q
+       +\mathcal R_q e^{-c/|\delta|},\qquad
+ c_{\rm end}\le e^{-(L/2-\text{chosen loss})q}.
+\end{equation}
+The end leg is localized in the end strips, with decaying Fourier
+and interwell tails. In W the corresponding one-anchor exponent
+is retained, together with the positive boundary weight of
+\cite[Appendix D, Interior coupling and omitted translates]{DMband}.
+\end{proposition}
+
+\begin{proof}
+The translated matrix expansion, its Hermitian compression, and the
+separation of bulk and end couplings are the kernel calculations in
+\cite[Appendices C--D]{DMband}. They use nearest-neighbor hopping,
+the physical localization kernels and finitely many phase
+derivatives. With two anchors the convolution distance for a
+nonzero cell displacement is $|m|q-r$, rather than $|m|q$.
+This gives~\eqref{eq:libranktwoerrors}, with both factors at an end
+interface retained. It also proves the differentiated seminorms
+in Appendix~\ref{app:libcalculus}. A column-frozen matrix is replaced
+by its Hermitian part before any comparison.
+
+For complement exclusion the omitted frozen branches are at least
+\[
+ g_{\mathrm W}\ge\min\{\rho_a/2,M''/(C|P'(E_a)|)\},\quad
+ g_{\mathrm N}\ge\min\{\rho_c/2,
+       M''/[C\sqrt{M_2(\mathrm{ex}+M'')}]\},
+ \quad M''=c_\lambda\Lambda e^{-\xi q/2}
+\]
+from the class window. Inside a frame patch this follows from the
+one-root or two-root contour. Outside it, the phase value is
+separated from the turning value by $M''$; the inverse derivative
+or Morse divided difference gives these bounds. Use a common lower
+bound $g\ge q^{-C}e^{-(\xi/2+Cd_h)q}$ in all patches.
+
+Put $\eta_{\rm fr}=C\sqrt{|\delta|/q}$. On each patch let
+$A_a=B_a-E$ be the frozen operator and $\Pi_a$ its retained one- or
+two-band projection. The common margin $g$ gives
+$\|A_a f\|\ge g\|(1-\Pi_a)f\|$. Freezing and
+$(x-y)_+^2\ge x^2/2-y^2$ imply
+\[
+ \|(H-E)f\|^2\ge\frac{g^2}{2}
+       \bigl(\|f\|^2-\|\Pi_a f\|^2\bigr)
+       -\eta_{\rm fr}^2\|f\|^2.
+\]
+For $v\in Q\ell^2$, apply the genuine IMS formula to $(H-E)^2$
+and sum with $f=\chi_a v$. Its error is $C|\delta|/q$.
+The supported joint Bessel estimate of
+\cite[Appendix D, Excluding the complementary subspace]{DMband},
+summed over the at most two anchors, is
+\[
+ \sum_a\|\Pi_a\chi_a v\|^2\le
+       \mathcal R_q|\delta|q^{-1}\|v\|^2.
+\]
+The patch-support factors are included in both Schur sums. Hence
+\[
+ \|(H-E)v\|^2\ge
+ \left[\frac{g^2}{2}-\frac{g^2}{2}\mathcal R_q\frac{|\delta|}{q}
+                  -C\frac{|\delta|}{q}\right]\|v\|^2.
+\]
+Since $b\ge2\xi$ and $d_h$ is chosen after the fixed constants,
+$\mathcal R_q|\delta|/q=o(1)$ and $|\delta|/q=o(g^2)$.
+Therefore $\|(H-E)v\|\ge(g/\sqrt2-o(g))\|v\|$.
+The complete coupling, including the conservative rank-two end
+term, is $o(g)$. Consequently
+\[
+ \|(QHQ-E)v\|\ge\|(H-E)v\|-\|\Pi HQ\|\|v\|
+       \ge(g/2)\|v\|.
+\]
+This proves the gap for the compression directly. A spectral gap of
+$H$ alone would not imply it. Both nearby branches have been
+included in N, also when their gap is positive but very small.
+\end{proof}
+
+\subsection{The curvature dichotomy and overlap anchors}
+
+\begin{lemma}[Overlap anchors at every open N gap]\label{lem:libanchors}
+At an open class-N gap, let $u,u'$ be the normalized real edge
+vectors at $(t_a,k_a)$ and let $\mathcal R$ be the signed reflection
+commuting with that fibre. There is a non-fixed site $x_*$ such that
+\begin{equation}\label{eq:libanchor}
+ |u(x_*)u'(x_*)|\ge q^{-C}e^{-Cd_hq},\qquad
+ \det G_{\{x_*,\mathcal Rx_*\}}=4u(x_*)^2u'(x_*)^2.
+\end{equation}
+If $r=\dist_{\Z/q\Z}(x_*,\mathcal Rx_*)\le q/2$, then
+\begin{equation}\label{eq:libtunnel}
+ |P'(E_a)|\le e^{hq}\mathcal R_q e^{-(L-2\tau)r}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let $V'=\partial_t B_{t_a}$ and
+$M=\langle u',V'u\rangle$. Twice differentiating Chambers' identity,
+then using simple-eigenvalue perturbation theory, gives
+\begin{equation}\label{eq:libRellich}
+ \frac{c''(t_a)}{P'(E_a)}=
+ \langle u,V''u\rangle+
+ \frac{2|M|^2}{E_a-E_a'}+
+ 2\sum_{j\ne a,a'}\frac{|\langle u_j,V'u\rangle|^2}{E_a-E_j},
+ \qquad |c''(t_a)|=8\pi^2q^2\Lambda.
+\end{equation}
+The derivative in this identity is signed. Other degenerate
+subspaces are summed by their projectors. A whole phase-union band
+separates the pair from every other same-sign root, so the other
+energy denominators have modulus at least $2R_*/M_1$.
+Also $\|V'\|\le4\pi\lambda$ and $\|V''\|\le8\pi^2\lambda$.
+
+If the partner term has modulus less than $|E_a''|/3$, the other
+terms imply $|P'(E_a)|\ge c_\lambda q\Lambda e^{-d_hq}$.
+Equation~\eqref{eq:libexcess} then gives
+$\mathrm{ex}\ge c_\lambda'\Lambda e^{-3d_hq}$.
+For large $q$ this is W under~\eqref{eq:libclasses}.
+Otherwise
+\[
+ |M|^2\ge \frac{4\pi^2q^2\Lambda}{3M_2}
+       \ge c_\lambda e^{-d_hq}.
+\]
+Every open N gap is therefore in this second alternative.
+Reflection anticommutes with $V'$, so its two edge vectors have
+opposite reflection parities. Since
+$|M|\le4\pi\lambda q\max_x|u(x)u'(x)|$, a site $x_*$ satisfies
+\eqref{eq:libanchor}. At a reflection-fixed site one of these
+opposite-parity vectors vanishes. Hence $x_*$ is not fixed.
+The Gram determinant follows by writing the two reflected columns
+in the edge basis.
+
+Let $\Pi_\gamma$ be the frozen pair projector and $ed\in\{-1,1\}$
+the reflection sign at $x_*$. The exact two-dimensional pencil
+identity is
+\[
+ (E_a-E_a')(\Pi_\gamma)_{x_*x_*}
+ =2ed(B\Pi_\gamma)_{x_*,\mathcal Rx_*}
+   -ed(E_a+E_a')(\Pi_\gamma)_{x_*,\mathcal Rx_*}.
+\]
+The two off-diagonal kernels decay in the cyclic distance $r$ by
+the contour Green bounds. The diagonal is at least
+$2|u(x_*)u'(x_*)|$. Thus
+$|E_a-E_a'|\le\mathcal R_q e^{-(L-2\tau)r}$.
+Finally $|P'(E_a)|\le M_2|E_a-E_a'|$, which proves
+\eqref{eq:libtunnel}. No maximizer of a projector diagonal has been
+assumed non-fixed.
+\end{proof}
+
+At an exactly closed pair we use the rank-two Riesz projector;
+\eqref{eq:libRellich} is not asserted for an individual vector at a
+double eigenvalue. For closed and near-closed pairs the general
+pivot anchors in Lemma~\ref{lem:libframes} give the longer-arc tail
+with $r\le q/2$. In the shallow comparison it suffices to use the
+cutoff $\sqrt{\mathrm{ex}}\le e^{(\xi/2+6\tau)q}$.
+Open N gaps outside that cutoff use Lemma~\ref{lem:libanchors}.
+At the longer-arc jump bond both endpoints are included. If
+\begin{equation}\label{eq:libF}
+ F=\mathcal R_q e^{-(L-4\tau)(q-r)},
+\end{equation}
+then $\|\un_{\rm bonds}\Pi\|^2\le F$.
+This is a physical operator bound from row and column Schur sums,
+rather than a single frozen projector diagonal.
+
+\subsection{The one-band W package}
+
+For a W edge put $P_a'=|P'(E_a)|$ and
+$\sigma_{\rm out}=s\,\operatorname{sgn}P'(E_a)$.
+The positive inward depth operator is
+$P_a'\sigma_{\rm out}(E_a+s_a(t_a)-h_s)$.
+Here $s_a$ is the orbital term, including the small parameter.
+The inverse branch $E(y)$ satisfies $P(E(y))=sR_*-sy$, and
+\[
+ F_a(y)=P_a'|E(y)-E_a|,\qquad
+ |F_a'(y)-1|\le4M_2y/(P_a')^2
+       \le q^C e^{-(\xi-Cd_h)q}
+\]
+on $0\le y\le C\Lambda e^{-\xi q}$.
+Taylor's theorem proves this after contracting the inverse domain.
+The orbital correction is the classical Rammal--Wilkinson term
+\cite{Wilkinson1987,RammalBellissard,HSII}; its uniform local compression is
+\cite[Appendix C]{DMband}.
+A possible odd part has size
+$\mathcal R_q\sqrt\kappa\sqrt U$, without an extra $|\delta|$.
+Its first two phase derivatives move the minimum by
+$\mathcal R_q$ cells and preserve quadratic growth there.
+Thus a margin $D$ gives one shell of width
+$C\sqrt{D/\kappa}+\mathcal R_q$ near the minimum, or two shells of
+width $CD/\sqrt{\kappa e}+\mathcal R_q$ away from it.
+The coarse unit is
+\[
+ A_a=D_a/P_a',\qquad
+ D_a=C\{1+P_a'(\gamma_{\rm cmp}+c_{\rm bulk}^2/m
+                                      +\|W_{\rm bd}\|)\}.
+\]
+Diagonal dominance after the shell penalty gives a gap $3A_a$.
+The one-anchor midpoint tail, the weight estimates of
+Appendix~\ref{app:liblocal}, and Proposition~\ref{prop:libcompression}
+prove the W package. At low $b$ the raw estimate gives
+\[
+ \sqrt{D_a/\kappa}\le
+ \mathcal R_q\bigl(\kappa^{-1/2}+e^{\xi q/4}\bigr).
+\]
+The padding $e^{(\xi/2+12\tau)q}$ absorbs the additional term.
+Top and bottom use the same one-band argument and the same coarse
+unit. These estimates are uniform at all depths of their class.
+The remaining N shell and weighted estimates are proved next.

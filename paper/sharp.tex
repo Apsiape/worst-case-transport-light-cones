@@ -51,7 +51,7 @@ Let $\lambda>1$, $h>L$ and $0<\eta\le1/4$, and let $C_h$ be the constant of~\cit
 \end{proposition}
 
 \begin{proof}
-At a phase with $\cos(2\pi q\varphi)=0$, \eqref{eq:chambers} gives $t_q=P_q$, so every root of $P_q$ is real and simple~\cite[Lemma~5.3]{DMuniv}. Away from its roots, $(\log|P_q|)''=-\sum_j(E-r_j)^{-2}<0$, so every critical point of $P_q$ is a strict local maximum of $|P_q|$. By Corollary~\ref{cor:closedgap}, $P_q'(0)=0$ and $sP_q$ has a strict local maximum at $0$ with value $2\lambda^q+2$. Let $f(E)=s(P_q(0)-P_q(E))$ and let $E^{(1)}$ be the first $E>0$ with $|f(E)|=\eta$. On $[0,E^{(1)}]$, $sP_q>0$, and $f\ge0$: otherwise $sP_q$ would exceed its value at $0$ somewhere in $(0,E^{(1)})$, forcing a positive local minimum of $|P_q|$ in between. So $f(E^{(1)})=\eta$ and $s\Delta_t=2-f\in[2-\eta,2]$ on $[0,E^{(1)}]$. This interval therefore lies in the spectrum of a turning approximant, hence in $U_h$ for large $n$~\cite[Lemma~2.5]{DMamo}, where $|f''|\le M:=C_hq^2e^{hq}$. Since $f(0)=f'(0)=0$ and $f'(E^{(1)})\ge0$, we have $f'(E^{(1)})\le ME^{(1)}$. With $t=f'(E^{(1)})/M\in[0,E^{(1)}]$, Taylor's formula gives $0\le f(E^{(1)}-t)\le\eta-f'(E^{(1)})^2/(2M)$. Hence $|P_q'(E^{(1)})|=f'(E^{(1)})\le\sqrt{2M\eta}$.
+At a phase with $\cos(2\pi q\varphi)=0$, \eqref{eq:chambers} gives $t_q=P_q$, so every root of $P_q$ is real and simple~\cite[Lemma~5.3]{DMuniv}. Away from its roots, $(\log|P_q|)''=-\sum_j(E-r_j)^{-2}<0$, so every critical point of $P_q$ is a strict local maximum of $|P_q|$. By Corollary~\ref{cor:closedgap}, $P_q'(0)=0$ and $sP_q$ has a strict local maximum at $0$ with value $2\lambda^q+2$. Let $f(E)=s(P_q(0)-P_q(E))$ and let $E^{(1)}$ be the first $E>0$ with $|f(E)|=\eta$. On $[0,E^{(1)}]$, $sP_q>0$, and $f\ge0$: otherwise $sP_q$ would exceed its value at $0$ somewhere in $(0,E^{(1)})$, forcing a positive local minimum of $|P_q|$ in between. So $f(E^{(1)})=\eta$ and $s\Delta_t=2-f\in[2-\eta,2]$ on $[0,E^{(1)}]$. This interval therefore lies in the spectrum of a turning approximant, hence in $U_h$ for large $n$~\cite[Lemma~2.6]{DMamo}, where $|f''|\le M:=C_hq^2e^{hq}$. Since $f(0)=f'(0)=0$ and $f'(E^{(1)})\ge0$, we have $f'(E^{(1)})\le ME^{(1)}$. With $t=f'(E^{(1)})/M\in[0,E^{(1)}]$, Taylor's formula gives $0\le f(E^{(1)}-t)\le\eta-f'(E^{(1)})^2/(2M)$. Hence $|P_q'(E^{(1)})|=f'(E^{(1)})\le\sqrt{2M\eta}$.
 \end{proof}
 
 \subsection{The lower bound at the phase \texorpdfstring{$1/4$}{1/4}}
@@ -75,13 +75,13 @@ Write $q=q_n$, $p=p_n$ (odd), $\delta=\delta_n$, $s=(-1)^{q/2}$ and $\eps=1/T$, 
 
 \emph{Step 1: an energy window.} Let $E^{(1)}$ be as in Proposition~\ref{prop:wideband} and $I_*=[E^{(1)}-r,E^{(1)}+r]$ with $r=\eta e^{-hq/2}/(C_1q)$ and $C_1$ large. For $E\in I_*$, which lies in $U_h$, $|P_q'(E)|\le C_2qe^{hq/2}$ and $|\Delta_t(E)-\Delta_t(E^{(1)})|\le\eta/2$, so $|\tr R(E)|\le2-\eta/2$, $|\sin\varrho_R|\ge\sqrt\eta/2$ for the rotation angle $\varrho_R$, and by~\cite[Lemma~8.2(1)]{DMamo} the block sum satisfies $S_R=|P_q'(E)|/|\sin\varrho_R|\le C_3qe^{hq/2}$.
 
-\emph{Step 2: insertion.} Let $B_R\in SL(2,\R)$ map $i$ to the fixed point of $R(E)$. The insertion lemma~\cite[Lemma~9.2]{DMamo} with the shifts $w_k$ gives $A_k(E,x_0)B_R=A^{(p/q)}_k(E,x_0')B_R\Pi_k$ with
+\emph{Step 2: insertion.} Let $B_R\in SL(2,\R)$ map $i$ to the fixed point of $R(E)$. The insertion lemma~\cite[Lemma~9.3]{DMamo} with the shifts $w_k$ gives $A_k(E,x_0)B_R=A^{(p/q)}_k(E,x_0')B_R\Pi_k$ with
 \[
 \|\Pi_k-I\|\le y_0:=\exp(4\pi\lambda|\delta|S_R)-1\le C q e^{-(h-L)q},
 \]
-using $|\delta|\le e^{-(h/2+(h-L))q}$. So $|\tr A_q(E,x_0)|\le2-\eta/2+2y_0\le2-\eta/4$. By~\cite[Lemma~9.3]{DMamo} the fixed point of $B_R^{-1}A_q(E,x_0)B_R$ is within hyperbolic distance $12y_0/(\sqrt\eta/2)$ of $i$; let $N\in SL(2,\R)$ map $i$ to it, so $\|N\|^2\le2$, and put $B_A=B_RN$, which maps $i$ to the fixed point of $A_q(E,x_0)$. The block sum of $A_q(E,x_0)$ in this frame is $S_0\le2(1+y_0)^2S_R\le3C_3qe^{hq/2}$.
+using $|\delta|\le e^{-(h/2+(h-L))q}$. So $|\tr A_q(E,x_0)|\le2-\eta/2+2y_0\le2-\eta/4$. By~\cite[Lemma~9.4]{DMamo} the fixed point of $B_R^{-1}A_q(E,x_0)B_R$ is within hyperbolic distance $12y_0/(\sqrt\eta/2)$ of $i$; let $N\in SL(2,\R)$ map $i$ to it, so $\|N\|^2\le2$, and put $B_A=B_RN$, which maps $i$ to the fixed point of $A_q(E,x_0)$. The block sum of $A_q(E,x_0)$ in this frame is $S_0\le2(1+y_0)^2S_R\le3C_3qe^{hq/2}$.
 
-\emph{Step 3: an elliptic run.} Apply~\cite[Lemma~9.5]{DMamo} to $g(k)=G(k;E+i\eps)=\langle\delta_k,(H_{1/4}-E-i\eps)^{-1}\delta_0\rangle$, $k\ge0$, which solves the half-line equation for $k\ge1$, with ellipticity margin $\eta'=\eta/4$, frame $B_A$, block sum $S_0$, and $\xi=(4\pi\lambda+1)\eps$. Its run length satisfies $m_*\ge c_\eta Te^{-hq/2}/q\ge8$ for large $n$, because $Te^{-hq/2}\ge e^{(h-L)q}$. With $m_0=\lceil m_*/2\rceil$ the lemma gives $\sum_{k>m_0q}|g(k)|^2\ge\eta'^{5/2}2^{-22}\|\Phi_0\|^2/\xi$ and $|g(0)|\le\|B_A\|\,\|\Phi_0\|$. By~\cite[Lemma~8.2(4)]{DMamo} and the growth bound, $\|B_A\|^2\le1+2\|A_q(E,x_0)\|/|\sin\varrho_A|\le C_\eta e^{hq}$, and $|G(0;E+i\eps)|\ge\operatorname{Im}G(0;E+i\eps)\ge\eps/D_\lambda^2$ with $D_\lambda=4(1+\lambda)+1$. Hence
+\emph{Step 3: an elliptic run.} Apply~\cite[Lemma~9.6]{DMamo} to $g(k)=G(k;E+i\eps)=\langle\delta_k,(H_{1/4}-E-i\eps)^{-1}\delta_0\rangle$, $k\ge0$, which solves the half-line equation for $k\ge1$, with ellipticity margin $\eta'=\eta/4$, frame $B_A$, block sum $S_0$, and $\xi=(4\pi\lambda+1)\eps$. Its run length satisfies $m_*\ge c_\eta Te^{-hq/2}/q\ge8$ for large $n$, because $Te^{-hq/2}\ge e^{(h-L)q}$. With $m_0=\lceil m_*/2\rceil$ the lemma gives $\sum_{k>m_0q}|g(k)|^2\ge\eta'^{5/2}2^{-22}\|\Phi_0\|^2/\xi$ and $|g(0)|\le\|B_A\|\,\|\Phi_0\|$. By~\cite[Lemma~8.2(4)]{DMamo} and the growth bound, $\|B_A\|^2\le1+2\|A_q(E,x_0)\|/|\sin\varrho_A|\le C_\eta e^{hq}$, and $|G(0;E+i\eps)|\ge\operatorname{Im}G(0;E+i\eps)\ge\eps/D_\lambda^2$ with $D_\lambda=4(1+\lambda)+1$. Hence
 \[
 \sum_{k>m_0q}|G(k;E+i\eps)|^2\ge c'_\eta\,\eps\,e^{-hq}\qquad(E\in I_*).
 \]
@@ -104,14 +104,14 @@ The theorem gives a polynomially small tail at the critical distance, not a fixe
 \subsection{Exact laws for the almost Mathieu operator}
 
 \begin{corollary}[Exact uniform law]\label{cor:exactunif}
-Let $\lambda>1$ and let $\alpha$ satisfy $\beta_e(\alpha)=\beta(\alpha)\in[L,\infty)$, for instance when all denominators with large $b_n$ are even. Then
+Let $\lambda>1$ and let $\alpha$ satisfy $\beta_e(\alpha)=\beta(\alpha)\in(L/2,\infty)$, for instance when all denominators with large $b_n$ are even. Then
 \[
 \aunif=\sup_\theta\au(H_{\lambda,\alpha,\theta})=\au(H_{\lambda,\alpha,1/4})=1-\frac{L}{2\beta(\alpha)} .
 \]
 \end{corollary}
 
 \begin{proof}
-Theorem~\ref{thm:quarter} gives $\au(1/4)\ge1-L/(2\beta)$, Corollary~\ref{cor:typeI} gives $\aunif\le1-L/(2\beta)$, and~\eqref{eq:unifsup} closes the chain.
+Theorem~\ref{thm:quarter} gives $\au(1/4)\ge1-L/(2\beta)$, Theorem~\ref{thm:libration} for $\beta<L$, and Corollary~\ref{cor:typeI} for $\beta\ge L$, give $\aunif\le1-L/(2\beta)$, and~\eqref{eq:unifsup} closes the chain.
 \end{proof}
 
 \begin{remark}\label{rem:aevalue}
@@ -152,7 +152,23 @@ For even $q_n$ and odd $p_n$,
 \end{remark}
 
 \begin{remark}[The plateau radius]\label{rem:plateau}
-At even $q_n$ with $b_n>L$ and $T=|\delta_n|^{-1}$, Theorem~\ref{thm:quarter} reaches distance $e^{(b_n-h/2)q_n}$, and Proposition~\ref{prop:Camo} confines the packet, at every phase, within $e^{(b_n-L/2+\eps)q_n}$. So the fastest-tail scale at such a scale is matched up to factors $e^{o(q_n)}$. The mass at that scale is only shown to be polynomially small; whether a fixed fraction of the packet reaches it is open.
+Fix sufficiently small $\xi>0$ and choose $L<h<L+2\xi/3$.
+On even scales $L/2+\xi\le b_n\le L-\xi$,
+Theorem~\ref{thm:quarter} at $T=|\delta_n|^{-1}$ gives a polynomial
+tail at distance $e^{(b_n-h/2)q_n}$, up to fixed and polynomial
+factors. The frame and interior estimates give radius at most
+$e^{(b_n-L/2+C\xi)q_n}$ on each fixed exponential time window.
+Their ratio is at most a polynomial factor times
+\[
+ \exp\!\left(\bigl((h-L)/2+C\xi\bigr)q_n\right).
+\]
+Its exponential rate can be made arbitrarily small by choosing
+$h\downarrow L$ and $\xi\downarrow0$ before taking large scales.
+For $b_n\ge L-\xi$ the earlier confinement estimate of
+Proposition~\ref{prop:Camo} gives the same Abel-tail radius rate
+with an additional $O(\xi)$ loss, at its stated time scales.
+Only polynomially small mass is proved at the exceptional radius;
+a fixed transported fraction remains open.
 \end{remark}
 
 \subsection{Odd-harmonic and type I potentials}
@@ -172,7 +188,7 @@ Hence $\aunif\ge1-\ell_0/(2\beta')-C\xi$.
 \end{theorem}
 
 \begin{proof}
-This is the proof of Theorem~\ref{thm:quarter} with the following changes. Restrict to $n\in\mathcal N'$ with $b_n>\ell_0/2+C\xi$; otherwise the claimed exponent is not positive. The rational block is the $p_n/q_n$-periodic block at the phase $x'/q_n$, with trace $t_{q_n}(x',E')$ of modulus at most $2-\eta$, and~\cite[Lemma~8.2(1)]{DMamo} gives $S_R\le Ce^{(\ell(E')/2+\xi)q_n}$. The energy window around $E'$ has width $e^{-(\ell(E')/2+C\xi)q_n}/(Cq_n^2)$; on it the bound $|\partial_E^2t_q|\le8q^2e^{q(\ell(E')+\xi)}$~\cite[Corollary~5.6]{DMuniv} keeps the trace elliptic with a fixed margin and the derivative of size $e^{(\ell(E')/2+C\xi)q}$. The local phases $q_n(\theta+j\alpha)=q_n\theta+j\delta_n$ sweep $\T$ as $j$ ranges over an interval of length $|\delta_n|^{-1}$, so there is a site $x_n$, $|x_n|\le|\delta_n|^{-1}$, at which the first block to the right has local phase within $|\delta_n|$ of $x'$. Closeness of local phases identifies the block only up to a cyclic shift of the rational potential; cyclic shifts have the same trace and the same energy derivative, and uniform growth controls their frames. The insertion error is at most $\exp(C\|v'\||\delta_n|S_R)-1\to0$, since $b_n>\ell(E')/2+2\xi$. The elliptic run lemma~\cite[Lemma~9.5]{DMamo} holds for Lipschitz potentials, $\|A_{q}\|\le Ce^{(\ell(E')+\xi)q}$ by Lemma~\ref{lem:growthy}, and the rest of the proof is unchanged. The last statement follows as in Section~\ref{sec:prelim}: if $\sup_\varphi P_\varphi(T^a,T)=O(T^{-m})$ for all $m$, then $a\ge1-(\ell_0/2+C\xi)/\beta'$.
+This is the proof of Theorem~\ref{thm:quarter} with the following changes. Restrict to $n\in\mathcal N'$ with $b_n>\ell_0/2+C\xi$; otherwise the claimed exponent is not positive. The rational block is the $p_n/q_n$-periodic block at the phase $x'/q_n$, with trace $t_{q_n}(x',E')$ of modulus at most $2-\eta$, and~\cite[Lemma~8.2(1)]{DMamo} gives $S_R\le Ce^{(\ell(E')/2+\xi)q_n}$. The energy window around $E'$ has width $e^{-(\ell(E')/2+C\xi)q_n}/(Cq_n^2)$; on it the bound $|\partial_E^2t_q|\le8q^2e^{q(\ell(E')+\xi)}$~\cite[Corollary~5.6]{DMuniv} keeps the trace elliptic with a fixed margin and the derivative of size $e^{(\ell(E')/2+C\xi)q}$. The local phases $q_n(\theta+j\alpha)=q_n\theta+j\delta_n$ sweep $\T$ as $j$ ranges over an interval of length $|\delta_n|^{-1}$, so there is a site $x_n$, $|x_n|\le|\delta_n|^{-1}$, at which the first block to the right has local phase within $|\delta_n|$ of $x'$. Closeness of local phases identifies the block only up to a cyclic shift of the rational potential; cyclic shifts have the same trace and the same energy derivative, and uniform growth controls their frames. The insertion error is at most $\exp(C\|v'\||\delta_n|S_R)-1\to0$, since $b_n>\ell(E')/2+2\xi$. The elliptic run lemma~\cite[Lemma~9.6]{DMamo} holds for Lipschitz potentials, $\|A_{q}\|\le Ce^{(\ell(E')+\xi)q}$ by Lemma~\ref{lem:growthy}, and the rest of the proof is unchanged. The last statement follows as in Section~\ref{sec:prelim}: if $\sup_\varphi P_\varphi(T^a,T)=O(T^{-m})$ for all $m$, then $a\ge1-(\ell_0/2+C\xi)/\beta'$.
 \end{proof}
 
 \begin{theorem}[Odd-harmonic potentials]\label{thm:oddharm}

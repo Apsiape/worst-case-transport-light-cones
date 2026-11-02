@@ -148,11 +148,11 @@ By~\eqref{eq:abelsplit} with $e^{-2k}=T_n^{-C}/2$, some one-body time $s\le CT_n
 \begin{enumerate}
 \item Let $v$ be real analytic with $H_{v,\alpha}$ supercritical, $\beta(\alpha)<\infty$, and $h_n=v(\theta+n\alpha)$. Then $\Gamma_{\mathrm{unif}}(\theta)\le\FU(\beta(\alpha))$ for every $\theta$.
 \item Let $h_n=2\lambda\cos2\pi(\theta+n\alpha)$ with $\lambda>1$. Then $\Gamma_{\mathrm{unif}}(\theta)\ge\max\{0,1-L/(2\beta_e(\alpha))\}$ for every $\theta$, read as $1$ if $\beta_e=\infty$.
-\item If moreover $\beta_e(\alpha)=\beta(\alpha)\in[L,\infty)$, then for every $\theta$
+\item If moreover $\beta_e(\alpha)=\beta(\alpha)\in(L/2,\infty)$, then for every $\theta$
 \[
 \Gamma_{\mathrm{unif}}(\theta)=1-\frac L{2\beta(\alpha)},
 \]
-while $\Gamma_x(\theta)=1-L/\beta(\alpha)$ at every site $x$ when $\theta\in\Ga^\Z$.
+while $\Gamma_x(\theta)=\max\{0,1-L/\beta(\alpha)\}$ at every site $x$ when $\theta\in\Ga^\Z$.
 \end{enumerate}
 \end{theorem}
 
@@ -161,10 +161,10 @@ while $\Gamma_x(\theta)=1-L/\beta(\alpha)$ at every site $x$ when $\theta\in\Ga^
 
 2. Let $\beta_e>L/2$ and $h>L$ with $h/2+(h-L)<\beta_e$. For an even scale $n$ with $b_n\ge h/2+(h-L)$, the $q_{n+1}$ points $\theta+x\alpha$, $0\le x<q_{n+1}$, have gaps at most $\|q_n\alpha\|+\|q_{n+1}\alpha\|\le2/q_{n+1}$, and $1/q_{n+1}<2|\delta_n|$; so some $x_n$ with $0\le x_n<q_{n+1}<T_n=|\delta_n|^{-1}$ has $\|\theta+x_n\alpha-1/4\|\le2|\delta_n|$. Theorem~\ref{thm:quarter} at the phase $\theta+x_n\alpha$ gives $P_{\theta+x_n\alpha}(N_n,T_n)\ge T_n^{-2}e^{-2hq_n}$ with $N_n=\lfloor c_\eta T_ne^{-hq_n/2}\rfloor$. Lemma~\ref{lem:tailcomm}, applied to the chain at phase $\theta+x_n\alpha$, which is the chain at phase $\theta$ seen from the site $x_n$, gives commutators $\|[\tau_{t_n}(Z_{x_n}),P_{R_n}]\|\ge t_n^{-C'}$ with $R_n\subset\{y:|y-x_n|>t_n^a\}$ for every $a<1-h/(2\beta_e)$, along even scales with $b_n\to\beta_e$. So $\Gamma_{\mathrm{unif}}(\theta)\ge1-h/(2\beta_e)$; let $h\downarrow L$. If $\beta_e=\infty$ the same argument gives $1$.
 
-3. Parts~1 and~2, with $\FU(\beta)=1-L/(2\beta)$ for the almost Mathieu operator when $\beta\ge L$ (Corollary~\ref{cor:typeI}), and Theorem~\ref{thm:LRfixed}.
+3. For $\beta\ge L$, use parts~1 and~2 and Corollary~\ref{cor:typeI}. For $L/2<\beta<L$, apply the uniform tail estimate of Theorem~\ref{thm:libration} in the proof of part~1: Lemma~\ref{lem:abel} gives the instantaneous one-body bound uniformly over launch sites, and Lemma~\ref{lem:locality} gives $\Gamma_{\rm unif}\le1-L/(2\beta)$. Part~2 gives the reverse inequality when $\beta_e=\beta$. The fixed-site assertion is Theorem~\ref{thm:LRfixed}, with the maximum with zero retained.
 \end{proof}
 
-So uniformity over sites changes the light-cone exponent: when $\beta_e=\beta\in[L,\infty)$, almost every phase has fixed-site exponent $1-L/\beta$ at every site, and uniform exponent $1-L/(2\beta)$. At $\beta=\infty$ both equal $1$.
+So uniformity over sites changes the light-cone exponent: when $\beta_e=\beta\in(L/2,\infty)$, almost every phase has fixed-site exponent $\max\{0,1-L/\beta\}$ at every site, and uniform exponent $1-L/(2\beta)$. At $\beta=\infty$ both equal $1$.
 
 \subsection{Uncomputable light cones}
 
@@ -181,7 +181,7 @@ For odd $q_n$ and every fixed $x$, $|\sin(2\pi q_n(1/4+x\alpha))|=|\cos(2\pi x\d
 The value-set statement concerns this family, with $\lambda=2$, phase $1/4$ and eventually odd denominators; it is not a classification over all computable fields and phases.
 
 \begin{corollary}[Two exponents of degree $\mathbf 0''$ in one computable chain]\label{cor:twoexp}
-Let $(v_m)$ be a computable sequence of rationals in $[1,2]$ with $\limsup v_m=s_*$~\cite[Lemma~10.1]{DMamo}. Define $\alpha=[0;a_1,a_2,\dots]$ by $a_1=2$ and, with $n_1=1$ and $n_{m+1}=n_m+3$,
+Let $(v_m)$ be a computable sequence of rationals in $[1,2]$ with $\limsup v_m=s_*$~\cite[Lemma~11.1]{DMamo}. Define $\alpha=[0;a_1,a_2,\dots]$ by $a_1=2$ and, with $n_1=1$ and $n_{m+1}=n_m+3$,
 \[
 a_{n_m+1}=2^{\lceil v_mq_{n_m}\rceil},\qquad a_{n_m+2}=a_{n_m+3}=1 .
 \]

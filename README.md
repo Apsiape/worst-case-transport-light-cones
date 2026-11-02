@@ -2,15 +2,26 @@
 
 Seth Douglas and Nidhal Mghirbi
 
-Version 1.0.0, October 2026. DOI: [10.5281/zenodo.23845228](https://doi.org/10.5281/zenodo.23845228). Concept DOI (all versions): [10.5281/zenodo.23845227](https://doi.org/10.5281/zenodo.23845227). A preprint; it has not been peer reviewed.
+Version 2.0.0, November 2026. A preprint; it has not been peer reviewed. Version 1.0.0: [10.5281/zenodo.23845228](https://doi.org/10.5281/zenodo.23845228). Concept DOI (all versions): [10.5281/zenodo.23845227](https://doi.org/10.5281/zenodo.23845227).
 
 ## Abstract
 
-We study the fastest transport exponent α_u^+ of quasi-periodic Schrödinger operators (Hu)(n) = u(n+1) + u(n−1) + v(θ + nα) u(n), with v real analytic and positive Lyapunov exponent on the spectrum, at the worst phase rather than a typical one. Let β(α) = limsup_n q_n^{−1} log q_{n+1}. For 0 < β < ∞ we prove, uniformly in the phase, that α_u^+ is at most the maximum over the spectrum of 1 − ℓ/(2ωβ) when β ≥ ℓ, with an explicit formula for β < ℓ, where ℓ is the Lyapunov exponent and ω the acceleration. So finite β keeps α_u^+ below 1 at every phase. The factor 2ω is attained, by 2λ cos 2πsx. For the almost Mathieu operator the phase 1/4 has exponent at least 1 − log λ/(2β_e), where β_e is the limsup along even denominators; when β_e = β is finite and at least log λ this is the exact worst exponent, and it holds on a dense G_δ set of phases, while almost every phase has 1 − log λ/β. For potentials with v(x + 1/2) = −v(x), a half-period sign flip closes the central gap of every even-denominator approximant and gives the uniform lower bound 1 − ℓ(0)/(2β_e). In the Aubry–André XY chain, for even sources and the receivers we specify, at almost every phase the light cone at a fixed site follows the typical law, and when β_e = β is finite and at least log λ the light cone uniform over sites follows the worst-case law; for every supercritical analytic field the uniform light cone obeys the all-phase upper bound; for an explicit computable chain the two exponents differ and both have Turing degree 0″. Finally, the Lyapunov exponent of a computable analytic potential is computable at every computable irrational frequency, uniformly in energy, and at one explicit computable frequency and the phase 1/4 the transport exponent has degree exactly 0″ for every computable even potential in an explicit open neighbourhood of 4 cos 2πx.
+We study the fastest transport exponent α_u^+ of supercritical analytic quasi-periodic Schrödinger operators at the worst phase. For finite Liouville exponent β, an upper law involving the Lyapunov exponent ℓ and acceleration ω keeps transport below one uniformly in phase. When β ≥ ℓ its local rate is 1 − ℓ/(2ωβ), and the factor 2ω is attained. For the almost Mathieu operator with L = log λ > 0, we prove the sharper uniform upper bound 1 − L/(2β) also on L/2 < β < L. Thus whenever the even-denominator exponent satisfies β_e = β > L/2, with β finite, the uniform exponent, the supremum over phases and the exponent at phase 1/4 all equal 1 − L/(2β). The same value holds on a dense G_δ set, while almost every phase has max{0, 1 − L/β}. The new upper proof uses translated one-band and two-band frames, an exact inverse-Morse factorization, matrix shells and one fixed energy unit through the full depth range. For odd-harmonic analytic potentials, a half-period sign flip gives a lower bound through a closed central gap. In the Aubry–André XY chain, for even sources and the specified receivers, the fixed-site light cone follows the typical law at almost every phase; the light cone uniform over sites follows the exact worst-case law when β_e = β > L/2 is finite. For an explicit computable chain these exponents differ and both have Turing degree 0″. We also prove computability of the Lyapunov exponent for computable analytic potentials and a transport exponent of degree 0″ throughout an explicit computable even-potential neighborhood. No computation enters the new upper proof.
+
+## Changes in version 2.0.0
+
+- The worst-case law is now exact on the whole range: for the almost Mathieu operator with lambda > 1 and
+  log(lambda)/2 < beta < log(lambda), the phase-uniform transport exponent is at most 1 - log(lambda)/(2 beta). So when beta_e = beta the
+  worst exponent equals 1 - log(lambda)/(2 beta) for every finite beta > log(lambda)/2 (version 1.0.0: beta >= log(lambda)), with the
+  matching extensions of the measure-versus-category theorem and of the uniform light cone of the Aubry-André XY chain.
+- New sections and appendices give the proof: a two-band normal form near the rational approximants, matrix-valued shells, a fixed-unit
+  estimate at every depth and a boundary Schur calculation.
+- Two uncertified numerical remarks were removed; credits were extended (including Wilkinson); the almost Mathieu paper is cited at
+  version 2.0.1 and the band-edges paper by its DOI.
 
 ## Contents
 
-The paper is paper/main.pdf (53 pages). Its LaTeX source is paper/main.tex with the section files and paper/references.bib; paper/main.bbl is included. Build with pdflatex and BibTeX. No computation is used in any proof.
+The paper is paper/main.pdf (72 pages). Its LaTeX source is paper/main.tex with the section files and paper/references.bib; paper/main.bbl is included. Build with pdflatex and BibTeX. No computation is used in any proof.
 
 ## Rights
 
@@ -18,5 +29,6 @@ CC BY 4.0. See RIGHTS.md and LICENSE-CC-BY-4.0.txt.
 
 ## Related
 
-- "Exact transport and packing dimension for the almost Mathieu operator" (Seth Douglas and Nidhal Mghirbi, 2026), version 1.0.0, [10.5281/zenodo.23830305](https://doi.org/10.5281/zenodo.23830305). It proves the transport law at almost every phase for the almost Mathieu operator.
+- "Exact transport and spectral dimensions for the almost Mathieu operator" (Seth Douglas and Nidhal Mghirbi, 2026), version 2.0.1, [10.5281/zenodo.23864352](https://doi.org/10.5281/zenodo.23864352). It proves the transport law and the spectral dimensions at almost every phase.
 - "Universality of the transport law for supercritical quasi-periodic operators" (Seth Douglas and Nidhal Mghirbi, 2026), version 1.0.0, [10.5281/zenodo.23830333](https://doi.org/10.5281/zenodo.23830333). It proves the law at almost every phase for supercritical type I analytic potentials.
+- "Band edges of the almost Mathieu operator at Liouville scales" (Seth Douglas and Nidhal Mghirbi, 2026), version 1.0.0, [10.5281/zenodo.23873797](https://doi.org/10.5281/zenodo.23873797). It proves that the gap-decay rate vanishes for beta > log(lambda)/2.

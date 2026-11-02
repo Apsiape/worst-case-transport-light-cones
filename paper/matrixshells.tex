@@ -1,0 +1,519 @@
+\section{Matrix shells, fixed units and assembly}\label{sec:matrixshells}
+
+\subsection{One energy unit for the whole N class}
+
+Fix a class-N gap and the scale of~\eqref{eq:libscale}.
+Use $\vartheta,\Omega,\Phi$ from~\eqref{eq:libinverse}--\eqref{eq:libfactor}.
+The self-adjoint effective symbol is $h+\varepsilon M$, with
+$\varepsilon=\delta/q$. If $m_0$ is the chosen scalar part of the
+orbital matrix at the reference point, use the consistent convention
+\begin{equation}\label{eq:libcenter}
+ c'=c+\varepsilon m_0,\qquad
+ W=z_\gamma(M-m_0I_2),\qquad y=Y+\varepsilon W.
+\end{equation}
+Then $y=z_\gamma(h+\varepsilon M-c')$.
+For an energy $E$, put $Y_0=z_\gamma(E-c')$.
+The operator $\operatorname{Op}(y)-Y_0$ is linear in $E$.
+The endpoint-average to midpoint error is kept separately.
+
+A single physical energy margin will be used for the entire gap class.
+The reference size $N_{\rm ref}$ records the pair at the reference edge
+and does not include the moving parameter $Y_0$. The factor $D$ pays
+raw compression and bulk Schur errors. Depth enlarges the shell
+threshold and penalty while $\epsilon_{\rm ref}$ and $A$ remain fixed.
+Let $\overline H\ge1$ dominate the finite off-cell seminorms after
+the fixed losses have been reserved. We may take
+$\overline H\le e^{2\tau q}\mathcal R_q$.
+Put
+\begin{equation}\label{eq:libunit}
+ \begin{split}
+ N_{\rm ref}&=\sqrt{\mathrm{ex}}+1+\overline H,\\
+ \epsilon_{\rm ref}&=(z_\gamma N_{\rm ref})^{-1},\\
+ D&=C_D\{1+z_\gamma N_{\rm ref}
+       (\gamma_{\rm cmp}+c_{\rm bulk}^2/m+\|W_{\rm bd}\|)\},\\
+ A&=D\epsilon_{\rm ref},\qquad c_A=C_Wz_\gamma A=C_WD/N_{\rm ref}.
+ \end{split}
+\end{equation}
+Here $C_D$ is a sufficiently large fixed constant for all assigned
+bulk budgets, and $C_W$ is fixed below. The bulk coupling in this
+definition is unweighted. The separate rank-two end coupling is
+excluded from $D$. A boundary weight is retained when present.
+This is one unit per gap and scale, independent of $E$.
+It is finite at $\mathrm{ex}=0$.
+
+The full class window is the contracted real chart with
+\begin{equation}\label{eq:libfullwindow}
+ |\zeta(E)|^2\le\mathrm{ex}+4\Lambda e^{-\xi q}.
+\end{equation}
+All assertions below hold for both branches and both signs of $Y_0$.
+There is no restriction to shallow values of $|Y_0|$.
+
+\subsection{The ordered product and the replacement shells}
+
+On the full cell lattice let
+\[
+ \overline X=\operatorname{Op}(y)-Y_0,\qquad
+ \overline V=\operatorname{Op}(y)+Y_0
+             -2\operatorname{Op}(\vartheta(x)).
+\]
+Apply the partner after $\overline X$. The calculus of
+Appendix~\ref{app:libcalculus} gives
+\begin{equation}\label{eq:libproduct}
+ \begin{split}
+ \overline V\overline X&=\operatorname{Op}(p_1)+E_2,\\
+ p_1&=\Phi(x)I_2+\varepsilon\{\widetilde Y,W\}_+
+        +\varepsilon^2W^2
+        +\frac{i\delta}{2}[y_k,y_t]
+        +i\delta\{y,\vartheta\},\\
+ \|E_2\|&\le\kappa\overline H\mathcal R_q=:e_2.
+ \end{split}
+\end{equation}
+The braces with subscript $+$ denote the anticommutator; the last
+braces are the ordered Poisson bracket. Both derivatives of
+$\vartheta(x)$ are retained, including
+$\partial_t\vartheta=\vartheta'(x)U'(t)$.
+The first four terms of $p_1$ are Hermitian on real $k,t$.
+The last term is anti-Hermitian. We use singular values and never
+assert that the ordered product is self-adjoint.
+
+Let $\mathcal D_j=(p_1)_0(t_j)$ be its exact zero Fourier block and
+write $\mathcal D_j=\mathcal D_j^h+\mathcal D_j^a$.
+Set
+\[
+ \mathcal D^h(t)=\overline\Phi(t)I_2+B(t),\qquad
+ \overline\Phi(t)=\frac1{2\pi}\int_0^{2\pi}
+             \Phi(\mathrm{ex}+T_s(k)+U(t))\,dk.
+\]
+The two ordered eigenvalues of $\mathcal D^h$ are denoted
+$\lambda_-(t)\le\lambda_+(t)$.
+
+\begin{lemma}[Block variation and global hopping]\label{lem:libhopping}
+For the fixed derivative losses above,
+\begin{align}
+ \|B(t)\|&\le b_1\sqrt{\mathrm{ex}+4+U(t)}+b_2,
+ &b_1&=C\sqrt\kappa\mathcal R_q,
+ &b_2&=C(\sqrt\kappa+\kappa)\overline H\mathcal R_q,
+ \label{eq:libB}\\
+ \|B'(t)\|&\le C\sqrt\kappa\mathcal R_q
+   (\sqrt{\mathrm{ex}+4+U(t)}+z_\gamma+\overline H)
+       +C\kappa\mathcal R_q.\label{eq:libBder}
+\end{align}
+There is a core of $k_{\rm core}\le C\overline H\mathcal R_q$ cells
+about the cell nearest $t_a$. On either side of the core each ordered
+eigenvalue increases away from $t_a$, and
+\begin{equation}\label{eq:libmatrixmono}
+ \lambda_\ell(t)-\lambda_\ell(u)
+     \ge\tfrac34(1-1/q)(U(t)-U(u))
+\end{equation}
+when $t$ is farther from $t_a$ than $u$ on that side.
+For the full hopping kernel $\mathcal P_{ji}$ of
+$\operatorname{Op}(p_1)$,
+\begin{equation}\label{eq:libglobalhop}
+ \sup_j\sum_{i\ne j}\|\mathcal P_{ji}\|,\quad
+ \sup_i\sum_{j\ne i}\|\mathcal P_{ji}\|
+ \le H_p:=C\{1+(\sqrt\kappa+\kappa)\overline H\mathcal R_q\}.
+\end{equation}
+The bound is independent of $\mathrm{ex}$ and $Y_0$.
+\end{lemma}
+
+\begin{proof}
+The differentiated convolution estimates in
+Appendix~\ref{app:libcalculus} bound $Y$ and $W$, with one extra
+factor $q$ for $W$. Differentiating the dipole product uses
+$\varepsilon(Y_tW+YW_t)$; differentiating the spin term uses
+$y_{kt}$ and $y_{tt}$. The stated fixed seminorm orders control all
+of them. They give~\eqref{eq:libB}--\eqref{eq:libBder}.
+The anti-Hermitian block has a uniform bound $a_\infty$ with
+\[
+ a_\infty\le C\sqrt\kappa\overline H\mathcal R_q
+                  +|\delta|\mathcal R_q/\rho_c.
+\]
+The last term is exponentially small for $b\ge2\xi$.
+
+Weyl's min-max inequality, integrated along a side of the core,
+gives
+\[
+ \lambda_\ell(t)-\lambda_\ell(u)
+ \ge\overline\Phi(t)-\overline\Phi(u)-\int_u^t\|B'(v)\|\,|dv|.
+\]
+Since $|U'|\ge2\pi q\sqrt\Lambda\sqrt U$ on the chart,
+each of the four ratios from~\eqref{eq:libBder} to
+$(1-1/q)|U'|$ is at most $1/16$ outside an enlarged
+$C\overline H\mathcal R_q$ core.
+Here $\sqrt U$ changes by $\sqrt\kappa(1+o(1))$ per cell,
+$\mathrm{ex}\le\mathrm{ex}_*\le\Lambda$, and
+$z_\gamma\le q\sqrt\Lambda\mathcal R_q$.
+Their sum is at most $1/4$, proving~\eqref{eq:libmatrixmono}.
+No convexity or unique matrix-eigenvalue minimum is asserted inside
+the core.
+
+For~\eqref{eq:libglobalhop}, retain the zero Fourier matrix exactly.
+Every nonzero Fourier coefficient of $\widetilde YW$ contains at
+least one off-cell factor. The bounds
+\[
+ Y_{\rm off}\le\overline H\mathcal R_q,\quad
+ W_{\rm off}\le q\overline H\mathcal R_q,\quad
+ \|Y_0^{\rm Fourier}\|\le Cz_\gamma\mathcal R_q,\quad
+ \|W_0^{\rm Fourier}\|\le qz_\gamma\mathcal R_q
+\]
+are bounds for absolute weighted Fourier sums. Thus its product
+with $\varepsilon$ has row and column sums at most
+$C|\delta|qz_\gamma\overline H\mathcal R_q
+ \le C\sqrt\kappa\overline H\mathcal R_q$.
+The $\varepsilon^2W^2$, spin and scalar-Poisson terms cost at most
+$C\kappa\overline H\mathcal R_q$ and
+$C\sqrt\kappa\overline H\mathcal R_q$.
+Expand the scalar $\Phi$ in bounded $T_s(k)$; $\Phi'=1+O(1/q)$ and
+the contracted-chart Cauchy bounds give off-cell sum $2+o(1)$.
+Midpoint shifts and Fourier tails are included in these sums.
+This proves the global estimate in both directions.
+A large diagonal matrix has not been used as an off-cell bound.
+\end{proof}
+
+Keep the full diagonal matrix exactly. A cell belongs to the shell
+only when one of its exact Hermitian block eigenvalues is close to
+zero. The constant threshold pays hopping, non-Hermitian and
+interface errors. Adding the diagonal bound again would overestimate
+the width.
+
+Fix a well $J$. Products of compressed factors retain an interface
+norm $I_{\rm int}\le C\overline H(\overline H+h_\vartheta)$,
+where $h_\vartheta$ is the off-cell sum of
+$\operatorname{Op}(\vartheta)$. Choose a constant floor
+\begin{equation}\label{eq:libWzero}
+ \begin{split}
+ W_0&\ge C_0(1+H_p+a_\infty+e_2+I_{\rm int}
+                      +\kappa\mathcal R_q),\\
+ W_0&\le C\mathcal R_q^C(1+\overline H^2+\kappa\overline H).
+ \end{split}
+\end{equation}
+The second line follows by enlarging the fixed losses. Write
+$n=|Y_0|+\sqrt{\mathrm{ex}}+1$ and define the replacement shell by
+\begin{equation}\label{eq:libnewshell}
+ \begin{split}
+ W'&=\max\{W_0,\,2c_A(n+\overline H+1),\,4c_A^2\},\\
+ \mathcal S&=\mathcal K_E\cup
+ \{j\in J:\min_{\ell\in\{-,+\}}|\lambda_\ell(t_j)|<W'\}.
+ \end{split}
+\end{equation}
+Here $\mathcal K_E$ is the whole core if the displayed inequality
+holds somewhere in the core, and is empty otherwise.
+In particular, the full diagonal majorant in~\eqref{eq:libB} is
+absent from the threshold. It is already in the exact eigenvalues.
+
+\begin{proposition}[Replacement shell geometry and penalized gap]
+\label{prop:libshell}
+For $2\xi\le b\le L-\xi$, large $q$, and every $E$ in
+\eqref{eq:libfullwindow}, the shell has at most five components per
+well, at most four if it misses the core. Each has width at most
+\begin{equation}\label{eq:libshellwidth}
+ C\left\{1+\sqrt{W_0/\kappa}
+ +\frac{c_A(1+\overline H)}{\sqrt\kappa}
+ +\sqrt{\frac{c_A(\sqrt{\mathrm{ex}}+1)}\kappa}\right\}
+       +2k_{\rm core}.
+\end{equation}
+These widths obey~\eqref{eq:FPwidth}.
+There is a bounded self-adjoint shell penalty, in energy units,
+$M_E\un_{\mathcal S}$, such that the effective frame operator has
+gap at least $4A$ at the window center and $3A$ for
+$|E-E_c|\le A$ with the shell fixed at $E_c$. Its size satisfies
+\begin{equation}\label{eq:libMbound}
+ M=z_\gamma M_E\le C\{n+\sqrt{W_0}
+                 +\overline H^2N_{\rm ref}/D+c_A\}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Put $\mathcal C=J\setminus\mathcal S$.
+Off the core each ordered eigenvalue is monotone on each side and
+the threshold is constant in the cell. Each branch gives at most
+one interval on either side. Adding the conditional core gives the
+component count.
+For an interval with endpoint potential values $U_1\le U_2$,
+\eqref{eq:libmatrixmono} gives $U_2-U_1\le CW'$.
+Its cell count is at most
+\[
+ C\min\{\sqrt{W'},W'/\sqrt{U_2}\}/\sqrt\kappa+1.
+\]
+If $W'=W_0$ or $4c_A^2$, use the square-root bound.
+For $W'=2c_A(n+\overline H+1)$ and $U_2\ge n^2/16$, use the second
+bound. If $U_2<n^2/16$, the shell inequality and the full diagonal
+bound~\eqref{eq:libB} imply
+\[
+ n\le C(\sqrt{\mathrm{ex}}+1+\sqrt{W'}+b_1+\sqrt{b_2}).
+\]
+The quantities $b_1^2,b_2$ are absorbed in $W_0$.
+AM--GM applied to $c_A\sqrt{W'}$ proves
+\eqref{eq:libshellwidth}.
+No cell-dependent diagonal-size threshold has been added.
+
+Here are both Schur sums for the off-shell gap. The floor gives
+$d_j:=\sigma_{\min}(\mathcal D_j)\ge W'-a_\infty\ge0.99W'$ on
+$\mathcal C$. For $\mathcal T_{ji}=\mathcal D_j^{-1}\mathcal P_{ji}$,
+\begin{align*}
+ \sup_j\sum_i\|\mathcal T_{ji}\|&\le H_p/(W'-a_\infty)\le1/32,\\
+ \sup_i\sum_j\|\mathcal T_{ji}\|&\le
+       (W'-a_\infty)^{-1}\sup_i\sum_j\|\mathcal P_{ji}\|\le1/32.
+\end{align*}
+Use operator norms, separately, for $E_2$ and the interface product:
+$\|\mathcal D_{\mathcal C}^{-1}(E_{2,\mathcal C}
+ -\mathrm{Int})\|\le1/32$.
+Thus the total normalized remainder has norm at most $1/16$.
+A norm-controlled remainder has not been assigned a row-sum bound.
+
+Let $N$ be cellwise scalar, with
+\[
+ N_j=\sqrt{\mathrm{ex}+4+U_j}+|Y_0|+\overline H+\sqrt{W'}+1.
+\]
+The diagonal part of $N^{-1}\overline V_{\mathcal C\mathcal C}$
+is bounded. Since $N_j\ge\overline H$, its off-cell row and column
+sums satisfy, respectively,
+\begin{align*}
+ \sup_j\sum_{i\ne j}\frac{\|\overline V_{ji}\|}{N_j}
+     &\le H_V/\overline H\le C,\\
+ \sup_i\sum_{j\ne i}\frac{\|\overline V_{ji}\|}{N_j}
+     &\le\overline H^{-1}\sup_i\sum_{j\ne i}
+                       \|\overline V_{ji}\|\le C.
+\end{align*}
+Here the fixed seminorm losses have been absorbed into $\overline H$.
+Hence its norm is at most a fixed $C_V$.
+The product, with partner after $X$, now yields
+\[
+ C_V\|X_{\mathcal C\mathcal C}v\|
+ \ge\|N^{-1}\mathcal D_{\mathcal C}(I+\mathcal T_{\rm total})v\|
+ \ge\tfrac{15}{16}\min_j(d_j/N_j)\|v\|.
+\]
+This uses the order shown. It commutes neither $N$ nor
+$\operatorname{Op}(\vartheta)$ past $X$.
+For $U\le C(Y_0^2+\mathrm{ex}+W')$ the last minimum is at least
+$cW'/(n+\sqrt{W'}+\overline H+1)\ge cc_A$.
+In the outer region the scalar $\Phi$ dominates the matrix
+majorant, the anti-Hermitian error and the floor, giving ratio at
+least $c\sqrt U$, which is larger. Thus
+$\|X_{\mathcal C\mathcal C}v\|\ge g\|v\|$ for the declared floor
+$g=cc_A$.
+
+Take $M=\|X_{\mathcal S\mathcal S}\|+g+3\overline H^2/g$.
+Its shell block has gap $G\ge g+3\overline H^2/g$.
+Diagonal scaling by $\operatorname{diag}(\sqrt G,\sqrt g)$ bounds
+the normalized off-diagonal norm by $1/\sqrt3$. The whole penalized
+operator therefore has singular gap at least
+$(1-1/\sqrt3)g$. Increase $C_W$ once and divide by $z_\gamma$ to get
+$4A$, with the endpoint error already paid in $D$.
+Energy variation of size $A$ leaves $3A$.
+If a block is empty, use the remaining gap or penalize the whole
+finite well directly.
+On shell cells the full diagonal bound implies
+$\sqrt U\le C(n+\sqrt{W'}+\sqrt{W_0})$.
+Substituting $g=cc_A$ gives~\eqref{eq:libMbound}.
+In particular its $\overline H^2N_{\rm ref}/D$ term is retained.
+
+Finally expand the unweighted definition of $D$ in
+\eqref{eq:libunit}, using~\eqref{eq:libranktwoerrors} and
+$c_{\rm bulk}^2/m\le\delta^2e^{\xi q/2}\mathcal R_q$.
+Since $N_{\rm ref}\le\sqrt\Lambda\mathcal R_q$ and $r\le q/2$,
+\begin{align*}
+ \frac{c_A(1+\overline H)}{\sqrt\kappa}
+       &\le\mathcal R_q^C(1+\kappa^{-1/2}),\\
+ \frac{c_A(\sqrt{\mathrm{ex}}+1)}\kappa&\le CD/\kappa,\\
+ \sqrt{D/\kappa}&\le e^{C\xi q}\mathcal R_q^C(1+\kappa^{-1/2}).
+\end{align*}
+For example the $\delta^2$ term in $D/\kappa$ is at most
+$\mathcal R_q^C(N_{\rm ref}/\sqrt\Lambda)e^{\xi q/2}$.
+The distance-dependent term is at most
+$\mathcal R_q^CN_{\rm ref}e^{-(L-4\tau)(q-r)}/
+ (\sqrt\Lambda|\delta|)$.
+Its square root is bounded by the same type of slack times
+$1+\kappa^{-1/2}$. The retained boundary weight and interwell tails
+are smaller. Equations~\eqref{eq:libWzero} and
+\eqref{eq:libshellwidth} now give~\eqref{eq:FPwidth}.
+This calculation keeps the low-$b$ numerator $D$ throughout.
+\end{proof}
+
+\subsection{Weighted estimates at every depth}
+
+\begin{proposition}[All-depth weighted budgets]\label{prop:libweighted}
+Use the physical frame penalty synthesized from
+Proposition~\ref{prop:libshell}. Let the weight vanish on shell cells,
+jump at both-endpoint longer-arc bonds by at most
+\[
+ \mu=e^{-(\xi/2+10\tau)q},\qquad
+ p_{\rm pad}=\lceil e^{(\xi/2+12\tau)q}\rceil,
+\]
+and cap it before the frame ends, keeping it constant in exterior
+gaps. Throughout~\eqref{eq:libfullwindow}, the three weighted
+budgets of Definition~\ref{def:FPstar} hold. All shells with their
+padding lie inside the frame, and their fine-window count and
+inverse widths are $e^{O(q)}$.
+\end{proposition}
+
+\begin{proof}
+Let $F$ be~\eqref{eq:libF}. Physical weighted Schur estimates, with
+both weight orientations, give for shell synthesis $U_{\mathcal S}$
+\begin{equation}\label{eq:libonetails}
+ \|(e^{\pm\varphi}-1)U_{\mathcal S}\|\le C\mu\sqrt F,
+ \qquad
+ \|V^*(e^{\pm\varphi}-1)U_{\mathcal S}\|\le C\mu F.
+\end{equation}
+The second bound uses two localized tails. Within a well the
+weights grow more slowly than the frame tails. Across wells retain
+$e^{\mu D_{\rm cap}}\mathcal R_qe^{-c/|\delta|}$, which is still
+negligible. The proof is given in Appendix~\ref{app:liblocal}.
+
+For open N,~\eqref{eq:libtunnel} and the Morse derivative comparison
+imply
+\begin{equation}\label{eq:libkeyproducts}
+ \begin{split}
+ z_\gamma\sqrt{\mathrm{ex}}F
+       &\le e^{(d_h+6\tau)q}\mathcal R_q,\\
+ \mathrm{ex}F&\le e^{(2d_h+4\tau)q-Lr}\mathcal R_q.
+ \end{split}
+\end{equation}
+For closed or near-closed pairs use
+$\sqrt{\mathrm{ex}}\le e^{(\xi/2+6\tau)q}$ and
+$F\le\Lambda^{-1/2}e^{2\tau q}\mathcal R_q$ instead.
+In either case
+\begin{equation}\label{eq:libKref}
+ K_{\rm ref}=z_\gamma N_{\rm ref}F
+       \le e^{(\xi/2+8\tau)q}\mathcal R_q^C,\qquad
+ \mu K_{\rm ref}=o(1).
+\end{equation}
+The physical weight perturbation has norm $O(\mu)$ and is supported
+on the jump bonds. Its frame block is $O(\mu F)=o(A)$ by
+\eqref{eq:libKref}. Its cross blocks are $O(\mu\sqrt F)$.
+After squaring and dividing by $mA$, the extra factor is $C\mu/m$,
+which tends to zero.
+
+The penalty is nonlocal in physical space. Expanding its conjugation
+with~\eqref{eq:libonetails} gives frame error $CM_E\mu F$, cross
+errors $CM_E\mu\sqrt F$ and complement error $CM_E\mu^2F$.
+The penalty is the only factor that grows with depth. Normalize its
+frame error by $A=D/(z_\gamma N_{\rm ref})$; this leaves
+$\mu MN_{\rm ref}F/D$. The deep part of $M$ is paid by
+$z_\gamma\sqrt{\mathrm{ex}}F$, and its reference-mass part by
+$\mathrm{ex}F$. Thus the same edge unit works at every depth.
+More precisely, use the corrected penalty bound:
+\begin{equation}\label{eq:libpenproduct}
+ MN_{\rm ref}F\le e^{(8\tau+2d_h)q}\mathcal R_q^C.
+\end{equation}
+Here the depth-dependent term is paid by
+\[
+ \sqrt\Lambda e^{-\xi q/2}N_{\rm ref}F,
+\]
+which is bounded using the first line of~\eqref{eq:libkeyproducts}
+or the near-closed cutoff. The squared reference term is paid by
+$\mathrm{ex}F$ in its second line. From~\eqref{eq:libWzero},
+$\sqrt{W_0}\le C\mathcal R_q^C
+ (1+\overline H+\sqrt{\kappa\overline H})$.
+This controls its term, and
+$\overline H^2N_{\rm ref}^2F$ is controlled by the same
+$\mathrm{ex}F$ bound. The last term is
+$c_AN_{\rm ref}F=C_WDF$, with $D$ expanded in unweighted quantities
+as in Proposition~\ref{prop:libshell}. This proves
+\eqref{eq:libpenproduct}.
+Consequently $\mu MN_{\rm ref}F=o(1)$.
+The normalized penalty cross budget has an additional
+$M_E\mu/m=o(1)$, since $M_E\le e^{4\tau q}\mathcal R_q^C$.
+The complement physical error is $O(\mu)=o(m)$; its penalty error
+has two one-tail factors and is $O(M_E\mu^2F)=o(m)$.
+The adjoint cross block obeys the same bounds.
+
+For location, a sufficient bound about the well bottom is
+\begin{equation}\label{eq:libposition}
+ |j-j_a|\le\mathcal R_q^C\left\{
+ \sqrt{e/\kappa}+(\mathrm{ex}/\kappa)^{1/4}
+ +\sqrt{W_0/\kappa}+c_A/\sqrt\kappa+k_{\rm core}\right\},
+\end{equation}
+where $e\le4\Lambda e^{-\xi q}$ bounds the spectral depth.
+The extra orbital position term is at most $e^{(b/2+\text{chosen loss})q}$.
+It is well inside the frame half-width
+$e^{(b-\xi/4)q}/(2\pi q)$ for $b\ge2\xi$.
+The other terms and $p_{\rm pad}$ are inside it as well.
+This position bound does not count distance from the bottom as shell
+width. Also $\mu p_{\rm pad}\ge e^{2\tau q}$.
+
+Finally
+\[
+ e^{-(L+\text{chosen loss})q}\le\epsilon_{\rm ref}
+      \le Cq^{-1/2}\Lambda^{-1/2}.
+\]
+The lower exponent is $L$, because $\mathrm{ex}$ can be large.
+The class width is bounded, so there are $e^{O(q)}$ fine windows.
+The weight and shell may be rebuilt in each smooth fine window.
+This changes neither the fixed unit nor the absolute depth.
+\end{proof}
+
+\begin{remark}[Choice of energy unit]\label{rem:libvarying}
+The available upper estimates do not prove the weighted budgets
+with the varying unit $(z_\gamma\sqrt{\mathrm{ex}+e})^{-1}$ at all
+depths. This is a limitation of that sufficient estimate. It is not
+a theorem excluding every construction with varying units.
+The fixed reference unit above is sufficient.
+\end{remark}
+
+\subsection{Assembly}
+
+\begin{proof}[Proof of Theorem~\ref{thm:libration}]
+We verify the five parts of Definition~\ref{def:FPstar}.
+The finite units, covariant frames and physical kernels are given
+by Lemma~\ref{lem:libframes}, Lemma~\ref{lem:libanchors} and
+\eqref{eq:libunit}. Direct complement exclusion is
+Proposition~\ref{prop:libcompression}. The unweighted definition
+of $D$ pays the compression and bulk squared-coupling budgets.
+It also gives $A=o(m)$, because
+\[
+ A\le C(\epsilon_{\rm ref}+\gamma_{\rm cmp}
+                 +c_{\rm bulk}^2/m+\|W_{\rm bd}\|)=o(m).
+\]
+The shell gap and widths are Proposition~\ref{prop:libshell}; the
+all-depth weighted budgets are Proposition~\ref{prop:libweighted}.
+The localized three-block calculation in
+Appendix~\ref{app:libboundary} supplies the retained end coupling.
+W, top and bottom use the one-band package at the end of
+Section~\ref{sec:innerframes}.
+
+The full window~\eqref{eq:libfullwindow} covers both sides of an N
+pair to $P$-depth $4\Lambda e^{-\xi q}$. The W and extreme windows
+have the corresponding contracted depths. Their smooth cover
+has $O(q)$ coarse classes and $e^{O(q)}$ fine windows.
+It overlaps the high-$b$ plateau $\Lambda e^{-5\xi q/4}$ and the
+target-dependent low-$b$ interior threshold in
+Proposition~\ref{prop:FPtransport}. No window is reset to shallow
+absolute depth. Thus all five parts hold, including closed pairs.
+
+For any strict target $a>1-L/(2\beta)$, first fix the covering slack
+as in Proposition~\ref{prop:FPtransport}. There are finitely many
+constants in $e^{C\xi q}\mathcal R_q^C$. Choose $\xi$ inside that
+slack, then $d_h$ after their largest derivative constant, and then
+$q$ large. The factor $e^{2\tau q}$ and all other fixed exponential
+losses are retained in this order. Proposition~\ref{prop:FPtransport}
+now proves the stated tail estimate.
+\end{proof}
+
+\begin{remark}[Finite certificates; no computation in the proof]
+\label{rem:libcertificates}
+Independent interval calculations give the following enclosures
+for sampled maxima of a frozen-fibre diagnostic. With
+$\xi=L/4$, let $S_B$ be the maximum, over the two real Bloch corners,
+of the sum of pair-projector diagonals at both jump-bond endpoints,
+and put $Q_{\rm old}=z_\gamma\sqrt{\mathrm{ex}+4\Lambda e^{-\xi q}}S_B$.
+For the finite proxy class $\mathrm{ex}\le\Lambda/q^3$, both turning
+signs, the certified intervals for the maximum are
+\[
+\begin{array}{c|c|c|c}
+ \lambda&p&q&\max Q_{\rm old}\\ \hline
+ 2&8&13&[65.567943,65.567944]\\
+ 2&13&21&[917.687046,917.687047]\\
+ 2&21&34&[56263.586146,56263.586147]\\
+ 3&21&34&[6992639.730639,6992639.730640]\\
+ 7&8&17&[280360.523174,280360.523175]
+\end{array}
+\]
+These are finite certificates, rounded outward from rational
+interval endpoints. The central touching pair at even $q$ is
+certified as a rank-two projector using the exact touching identity,
+residual and Gram bounds. The proxy class is different from
+\eqref{eq:libclasses}; two Bloch corners do not certify a uniform
+physical operator estimate. The intervals do not prove an
+asymptotic obstruction for varying units. None is used above.
+\end{remark}

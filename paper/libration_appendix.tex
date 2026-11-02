@@ -1,0 +1,335 @@
+\section{Lattice composition with matrix symbols}\label{app:libcalculus}
+
+The Weyl calculus is classical; see \cite{HSII,RammalBellissard}.
+We record the elementary discrete calculation to specify matrix
+order, shifted domains and the errors used here. For
+$a(k,t)=\sum_m a_m(t)e^{imk}$, put $t_j=t^\nu+j\delta$ and
+\[
+ (\operatorname{Op}(a)v)_j
+       =\sum_m a_m(t_j-m\delta/2)v_{j-m},\qquad
+ N_r^p(a)=\sum_m(1+|m|)^p\sup_I\|\partial_t^r a_m\|.
+\]
+In estimates requiring an off-cell factor, omit the zero Fourier
+mode. The interval $I$ contains every shifted segment below.
+Absolute row and column sums give $\|\operatorname{Op}(a)\|\le N_0^0(a)$.
+For the symmetric endpoint-average quantization,
+\begin{equation}\label{eq:libendpoint}
+ \|\operatorname{Op}^{\rm sym}(a)-\operatorname{Op}(a)\|
+       \le\delta^2 N_2^2(a)/8.
+\end{equation}
+
+\begin{lemma}[Exact product and second-order remainder]
+\label{lem:libcalculus}
+Matrix order is preserved in
+\begin{equation}\label{eq:libtwist}
+ (a\mathbin\# b)_\ell(t)
+   =\sum_{m+n=\ell}a_m(t+n\delta/2)b_n(t-m\delta/2),\qquad
+ \operatorname{Op}(a)\operatorname{Op}(b)
+       =\operatorname{Op}(a\mathbin\# b).
+\end{equation}
+With $\{a,b\}=a_kb_t-a_tb_k$,
+\begin{equation}\label{eq:libTaylorbound}
+ \left\|\operatorname{Op}(a)\operatorname{Op}(b)
+       -\operatorname{Op}\left(ab+\frac{i\delta}2\{a,b\}\right)\right\|
+ \le\frac{\delta^2}8\bigl[
+ N_2^0(a)N_0^2(b)+2N_1^1(a)N_1^1(b)+N_0^2(a)N_2^0(b)\bigr].
+\end{equation}
+If $P_J$ is the cell projection onto a finite well, then
+\begin{equation}\label{eq:libinterface}
+ (P_J\operatorname{Op}(a)P_J)(P_J\operatorname{Op}(b)P_J)
+ =P_J\operatorname{Op}(a\mathbin\# b)P_J
+  -P_J\operatorname{Op}(a)(1-P_J)\operatorname{Op}(b)P_J.
+\end{equation}
+The last term uses the full-lattice factors before compression.
+\end{lemma}
+
+\begin{proof}
+Multiplying kernels at $(j,j-m,j-m-n)$ gives
+\eqref{eq:libtwist}. Apply Taylor's formula in $u\in[0,1]$ to
+$a_m(t+un\delta/2)b_n(t-um\delta/2)$.
+The first derivative gives $(i\delta/2)\{a,b\}$.
+The three second derivatives have coefficients $n^2,-2mn,m^2$.
+Integrating their norms and summing both absolute Schur sums proves
+\eqref{eq:libTaylorbound}. This uses only second derivatives and
+covers negative $\delta$. Equation~\eqref{eq:libendpoint} is the
+trapezoid-midpoint bound. Insert $1=P_J+(1-P_J)$ between full
+factors for~\eqref{eq:libinterface}.
+\end{proof}
+
+Here is the family-specific control of these seminorms.
+With the two finite anchor lifts at shorter-arc distance $r\le q/2$
+and $a_0=L-4\tau$,
+\begin{equation}\label{eq:libconvolution}
+ \sum_x e^{-a_0\dist(x,\mathcal A)}
+        e^{-a_0\dist(x,\mathcal A+mq)}
+ \le C(|m|q+1)e^{-a_0(|m|q-r)},\qquad m\ne0.
+\end{equation}
+Fixed differentiated versions follow from~\eqref{eq:libtails}.
+The matrix coefficients of $h$ are inner products of two frame
+vectors with the nearest-neighbor frozen operator. The orbital
+matrix also has one position factor, costing $q(1+|m|)$.
+Thus, for the finite $p,r'$ used in the preceding estimates,
+\begin{align}
+ N_{r'}^p(Y-Y_0^{\rm Fourier})
+       &\le z_\gamma\mathcal R_qe^{-a_0(q-r)},\\
+ N_{r'}^p(W-W_0^{\rm Fourier})
+       &\le qz_\gamma\mathcal R_qe^{-a_0(q-r)},\\
+ N_{r'}^0(Y)&\le z_\gamma\mathcal R_q,\qquad
+ N_{r'}^0(W)\le qz_\gamma\mathcal R_q.\label{eq:libseminorms}
+\end{align}
+The Fourier subscripts in this display are unrelated to the energy
+parameter $Y_0$ or the floor $W_0$.
+The same common periodic gauge is used for every coefficient.
+The proof is~\eqref{eq:libconvolution}, followed by summation over
+$m$; finite extra polynomial factors are absorbed in $\mathcal R_q$.
+It relies on the localized frame, not merely on $Z^2=xI_2$.
+
+For Fourier truncation at $|m|\le q$, enlarge the phase interval by
+$[-3q|\delta|/2,3q|\delta|/2]$. It then contains all product
+midpoints and shifted segments. This enlargement is smaller than
+the reserved frame-chart margin for $b\ge2\xi$.
+The omitted Fourier tail has its absolute weighted sum retained.
+Every nonzero term crossing a shell or well-end interface contains
+two off-cell factors in~\eqref{eq:libinterface}. Its norm is at most
+$C\overline H(\overline H+h_\vartheta)$.
+It is not part of an $O(\delta^2)$ Taylor remainder.
+
+For completeness, put $u=Y_0-\vartheta$, so the two symbols in
+\eqref{eq:libproduct} are $b=\widetilde Y+\varepsilon W+u$ and
+$a=\widetilde Y+\varepsilon W-u$.
+Then $ba=\Phi I_2+\varepsilon\{\widetilde Y,W\}_+
++\varepsilon^2W^2$ and
+$\{b,a\}=[y_k,y_t]+2\{y,\vartheta\}$.
+Equations~\eqref{eq:libTaylorbound} and~\eqref{eq:libseminorms}
+prove the product and its $\kappa\overline H\mathcal R_q$ error.
+This also identifies the anti-Hermitian term that must be retained.
+
+\section{The localized three-block boundary calculation}
+\label{app:libboundary}
+
+We give the end correction separately because the global estimate
+$c_{\rm end}^2/m\ll A$ is not required by the argument.
+Fix a fine window and use its shell penalty and capped weight.
+Write $K=e^\varphi(H+M_EP_{\mathcal S}-E)e^{-\varphi}$.
+Split the frame projection as $\Pi=\Pi_I+\Pi_B$, where $B$ consists
+of end strips beyond the deepest shell and its padding, and
+$I$ is the remaining frame. Keep Fourier and interwell tails as
+errors in their assigned budgets. The weight is constant at this
+end seam. Write $F=K_{\Pi\Pi}$.
+
+The shell gap, compression estimate and weighted frame estimate give
+$\|F^{-1}\|\le1/(2A)$, with the same adjoint statement.
+At an end cell, $U_{\rm end}\asymp\Lambda e^{-\xi q/2}$ and the
+spectral depth is $e\le4\Lambda e^{-\xi q}$.
+The product lower bound and its partner normalization give
+\begin{equation}\label{eq:libendmargin}
+ \begin{split}
+ d:=\sigma_{\min}(F_{BB})
+ &\ge\frac{c(U_{\rm end}-e)}
+ {z_\gamma(\sqrt{\mathrm{ex}+U_{\rm end}}
+                         +\sqrt{\mathrm{ex}+e})}\\
+ &\ge\frac{cU_{\rm end}}{z_\gamma\sqrt{\mathrm{ex}+U_{\rm end}}}
+ \ge e^{-(\xi/2+\text{chosen loss})q}.
+ \end{split}
+\end{equation}
+When $\mathrm{ex}$ dominates, replacing this divided difference by
+$\sqrt{U_{\rm end}}/z_\gamma$ would be incorrect.
+The penalty is zero on $B$.
+Also
+\[
+ \|F_{IB}\|,\|F_{BI}\|\le t_{\rm end}
+       =\overline H/z_\gamma\le e^{-(L/2-2\tau)q}\mathcal R_q,
+ \qquad \|K_{QQ}^{-1}\|\le2/m.
+\]
+Let $c_0$ now denote the complete weighted bulk cross-block bound,
+so $c_0^2/m\le A/50$ after assigning the budgets and
+$c_0=o(m)$. The end cross blocks are bounded by $c_0+c_{\rm end}$.
+The weighted $c_0$ need not be $O(|\delta|\mathcal R_q)$.
+
+Eliminate $Q$, writing $R=K_{QQ}^{-1}$ and
+$S=F-G$, $G=K_{\Pi Q}RK_{Q\Pi}$.
+Then
+\[
+ \|G_{II}\|\le2c_0^2/m,\quad
+ \|G_{IB}\|,\|G_{BI}\|\le2c_0(c_0+c_{\rm end})/m,\quad
+ \|G_{BB}\|\le2(c_0+c_{\rm end})^2/m.
+\]
+Set
+\[
+ r_1=(c_0+c_{\rm end})^2/(md),\quad
+ r_2=t_{\rm end}/d,\quad
+ r_3=c_{\rm end}^2t_{\rm end}^2/(md^2A).
+\]
+One has $A/d=o(1)$, by~\eqref{eq:libunit}, the raw compression
+errors and~\eqref{eq:libendmargin}. Hence the bulk part of $r_1$ is
+at most $A/(50d)=o(1)$. Its end part tends to zero.
+Furthermore
+\begin{equation}\label{eq:librthree}
+ r_2=o(1),\qquad
+ r_3\le e^{(-L+3\xi/2+4\tau)q}\mathcal R_q^C=o(1).
+\end{equation}
+The last bound uses $A\ge\epsilon_{\rm ref}
+\ge e^{-(L+\text{chosen loss})q}$ and $\xi$ sufficiently small.
+All estimates hold for adjoints too.
+
+For $q$ large, $S_{BB}$ is invertible with norm of its inverse at
+most $2/d$. The resolvent identity gives
+\[
+ S_{BB}^{-1}-F_{BB}^{-1}=F_{BB}^{-1}G_{BB}S_{BB}^{-1}.
+\]
+The difference of interior Schur complements is exactly
+\begin{equation}\label{eq:libSchurdifference}
+\begin{split}
+ S/S_{BB}-F/F_{BB}={}&-G_{II}
+ -F_{IB}(S_{BB}^{-1}-F_{BB}^{-1})F_{BI}\\
+ &+G_{IB}S_{BB}^{-1}F_{BI}
+   +F_{IB}S_{BB}^{-1}G_{BI}
+   -G_{IB}S_{BB}^{-1}G_{BI}.
+\end{split}
+\end{equation}
+Both mixed $I$--$Q$--$B$ paths are present.
+The second term costs at most
+$8r_2^2c_0^2/m+8r_3A$.
+The two mixed terms together cost at most
+\[
+ 8r_2c_0^2/m+
+ 8\sqrt{c_0^2/m}\sqrt{r_3A}.
+\]
+The last term costs at most $8r_1c_0^2/m$.
+Together with $\|G_{II}\|\le A/25$, their sum is at most $A/10$
+for all large $q$.
+
+The inverse of the unperturbed interior Schur complement is the
+$I,I$ block of $F^{-1}$. It therefore has norm at most $1/(2A)$;
+no positivity of $F$ is assumed. Thus the perturbed interior inverse
+has norm at most $1/(1.9A)$.
+Since $r_2=o(1)$ and $A/d=o(1)$, block reconstruction gives
+$\|S^{-1}\|\le0.6/A$ eventually. The strict little-$o$ comparison
+$A/d=o(1)$ is needed for this constant; $A\le d/4$ alone would not
+suffice. Finally $A=o(m)$ and both full cross blocks are $o(m)$,
+so reconstructing $Q$ gives $\|K^{-1}\|\le1/A$.
+The same calculation for $K^*$ supplies the two-sided inverse
+statement. A small complex strip, for example
+$|\operatorname{Im}z|\le A/4$ after a fixed contraction of the real
+fine window, has inverse $O(1/A)$ by the resolvent identity.
+
+\section{From weighted gaps to launch-shell confinement}
+\label{app:liblocal}
+
+We supply the functional-calculus details used in
+Proposition~\ref{prop:FPtransport}.
+The physical Green, synthesis and orthogonalization kernels are
+those of \cite[Appendices B--D]{DMband}, extended to rank at most two
+in Lemma~\ref{lem:libframes}. Let $U_{\mathcal S}$ synthesize shell
+vectors. The weight is zero on their cells. For a tail at cell
+distance $d$ from such a cell,
+\[
+ |e^{\pm\varphi(x)}-1|\le C\mu d e^{\mu d}.
+\]
+Combining this with the physical frame tails gives an absolute
+kernel majorant with one tail from a shell cell to a jump bond.
+Its row and column sums are $C\mu\sqrt F$.
+Compressing to the frame multiplies by a second localized kernel;
+convolution and both Schur sums give $C\mu F$.
+Both endpoints of every jump bond are included. The number of
+shell components is bounded, so the constants are independent of
+their lengths. Across wells retain the physical interwell tail
+multiplied by $e^{\mu D_{\rm cap}}$, as in
+\cite[Appendix D, Boundary leakage with the correct rate]{DMband}.
+It remains negligible. This proves~\eqref{eq:libonetails}, including
+both weight signs. Expanding
+$e^\varphi P_{\mathcal S}e^{-\varphi}-P_{\mathcal S}$ gives the
+one-tail and two-tail penalty bounds used in
+Proposition~\ref{prop:libweighted}.
+
+The same proof in rank one gives the top, bottom and W estimates.
+At low $b$ the normalized compression errors can grow.
+Use $A=D/|P'(E_a)|$, not a dimensionless margin exceeding the
+range of a previously normalized gap lemma. The coarse shell width
+and the larger padding proved above still give~\eqref{eq:FPwidth}.
+The raw top-frame estimates require only $b\ge2\xi$: on the IMS
+patches the freezing error $C\sqrt{|\delta|/q}$ is $o(m)$.
+The small-$\kappa$ Mathieu ladder and its quantization assumptions
+are unused in this extension.
+
+\subsection{Static localization and the initial tail}
+
+Let $H_O=H+M_EP_{\mathcal S}$ and let $g$ be a smooth fine filter
+supported in the contracted gap window of $H_O$.
+The frame, complement and boundary calculations above give
+\[
+ g(H_O)=0,\qquad
+ \|e^\varphi(H_O-z)^{-1}e^{-\varphi}\|\le C/A
+\]
+on the small complex strip used for an almost-analytic extension.
+Its vertical width and all required inverse constants are
+$e^{O(q)}$.
+The resolvent identity and Helffer--Sj\"ostrand formula give
+\begin{equation}\label{eq:libstatic}
+ \|\un_{\mathcal O}g(H)\|
+ \le C(g)M_EA^{-1}e^{-\mu p_{\rm pad}}
+ \le\exp(-e^{\tau q})
+\end{equation}
+after harmless contractions and polynomial factors.
+Here $\mathcal O$ is outside the padded union of shell cells.
+Although the penalty is nonlocal, its weighted synthesis is bounded
+by~\eqref{eq:libonetails}; this is the needed right-hand factor in
+the resolvent identity.
+Choose a wider filter $g_2=1$ on a neighborhood of $\supp g$, still
+inside a spare gap buffer, with fixed-order derivatives $e^{O(q)}$.
+Constructing the initial gap with margin $4A$ and using a narrower
+fine window leaves this buffer. This avoids assuming that an
+arbitrary compact support stays a fixed distance from a window end.
+
+Merge padded shell intervals that meet or are separated by less
+than a fixed multiple of the padding. Their number is bounded, so
+each merged component still has width bounded by a constant times
+\eqref{eq:FPwidth}. If the launch $x_0$ lies outside the padded union,
+$\|g(H)\delta_{x_0}\|$ is bounded by~\eqref{eq:libstatic}.
+Otherwise choose the merged component containing it and a position
+cutoff $\chi$ whose boundary bonds lie in $\mathcal O$.
+In the functional-calculus formula for $[g(H),\chi]$, split
+\[
+ (H-z)^{-1}=(H-z)^{-1}g_2(H)+(H-z)^{-1}(1-g_2(H)).
+\]
+The term with both resolvents in the second part is analytic near
+$\supp g$ and integrates to zero. Each remaining term contains
+$[H,\chi]g_2(H)$ or its adjoint, which is bounded by
+\eqref{eq:libstatic}. The functional-calculus factors are
+$e^{O(q)}$, so the initial mass outside this component is doubly
+exponentially small.
+
+For $\psi_t=e^{-itH}g(H)\delta_{x_0}$,
+\[
+ \left|\frac{d}{dt}\langle\psi_t,(1-\chi)\psi_t\rangle\right|
+ \le\|[H,\chi]g_2(H)\|\,\|\psi_t\|^2.
+\]
+Thus the outside mass is at most
+$\exp(-e^{c\xi q})(1+|t|)$ for a fixed $c>0$, after reducing the
+constant in the exponent. This is confinement about the launch
+shell. Its distance from the well bottom is not included in its
+width. Summing the $e^{O(q)}$ fine windows preserves every fixed
+inverse-power tail on $|t|\le e^{Bq}$.
+
+\subsection{The interior functional-calculus bridge}
+
+Let $f$ be a smooth filter supported in the interior class of
+\eqref{eq:libinterior}, with derivatives $e^{O(q)}$.
+Insert a smooth spectral-neighborhood cutoff equal to one on the
+spectrum. For $|t|\le e^{Bq}$, all fixed derivatives of
+$h_t(E)=e^{-itE}f(E)$ are $e^{O(q)}$.
+In an almost-analytic formula for $h_t(H)$ choose fixed extension
+order $r$ and vertical cutoff $y_0=e^{-dq}$.
+Fix the desired error $e^{-Mq}$ and choose a constant $B'$ large.
+For $e^{-B'q}\le|\operatorname{Im}z|\le y_0$, use the interior
+resolvent estimate at auxiliary time $1/|\operatorname{Im}z|$.
+Its doubly exponential error absorbs every $e^{O(q)}$ factor.
+For $|\operatorname{Im}z|<e^{-B'q}$, the plain resolvent bound and
+$\bar\partial\widetilde h_t=O(e^{C_rq}|\operatorname{Im}z|^r)$
+give at most $Ce^{(C_r-rB')q}$.
+Choose $B'$ so that this is below $e^{-Mq}$.
+The argument treats the negative half-plane by conjugation.
+It proves the interior filtered-packet estimate on every fixed
+exponential time window. It asserts no longer time range.
+This completes the analytic passage required by
+Proposition~\ref{prop:FPtransport}.

@@ -17,15 +17,15 @@ The map $\theta\mapsto H_\theta$ is norm continuous, so for fixed $N,T$ the map 
 The argument is the standard open-dense mechanism; we claim no novelty for it. Its content lies in the inputs.
 
 \begin{corollary}[The almost Mathieu operator]\label{cor:G1}
-Let $\lambda>1$ and $\alpha$ irrational with $\beta_e(\alpha)>L/2$. Then $\au(H_{\lambda,\alpha,\theta})\ge1-L/(2\beta_e(\alpha))$ for every $\theta$ in a dense $G_\delta$ set, read as $1$ if $\beta_e=\infty$. If moreover $\beta_e(\alpha)=\beta(\alpha)\in[L,\infty)$, then
+Let $\lambda>1$ and $\alpha$ irrational with $\beta_e(\alpha)>L/2$. Then $\au(H_{\lambda,\alpha,\theta})\ge1-L/(2\beta_e(\alpha))$ for every $\theta$ in a dense $G_\delta$ set, read as $1$ if $\beta_e=\infty$. If moreover $\beta_e(\alpha)=\beta(\alpha)\in(L/2,\infty)$, then
 \[
 \au(H_{\lambda,\alpha,\theta})=1-\frac L{2\beta(\alpha)}\quad\text{on a dense }G_\delta\text{ set},
 \]
-which is strictly larger than the value $1-L/\beta(\alpha)$ at almost every phase.
+which is strictly larger than the value $\max\{0,1-L/\beta(\alpha)\}$ at almost every phase.
 \end{corollary}
 
 \begin{proof}
-If $\beta_e=\infty$ the value is $1$ at every phase by Remark~\ref{rem:endpoint}. Let $L/2<\beta_e<\infty$ and fix $h>L$ with $h/2+(h-L)<\beta_e$ and $\eta=1/4$. Along even scales $n_j$ with $b_{n_j}\to\beta_e$, Theorem~\ref{thm:quarter} gives~\eqref{eq:quarter} at $T_j=|\delta_{n_j}|^{-1}$ for every $\theta$ whose local phase lies in the open nonempty set $U_j=\{x\in\T:|\cos2\pi x-(-1)^{q_{n_j}/2}|<\eta\lambda^{-q_{n_j}}/16\}$. There $T_j^{-2}e^{-2hq_{n_j}}\ge T_j^{-C}$ with $C=2+2h/(h/2+h-L)$, and $\log N_j/\log T_j\to1-h/(2\beta_e)$. Theorem~\ref{thm:G} gives a dense $G_\delta$ set on which $\au\ge1-h/(2\beta_e)$. Intersect these sets along a sequence $h\downarrow L$; a countable intersection of dense $G_\delta$ sets is a dense $G_\delta$ set. If $\beta_e=\beta\ge L$, Corollary~\ref{cor:typeI} gives $\au\le1-L/(2\beta)$ at every phase. The almost-everywhere value is~\cite[Theorem~A]{DMamo}; for finite $\beta\ge L$ the two values differ.
+If $\beta_e=\infty$ the value is $1$ at every phase by Remark~\ref{rem:endpoint}. Let $L/2<\beta_e<\infty$ and fix $h>L$ with $h/2+(h-L)<\beta_e$ and $\eta=1/4$. Along even scales $n_j$ with $b_{n_j}\to\beta_e$, Theorem~\ref{thm:quarter} gives~\eqref{eq:quarter} at $T_j=|\delta_{n_j}|^{-1}$ for every $\theta$ whose local phase lies in the open nonempty set $U_j=\{x\in\T:|\cos2\pi x-(-1)^{q_{n_j}/2}|<\eta\lambda^{-q_{n_j}}/16\}$. There $T_j^{-2}e^{-2hq_{n_j}}\ge T_j^{-C}$ with $C=2+2h/(h/2+h-L)$, and $\log N_j/\log T_j\to1-h/(2\beta_e)$. Theorem~\ref{thm:G} gives a dense $G_\delta$ set on which $\au\ge1-h/(2\beta_e)$. Intersect these sets along a sequence $h\downarrow L$; a countable intersection of dense $G_\delta$ sets is a dense $G_\delta$ set. If $\beta_e=\beta>L/2$, Theorem~\ref{thm:libration} for $\beta<L$ and Corollary~\ref{cor:typeI} for $\beta\ge L$ give $\au\le1-L/(2\beta)$ at every phase. The almost-everywhere value is~\cite[Theorem~A]{DMamo}; for every finite $\beta>L/2$ the two values differ.
 \end{proof}
 
 So for these frequencies the transport exponent of the almost Mathieu operator takes one value at almost every phase and a strictly larger value at a residual set of phases. At $\beta=\infty$ both values are $1$.

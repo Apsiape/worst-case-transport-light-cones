@@ -43,11 +43,11 @@
 \raggedbottom
 \title{Worst-case transport and light cones\\ for quasi-periodic operators\thanks{The authors developed this work with AI models from more than one developer and take responsibility for every claim. How the work was done is described at the end of the paper.}}
 \author{Seth Douglas \and Nidhal Mghirbi}
-\date{Version 1.0.0, October 2026}
+\date{Version 2.0.0, November 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-We study the fastest transport exponent $\alpha_u^+$ of quasi-periodic Schr\"odinger operators $(Hu)(n)=u(n+1)+u(n-1)+v(\theta+n\alpha)u(n)$, with $v$ real analytic and positive Lyapunov exponent on the spectrum, at the worst phase rather than a typical one. Let $\beta(\alpha)=\limsup_nq_n^{-1}\log q_{n+1}$. For $0<\beta<\infty$ we prove, uniformly in the phase, that $\alpha_u^+$ is at most the maximum over the spectrum of $1-\ell/(2\omega\beta)$ when $\beta\ge\ell$, with an explicit formula for $\beta<\ell$, where $\ell$ is the Lyapunov exponent and $\omega$ the acceleration. So finite $\beta$ keeps $\alpha_u^+$ below $1$ at every phase. The factor $2\omega$ is attained, by $2\lambda\cos2\pi sx$. For the almost Mathieu operator the phase $1/4$ has exponent at least $1-\log\lambda/(2\beta_e)$, where $\beta_e$ is the limsup along even denominators; when $\beta_e=\beta$ is finite and at least $\log\lambda$ this is the exact worst exponent, and it holds on a dense $G_\delta$ set of phases, while almost every phase has $1-\log\lambda/\beta$. For potentials with $v(x+1/2)=-v(x)$, a half-period sign flip closes the central gap of every even-denominator approximant and gives the uniform lower bound $1-\ell(0)/(2\beta_e)$. In the Aubry--Andr\'e XY chain, for even sources and the receivers we specify, at almost every phase the light cone at a fixed site follows the typical law, and when $\beta_e=\beta$ is finite and at least $\log\lambda$ the light cone uniform over sites follows the worst-case law; for every supercritical analytic field the uniform light cone obeys the all-phase upper bound; for an explicit computable chain the two exponents differ and both have Turing degree $\mathbf 0''$. Finally, the Lyapunov exponent of a computable analytic potential is computable at every computable irrational frequency, uniformly in energy, and at one explicit computable frequency and the phase $1/4$ the transport exponent has degree exactly $\mathbf 0''$ for every computable even potential in an explicit open neighbourhood of $4\cos2\pi x$.
+We study the fastest transport exponent $\alpha_u^+$ of supercritical analytic quasi-periodic Schr\"odinger operators at the worst phase. For finite Liouville exponent $\beta$, an upper law involving the Lyapunov exponent $\ell$ and acceleration $\omega$ keeps transport below one uniformly in phase. When $\beta\ge\ell$ its local rate is $1-\ell/(2\omega\beta)$, and the factor $2\omega$ is attained. For the almost Mathieu operator with $L=\log\lambda>0$, we prove the sharper uniform upper bound $1-L/(2\beta)$ also on $L/2<\beta<L$. Thus whenever the even-denominator exponent satisfies $\beta_e=\beta>L/2$, with $\beta$ finite, the uniform exponent, the supremum over phases and the exponent at phase $1/4$ all equal $1-L/(2\beta)$. The same value holds on a dense $G_\delta$ set, while almost every phase has $\max\{0,1-L/\beta\}$. The new upper proof uses translated one-band and two-band frames, an exact inverse-Morse factorization, matrix shells and one fixed energy unit through the full depth range. For odd-harmonic analytic potentials, a half-period sign flip gives a lower bound through a closed central gap. In the Aubry--Andr\'e XY chain, for even sources and the specified receivers, the fixed-site light cone follows the typical law at almost every phase; the light cone uniform over sites follows the exact worst-case law when $\beta_e=\beta>L/2$ is finite. For an explicit computable chain these exponents differ and both have Turing degree $\mathbf0''$. We also prove computability of the Lyapunov exponent for computable analytic potentials and a transport exponent of degree $\mathbf0''$ throughout an explicit computable even-potential neighborhood. No computation enters the new upper proof.
 \end{abstract}
 
 {\small\tableofcontents}
@@ -57,6 +57,9 @@ We study the fastest transport exponent $\alpha_u^+$ of quasi-periodic Schr\"odi
 \input{zeros}
 \input{velocity}
 \input{upperlaw}
+\input{libration}
+\input{innerframes}
+\input{matrixshells}
 \input{amoproof}
 \input{sharp}
 \input{category}
@@ -64,6 +67,9 @@ We study the fastest transport exponent $\alpha_u^+$ of quasi-periodic Schr\"odi
 \input{computability}
 \input{discussion}
 
+\appendix
+\input{libration_appendix}
+
 \bibliographystyle{plainurl}
-\bibliography{references}
+{\small\bibliography{references}}
 \end{document}

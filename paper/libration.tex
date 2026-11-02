@@ -1,0 +1,213 @@
+\section{The almost Mathieu upper law down to \texorpdfstring{$L/2$}{L/2}}\label{sec:libration}
+
+The almost Mathieu operator admits a sharper upper bound than
+Corollary~\ref{cor:typeI} below $L$. Throughout this section,
+$L=\log\lambda>0$. No parity assumption is needed for the upper bound.
+
+\begin{theorem}[The sharper almost Mathieu upper law]\label{thm:libration}
+Let $\alpha$ be irrational and $L/2<\beta(\alpha)<L$. For every
+$a>1-L/(2\beta(\alpha))$ and $m>0$,
+\[
+ \sup_{\theta\in\T}P_\theta(T^a,T)=O(T^{-m}).
+\]
+The constants can depend on $\lambda,\alpha,a,m$.
+Consequently $\aunif\le1-L/(2\beta(\alpha))$.
+\end{theorem}
+
+Together with Corollary~\ref{cor:typeI}, this proves the upper bound
+$1-L/(2\beta)$ for every finite $\beta>L/2$. The matching lower bound
+in Section~\ref{sec:sharp} uses $\beta_e$, so equality in terms of
+$\beta$ still requires $\beta_e=\beta$.
+
+\subsection{Reduction to a quantitative frame package}
+
+At one convergent write
+\begin{equation}\label{eq:libscale}
+ q=q_n,\quad p=p_n,\quad \delta=q\alpha-p,\quad
+ b=-q^{-1}\log|\delta|,\quad \Lambda=\lambda^q,\quad
+ R_*=2\Lambda+2,\quad \kappa=(2\pi q)^2\Lambda\delta^2.
+\end{equation}
+The letter $P$ below denotes the Chambers polynomial $P_q$.
+A cell has $q$ physical sites. Fix $\xi>0$, put $\tau=\xi/100$,
+and choose $h=L+d_h>L$ after the finite list of derivative estimates
+used below. A factor denoted $\mathcal R_q$ has the form
+$q^C e^{C d_hq}$. Different occurrences can have different fixed $C$.
+We first bound all these constants, then choose $d_h$ so that every
+such loss fits its assigned fraction of $\tau q$, and finally take
+$q$ large. Neither $d_hq$ nor $\tau q$ is called $o(q)$ at fixed
+positive $d_h,\tau$.
+
+The frame phase interval has half-width
+$t_{\rm fr}=e^{-\xi q/4}/(2\pi q)$.
+Its translated copies have physical centers and local phases as in
+\cite[Appendix C, Covariance and well density]{DMband}.
+The upper-law argument uses their raw frame estimates at
+$2\xi\le b\le L-\xi$. This range includes $b\le L/2$.
+It does not use a small-$\kappa$ eigenvalue-counting theorem there.
+
+\begin{definition}[The package $\mathrm{FP}^*$]\label{def:FPstar}
+For each inner edge class and scale, the following data are required,
+uniformly in the phase, the well and the launch site.
+\begin{enumerate}
+\item A finite positive energy unit $\epsilon$, a covariant
+orthonormal frame $V$, its projection $\Pi$, and summable physical
+kernel bounds for the frame and its orthogonalization. At a closed
+pair the unit must be defined without dividing by $P'(E_a)$.
+\item A gap $m$ for $QHQ-E$ on $Q=1-\Pi$ throughout the class window.
+After declaring $A=D\epsilon$, the bulk compression error $\gamma$
+and bulk coupling $c_0$ satisfy
+\[
+ \gamma\le A/100,\qquad c_0^2/m\le A/100,\qquad
+ c_0=o(m),\qquad A=o(m).
+\]
+A coupling at the ends of a frame interval may instead be kept as a
+separate localized block. It must satisfy the boundary calculation
+of Appendix~\ref{app:libboundary}.
+\item In each fine energy window, at most a fixed number of shell
+intervals per well and a bounded self-adjoint frame penalty give a
+frame gap at least $3A$. Their widths and forbidden paddings in cells
+are at most
+\begin{equation}\label{eq:FPwidth}
+ C\exp(C\xi q)\bigl(1+\kappa^{-1/2}\bigr).
+\end{equation}
+The constant $C$ in the exponent is fixed before $\xi$ is chosen.
+\item For the physical operator with this penalty, a capped
+cell-constant weight $\varphi$ gives a perturbation $\Delta$ with
+\[
+ \|\Pi\Delta\Pi\|=o(A),\quad
+ \|Q\Delta\Pi\|^2+\|\Pi\Delta Q\|^2=o(mA),\quad
+ \|Q\Delta Q\|=o(m).
+\]
+Its jumps are at the specified bonds. With $p_{\rm pad}$ cells of
+forbidden padding, $\mu p_{\rm pad}\ge e^{c\xi q}$ for a fixed $c>0$.
+The same bounds hold in the opposite weight direction.
+\item Smooth fine windows cover the full class and overlap the
+interior thresholds below. There are $e^{O(q)}$ fine windows and
+$O(q)$ coarse classes. All fixed-order filter derivatives, inverse
+window widths and inverse constants are $e^{O(q)}$.
+\end{enumerate}
+The little-$o$ comparisons refer to $q\to\infty$ after the slack
+parameters have been fixed.
+\end{definition}
+
+This is a static package. In particular, the shell gap is a statement
+about the linear energy-space operator $H-E$. A scalar identity for
+$P(H)$ does not replace it. The factors $D$ are allowed to grow at low
+$b$. Their growth must still imply~\eqref{eq:FPwidth}.
+
+\begin{proposition}[From the package to transport]\label{prop:FPtransport}
+Suppose $\mathrm{FP}^*$ holds at every inner edge class for all
+sufficiently large convergents with $2\xi\le b\le L-\xi$, for every
+sufficiently small $\xi>0$. Then Theorem~\ref{thm:libration} holds.
+\end{proposition}
+
+\begin{proof}
+We give the scale and energy bookkeeping. The resolvent, functional
+calculus and launch-shell argument are proved in
+Appendix~\ref{app:liblocal}. They turn the package into absolute
+filtered-packet tails smaller than $e^{-Mq}$ for every fixed $M$,
+on every fixed time window $|t|\le e^{Bq}$. Their physical radius is
+\begin{equation}\label{eq:libedgeR}
+ R_{\rm edge}\le Cq e^{C\xi q}(1+\kappa^{-1/2}),\qquad
+ q\kappa^{-1/2}=(2\pi)^{-1}e^{(b-L/2)q}.
+\end{equation}
+The top edge has the one-band package from the translated-well
+construction in \cite[Appendices C--E]{DMband}, with the
+cell-weight and penalty estimates in
+Appendix~\ref{app:liblocal}. The bottom edge follows from
+$u(j)\mapsto(-1)^ju(j)$ and $\theta\mapsto\theta+1/2$.
+
+For interior energies set
+$e_P(E)=\min\{|P(E)-2\Lambda|,|P(E)+2\Lambda|\}$.
+If $0<\eta\le e_P/4$, then
+\begin{equation}\label{eq:libsublevel}
+ \bigl|\{x\in\T:|P(E)-2\Lambda\cos2\pi x|<\eta\}\bigr|
+ \le \frac{2\eta}{\pi\sqrt{\Lambda e_P}}.
+\end{equation}
+The set has at most two arcs, up to the circle seam; it is empty if
+$|P(E)|>2\Lambda$. On each monotone cosine branch its derivative is
+at least $2\pi\sqrt{\Lambda e_P}$, which proves the assertion.
+Replace only the sublevel step in Proposition~\ref{prop:Comega} by
+this estimate. Retaining the rational-product residual gives
+\begin{equation}\label{eq:libinterior}
+ R_{\rm int}(E)\le
+ C e^{(L/2+4\xi_C)q}e_P(E)^{-1/2}+Cq e^{\xi_Cq},
+ \qquad e_P\ge16e^{(L-b+4\xi_C)q}.
+\end{equation}
+Here $\xi_C>0$ includes the Lyapunov-growth slack in the shrinking
+spectral neighborhood. The resolvent tail is the absolute bound
+of Proposition~\ref{prop:Comega}. It holds for any fixed exponential
+time window. Appendix~\ref{app:liblocal} passes it to smooth interior
+filters on the same type of window. No doubly exponential time
+claim is needed for the interior packet.
+
+Fix a requested exponent $a>1-L/(2\beta)$. Choose
+\[
+ 1-L/(2\beta)<a_0<\min\{a,1/2\},\qquad
+ \nu=L/2,\quad t_v=\nu/(1-a_0),\quad r_v=a_0t_v=t_v-\nu.
+\]
+Then $\beta<t_v<L$ and $r_v>0$. Choose
+$\beta<B_0<t_v$. In the covering of Theorem~\ref{thm:U}, choose
+$K$ first, and then $\xi,\xi_C,d_h$ small enough that all radius
+losses fit inside the strict gaps $t_v-B_0$ and $a-a_0$.
+We may require $2\xi<r_v$ and $B_0<L-\xi$.
+Case A of that proof is unchanged.
+
+In Case B put $t=\log T/q$. The three regimes are
+\[
+ \begin{array}{c|l}
+  t\le t_v & \text{velocity},\\
+  t\ge t_v,\ b\le2r_v & \text{old confinement},\\
+  t\ge t_v,\ b>2r_v & \text{frames and interior}.
+ \end{array}
+\]
+The velocity radius is
+$\exp(((t-\nu)_++\text{chosen loss})q)$, up to polynomial factors.
+For $t\le t_v$ it is bounded by $T^{a_0+\text{chosen loss}}$.
+For $t\ge t_v$, a radius exponent at most $r_v$ suffices.
+If $b\le2r_v$ the old radius exponent $b/2$ in
+Proposition~\ref{prop:Camo} suffices, with the final slack assigned
+to $a-a_0$. Otherwise $b>2r_v>2\xi$ and $b\le B_0<L-\xi$.
+Apply the frame package. The exponent in~\eqref{eq:libedgeR} is at
+most $(B_0-\nu)_++C\xi<r_v$.
+For the interior use the threshold
+\[
+ e_P\ge \exp((2L-2t_v+8\xi_C)q).
+\]
+Since $b>2r_v=2t_v-L$, this dominates the threshold in
+\eqref{eq:libinterior} after arbitrarily small slack. That radius
+is at most $e^{(r_v+\text{chosen loss})q}$.
+
+The edge windows extend to $P$-depth $4\Lambda e^{-\xi q}$.
+Choose their plateaux strictly between the last interior threshold
+and this cap. This is possible because $2L-2t_v<L$.
+On $b\ge L/2+\xi$ one may take plateau
+$\Lambda e^{-5\xi q/4}$, with $\xi_C\le\xi/16$.
+If elementary cutoffs are $\chi_1,\ldots,\chi_k$, use
+\[
+ g_j=\chi_j\prod_{i<j}(1-\chi_i),\qquad
+ g_{\rm rest}=\prod_{i=1}^k(1-\chi_i).
+\]
+These sum to one. The remainder is supported in the interior class,
+after inserting a smooth spectral-neighborhood cutoff. Fixed-order
+derivatives and the number of fine windows cost $e^{O(q)}$.
+Overlapping windows require no false separation from the resolvent
+energy. Their functional-calculus factors have $e^{O(q)}$ bounds
+on $T\le e^{Bq}$.
+
+Summing absolute packet tails costs only the number of filters.
+For the Abel average, truncate time at $kqT$; the omitted part is
+$e^{-2kq}$ and $kqT$ is still in a fixed exponential window.
+Choose $M,k$ for the prescribed inverse power of $T$.
+Far energies are treated by Combes--Thomas exactly as in
+Theorem~\ref{thm:U}. Since $q$ is comparable with $\log T$ in
+Case B, the resulting bound is $O(T^{-m})$ at $T^a$.
+All choices are uniform in phase and launch site.
+\end{proof}
+
+\begin{remark}[The lower-ratio scales]\label{rem:liblow}
+At the limiting target $a_0=1-L/(2\beta)$, the range requiring new
+confinement starts at $b>2\beta-L$. For $\beta<3L/4$ it includes
+$b<L/2$. This is why the raw frame construction and its coarse
+energy unit are needed down to $b\ge2\xi$.
+\end{remark}

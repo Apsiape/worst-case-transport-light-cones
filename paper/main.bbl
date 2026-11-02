@@ -67,6 +67,13 @@ Matthew Bradshaw, Titus de~Jong, Wencai Liu, Audrey Wang, Xueyin Wang, and
 \newblock arXiv:2510.25603, 2025.
 \newblock \href {https://arxiv.org/abs/2510.25603} {\path{arXiv:2510.25603}}.
 
+\bibitem{Chambers1965}
+W.~G. Chambers.
+\newblock Linear-network model for magnetic breakdown in two dimensions.
+\newblock {\em Phys. Rev.}, 140(1A):A135--A143, 1965.
+\newblock \href {https://doi.org/10.1103/PhysRev.140.A135}
+  {\path{doi:10.1103/PhysRev.140.A135}}.
+
 \bibitem{CEF2026}
 Matthew~J. Colbrook, Mark Embree, and Jake Fillman.
 \newblock Computing spectral size: rigorous algorithms and the limits of
@@ -117,13 +124,20 @@ David Damanik and Serguei Tcheremchantsev.
 \newblock {\em J. Funct. Anal.}, 255:2872--2887, 2008.
 \newblock \href {https://arxiv.org/abs/0801.3399} {\path{arXiv:0801.3399}}.
 
+\bibitem{DMband}
+Seth Douglas and Nidhal Mghirbi.
+\newblock Band edges of the almost {Mathieu} operator at {Liouville} scales.
+\newblock Preprint, version 1.0.0, Zenodo, 2026.
+\newblock \href {https://doi.org/10.5281/zenodo.23873797}
+  {\path{doi:10.5281/zenodo.23873797}}.
+
 \bibitem{DMamo}
 Seth Douglas and Nidhal Mghirbi.
-\newblock Exact transport and packing dimension for the almost {M}athieu
+\newblock Exact transport and spectral dimensions for the almost {M}athieu
   operator.
-\newblock Preprint, version 1.0.0, Zenodo, 2026.
-\newblock \href {https://doi.org/10.5281/zenodo.23830305}
-  {\path{doi:10.5281/zenodo.23830305}}.
+\newblock Preprint, version 2.0.1, Zenodo, 2026.
+\newblock \href {https://doi.org/10.5281/zenodo.23864352}
+  {\path{doi:10.5281/zenodo.23864352}}.
 
 \bibitem{DMuniv}
 Seth Douglas and Nidhal Mghirbi.
@@ -170,6 +184,16 @@ Rui Han and Wilhelm Schlag.
 \newblock Published in Comm. Pure Appl. Math. 79(3) (2026), 729--761; we cite
   the numbering of arXiv v2.
 \newblock \href {https://arxiv.org/abs/2212.05988} {\path{arXiv:2212.05988}}.
+
+\bibitem{HSII}
+Bernard Helffer and Johannes Sj{\"o}strand.
+\newblock {\em Analyse semi-classique pour l'\'{e}quation de {Harper}. {II}:
+  Comportement semi-classique pr\`es d'un rationnel}, volume~40 of {\em
+  M\'{e}moires de la Soci\'{e}t\'{e} Math\'{e}matique de France, nouvelle
+  s\'{e}rie}.
+\newblock Soci\'{e}t\'{e} Math\'{e}matique de France, 1990.
+\newblock URL: \url{https://www.numdam.org/item/10.24033/msmf.347.pdf}, \href
+  {https://doi.org/10.24033/msmf.347} {\path{doi:10.24033/msmf.347}}.
 
 \bibitem{JKS2009}
 Svetlana Jitomirskaya, D.~A. Koslover, and M.~S. Schulteis.
@@ -270,6 +294,14 @@ James Purcell, Zhi Li, and Toby~S. Cubitt.
 \newblock arXiv:2410.02600, 2024.
 \newblock \href {https://arxiv.org/abs/2410.02600} {\path{arXiv:2410.02600}}.
 
+\bibitem{RammalBellissard}
+R.~Rammal and Jean Bellissard.
+\newblock An algebraic semi-classical approach to {Bloch} electrons in a
+  magnetic field.
+\newblock {\em J. Phys. (Paris)}, 51(17):1803--1830, 1990.
+\newblock \href {https://doi.org/10.1051/jphys:0199000510170180300}
+  {\path{doi:10.1051/jphys:0199000510170180300}}.
+
 \bibitem{RiddellSorensen2020}
 Jonathon Riddell and Erik~S. S{\o}rensen.
 \newblock Out-of-time-order correlations in the quasiperiodic
@@ -281,5 +313,13 @@ Jonathon Riddell and Erik~S. S{\o}rensen.
 P.~van Mouche.
 \newblock The coexistence problem for the discrete {M}athieu operator.
 \newblock {\em Comm. Math. Phys.}, 122(1):23--33, 1989.
+
+\bibitem{Wilkinson1987}
+Michael Wilkinson.
+\newblock An exact renormalisation group for {Bloch} electrons in a magnetic
+  field.
+\newblock {\em J. Phys. A: Math. Gen.}, 20(13):4337--4354, 1987.
+\newblock \href {https://doi.org/10.1088/0305-4470/20/13/035}
+  {\path{doi:10.1088/0305-4470/20/13/035}}.
 
 \end{thebibliography}
